@@ -95,7 +95,7 @@ const maxWidthClass = computed(() => {
                     @click="close"
                 >
                     <div
-                        class="absolute inset-0 bg-gray-500 opacity-75 dark:bg-gray-900"
+                        class="absolute inset-0 bg-black/75 dark:bg-black/80"
                     />
                 </div>
             </Transition>

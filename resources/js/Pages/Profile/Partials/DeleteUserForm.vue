@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import DangerButton from '@/Components/DangerButton.vue';
+import Heading from '@/Components/Ui/Heading.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import Modal from '@/Components/Modal.vue';
@@ -43,9 +44,7 @@ const closeModal = () => {
 <template>
     <section class="space-y-6">
         <header>
-            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                Delete Account
-            </h2>
+            <Heading as="h2" :level="4" class="text-gray-900 dark:text-gray-100">Delete Account</Heading>
 
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
                 Once your account is deleted, all of its resources and data will
@@ -58,11 +57,7 @@ const closeModal = () => {
 
         <Modal :show="confirmingUserDeletion" @close="closeModal">
             <div class="p-6">
-                <h2
-                    class="text-lg font-medium text-gray-900 dark:text-gray-100"
-                >
-                    Are you sure you want to delete your account?
-                </h2>
+                <Heading as="h2" :level="4" class="text-gray-900 dark:text-gray-100">Are you sure you want to delete your account?</Heading>
 
                 <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
                     Once your account is deleted, all of its resources and data

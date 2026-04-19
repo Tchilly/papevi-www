@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import DocsLayout from '@/Layouts/DocsLayout.vue';
+import Heading from '@/Components/Ui/Heading.vue';
 import { Head, Link } from '@inertiajs/vue3';
 </script>
 
@@ -13,7 +14,7 @@ import { Head, Link } from '@inertiajs/vue3';
                 <p class="text-xs font-semibold uppercase tracking-[0.14em] text-brand-600 dark:text-brand-400">
                     Papevi CMS
                 </p>
-                <h1 class="text-4xl font-bold tracking-[-0.025em] text-gray-900 dark:text-white">Documentation</h1>
+                <Heading as="h1" display="md">Documentation</Heading>
                 <p class="max-w-xl text-lg text-gray-600 dark:text-gray-300">
                     Everything you need to integrate the public API, manage content, and configure your workspace.
                 </p>
@@ -62,7 +63,7 @@ import { Head, Link } from '@inertiajs/vue3';
                             <path d="M10 2L2 8v10h6v-4h4v4h6V8L10 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <h2 class="text-base font-semibold text-gray-900 dark:text-white">Quick Start</h2>
+                    <Heading as="h2" :level="5">Quick Start</Heading>
                     <p class="mt-1.5 text-sm text-gray-600 dark:text-gray-300">
                         Create your first API token and make your first request in under five minutes.
                     </p>
@@ -78,7 +79,7 @@ import { Head, Link } from '@inertiajs/vue3';
                             <path d="M8 11a4 4 0 100-8 4 4 0 000 8zm-3 2h6l2 4H3l2-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <h2 class="text-base font-semibold text-gray-900 dark:text-white">Authentication</h2>
+                    <Heading as="h2" :level="5">Authentication</Heading>
                     <p class="mt-1.5 text-sm text-gray-600 dark:text-gray-300">
                         Dev and production tokens, domain verification, token rotation, and security practices.
                     </p>
@@ -94,7 +95,7 @@ import { Head, Link } from '@inertiajs/vue3';
                             <path d="M4 4h12v12H4zM8 8h4M8 12h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
                         </svg>
                     </div>
-                    <h2 class="text-base font-semibold text-gray-900 dark:text-white">Pages API</h2>
+                    <Heading as="h2" :level="5">Pages API</Heading>
                     <p class="mt-1.5 text-sm text-gray-600 dark:text-gray-300">
                         Fetch published pages, filter by type, paginate results, and understand response shapes.
                     </p>
@@ -110,7 +111,7 @@ import { Head, Link } from '@inertiajs/vue3';
                             <path d="M3 6h14M3 10h10M3 14h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
                         </svg>
                     </div>
-                    <h2 class="text-base font-semibold text-gray-900 dark:text-white">Menus API</h2>
+                    <Heading as="h2" :level="5">Menus API</Heading>
                     <p class="mt-1.5 text-sm text-gray-600 dark:text-gray-300">
                         Fetch navigation menus and their items. Filter by primary menu or language.
                     </p>
@@ -126,7 +127,7 @@ import { Head, Link } from '@inertiajs/vue3';
                             <path d="M4 4h4v4H4zM12 4h4v4h-4zM8 12h4v4H8zM2 8l2 4M18 8l-2 4M10 8v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <h2 class="text-base font-semibold text-gray-900 dark:text-white">Taxonomies API</h2>
+                    <Heading as="h2" :level="5">Taxonomies API</Heading>
                     <p class="mt-1.5 text-sm text-gray-600 dark:text-gray-300">
                         Fetch taxonomies and their terms. Supports hierarchical and flat structures.
                     </p>
@@ -144,7 +145,7 @@ import { Head, Link } from '@inertiajs/vue3';
                             <path d="M3 13l4-3 3 2.5 2-1.5 5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <h2 class="text-base font-semibold text-gray-900 dark:text-white">Media API</h2>
+                    <Heading as="h2" :level="5">Media API</Heading>
                     <p class="mt-1.5 text-sm text-gray-600 dark:text-gray-300">
                         List and retrieve media files with URLs, dimensions, and generated variants.
                     </p>
@@ -161,7 +162,7 @@ import { Head, Link } from '@inertiajs/vue3';
                             <path d="M10 3a10 10 0 010 14M3 10h14" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
                         </svg>
                     </div>
-                    <h2 class="text-base font-semibold text-gray-900 dark:text-white">Site API</h2>
+                    <Heading as="h2" :level="5">Site API</Heading>
                     <p class="mt-1.5 text-sm text-gray-600 dark:text-gray-300">
                         Read site metadata: name, language, timezone, currency, and active status.
                     </p>
@@ -177,7 +178,7 @@ import { Head, Link } from '@inertiajs/vue3';
                             <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <h2 class="text-base font-semibold text-gray-900 dark:text-white">Workflow & Publishing</h2>
+                    <Heading as="h2" :level="5">Workflow & Publishing</Heading>
                     <p class="mt-1.5 text-sm text-gray-600 dark:text-gray-300">
                         Draft → Review → Approved → Published. How statuses work and how scheduling is handled.
                     </p>
@@ -194,7 +195,7 @@ import { Head, Link } from '@inertiajs/vue3';
                             <path d="M10 6v4l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
                         </svg>
                     </div>
-                    <h2 class="text-base font-semibold text-gray-900 dark:text-white">Versioning & Audit</h2>
+                    <Heading as="h2" :level="5">Versioning & Audit</Heading>
                     <p class="mt-1.5 text-sm text-gray-600 dark:text-gray-300">
                         Every change tracked. Compare revisions, revert safely, and access a full audit trail.
                     </p>

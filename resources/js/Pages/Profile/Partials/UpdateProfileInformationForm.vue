@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Heading from '@/Components/Ui/Heading.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
@@ -21,9 +22,7 @@ const form = useForm({
 <template>
     <section>
         <header>
-            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                Profile Information
-            </h2>
+            <Heading as="h2" :level="4" class="text-gray-900 dark:text-gray-100">Profile Information</Heading>
 
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
                 Update your account's profile information and email address.
@@ -72,7 +71,7 @@ const form = useForm({
                         :href="route('verification.send')"
                         method="post"
                         as="button"
-                        class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800"
+                        class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-600 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-brand-300 dark:focus:ring-offset-gray-900"
                     >
                         Click here to re-send the verification email.
                     </Link>

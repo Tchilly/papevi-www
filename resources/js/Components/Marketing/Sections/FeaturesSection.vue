@@ -50,7 +50,7 @@ const onImageError = (event: Event) => {
     >
         <div class="mx-auto max-w-3xl text-center">
             <p class="kicker mx-auto">Built for the modern web</p>
-            <Heading as="h2" class="mt-5 text-4xl font-bold tracking-[-0.025em] text-gray-900 sm:text-5xl dark:text-white">
+            <Heading as="h2" display="lg" class="mt-5">
                 Everything you need to ship content.
             </Heading>
             <p class="mx-auto mt-5 max-w-2xl text-lg text-gray-600 dark:text-gray-300">

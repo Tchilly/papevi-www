@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Link, usePage } from '@inertiajs/vue3';
+import Button from '@/Components/Ui/Button.vue';
 import SearchDialog from './SearchDialog.vue';
 import ThemeToggle from './ThemeToggle.vue';
 
@@ -24,35 +25,38 @@ const page = usePage();
             <div class="flex items-center gap-2">
                 <SearchDialog />
                 <ThemeToggle />
-                <Link
-                    :href="route('docs')"
-                    class="inline-flex h-9 items-center rounded-lg border border-gray-200 bg-gray-50 px-3 text-sm font-medium text-gray-700 transition hover:border-gray-300 hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:hover:border-white/20 dark:hover:text-white"
-                >
+                <Button :as="Link" :href="route('docs')" variant="ghost" size="sm">
                     Docs
-                </Link>
+                </Button>
 
                 <template v-if="canLogin">
-                    <Link
+                    <Button
                         v-if="page.props.auth.user"
+                        :as="Link"
                         :href="route('dashboard')"
-                        class="inline-flex h-9 items-center rounded-lg border border-brand-600/50 bg-brand-600 px-3 text-sm font-semibold text-white transition hover:bg-brand-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 dark:border-brand-400/60 dark:bg-brand-500 dark:hover:bg-brand-400"
+                        variant="brand"
+                        size="sm"
                     >
                         Dashboard
-                    </Link>
-                    <Link
+                    </Button>
+                    <Button
                         v-else-if="canRegister"
+                        :as="Link"
                         :href="route('register')"
-                        class="inline-flex h-9 items-center rounded-lg border border-brand-600/50 bg-brand-600 px-3 text-sm font-semibold text-white transition hover:bg-brand-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 dark:border-brand-400/60 dark:bg-brand-500 dark:hover:bg-brand-400"
+                        variant="brand"
+                        size="sm"
                     >
                         Get started
-                    </Link>
-                    <Link
+                    </Button>
+                    <Button
                         v-else
+                        :as="Link"
                         :href="route('login')"
-                        class="inline-flex h-9 items-center rounded-lg border border-brand-600/50 bg-brand-600 px-3 text-sm font-semibold text-white transition hover:bg-brand-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 dark:border-brand-400/60 dark:bg-brand-500 dark:hover:bg-brand-400"
+                        variant="brand"
+                        size="sm"
                     >
                         Log in
-                    </Link>
+                    </Button>
                 </template>
             </div>
         </div>

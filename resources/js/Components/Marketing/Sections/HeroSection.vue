@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Heading from '@/Components/Ui/Heading.vue';
+import Button from '@/Components/Ui/Button.vue';
 import { Link, usePage } from '@inertiajs/vue3';
 
 defineProps<{
@@ -33,7 +34,7 @@ const onImageError = (event: Event) => {
         <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 sm:px-8 lg:grid-cols-[1fr_1.15fr] lg:gap-16 lg:px-12 lg:py-28">
             <!-- Left column: copy + CTAs -->
             <div class="flex flex-col">
-                <Heading as="h1" class="text-balance text-5xl font-bold leading-[1.04] tracking-[-0.035em] text-gray-900 sm:text-6xl dark:text-white">
+                <Heading as="h1" display="xl" class="text-balance">
                     The content platform for
                     <span class="bg-gradient-to-r from-brand-600 via-brand-500 to-brand-400 bg-clip-text text-transparent dark:from-brand-300 dark:via-brand-400 dark:to-brand-500">
                         ambitious teams</span>.
@@ -45,29 +46,37 @@ const onImageError = (event: Event) => {
                 </p>
 
                 <div class="mt-8 flex flex-wrap gap-3">
-                    <Link
+                    <Button
                         v-if="canLogin && !page.props.auth.user"
+                        :as="Link"
                         :href="route(canRegister ? 'register' : 'login')"
-                        class="inline-flex items-center gap-2 rounded-xl border border-brand-600/50 bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 dark:border-brand-400/60 dark:bg-brand-500 dark:hover:bg-brand-400"
+                        variant="brand"
+                        size="lg"
                     >
+                        <template #icon-right>
+                            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </template>
                         Start free
-                        <svg class="size-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                            <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </Link>
-                    <Link
+                    </Button>
+                    <Button
                         v-else-if="canLogin"
+                        :as="Link"
                         :href="route('dashboard')"
-                        class="inline-flex items-center gap-2 rounded-xl border border-brand-600/50 bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 dark:border-brand-400/60 dark:bg-brand-500 dark:hover:bg-brand-400"
+                        variant="brand"
+                        size="lg"
                     >
                         Open dashboard
-                    </Link>
-                    <Link
+                    </Button>
+                    <Button
+                        :as="Link"
                         :href="route('docs')"
-                        class="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-gray-700 transition hover:border-gray-400 hover:text-gray-900 dark:border-white/15 dark:bg-white/5 dark:text-gray-100 dark:hover:border-white/30 dark:hover:text-white"
+                        variant="outline"
+                        size="lg"
                     >
                         Read the docs
-                    </Link>
+                    </Button>
                 </div>
             </div>
 

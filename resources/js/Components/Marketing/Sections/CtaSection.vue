@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Heading from '@/Components/Ui/Heading.vue';
+import Button from '@/Components/Ui/Button.vue';
 import { Link, usePage } from '@inertiajs/vue3';
 
 defineProps<{
@@ -16,7 +17,7 @@ const page = usePage();
             <div class="grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
                 <div class="space-y-5">
                     <p class="kicker">Get started</p>
-                    <Heading as="h2" class="text-balance text-4xl font-bold tracking-[-0.025em] text-gray-900 sm:text-5xl dark:text-white">
+                    <Heading as="h2" display="lg" class="text-balance">
                         Ready to publish without compromise?
                     </Heading>
                     <p class="max-w-xl text-lg text-gray-600 dark:text-gray-300">
@@ -25,26 +26,32 @@ const page = usePage();
                     </p>
                 </div>
                 <div class="flex flex-col gap-3 sm:flex-row lg:flex-col">
-                    <Link
+                    <Button
                         v-if="canLogin && !page.props.auth.user"
+                        :as="Link"
                         :href="route(canRegister ? 'register' : 'login')"
-                        class="inline-flex items-center justify-center gap-2 rounded-xl border border-brand-600/50 bg-brand-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 dark:border-brand-400/60 dark:bg-brand-500 dark:hover:bg-brand-400"
+                        variant="brand"
+                        size="lg"
                     >
                         Start free
-                    </Link>
-                    <Link
+                    </Button>
+                    <Button
                         v-else-if="canLogin"
+                        :as="Link"
                         :href="route('dashboard')"
-                        class="inline-flex items-center justify-center gap-2 rounded-xl border border-brand-600/50 bg-brand-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 dark:border-brand-400/60 dark:bg-brand-500 dark:hover:bg-brand-400"
+                        variant="brand"
+                        size="lg"
                     >
                         Open dashboard
-                    </Link>
-                    <Link
+                    </Button>
+                    <Button
+                        :as="Link"
                         :href="route('docs')"
-                        class="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-5 py-3 text-sm font-medium text-gray-700 transition hover:border-gray-400 hover:text-gray-900 dark:border-white/15 dark:bg-white/5 dark:text-gray-100 dark:hover:border-white/30 dark:hover:text-white"
+                        variant="outline"
+                        size="lg"
                     >
                         Browse the docs
-                    </Link>
+                    </Button>
                 </div>
             </div>
         </div>

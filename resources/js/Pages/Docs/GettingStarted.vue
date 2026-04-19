@@ -50,7 +50,7 @@ const tocItems = [
             <!-- Header -->
             <div class="space-y-3 border-b border-gray-200 pb-10 dark:border-white/8">
                 <p class="text-xs font-semibold uppercase tracking-[0.14em] text-brand-600 dark:text-brand-400">Getting Started</p>
-                <Heading as="h1" :level="1" class="text-gray-900 dark:text-white">Quick Start</Heading>
+                <Heading as="h1">Quick Start</Heading>
                 <p class="max-w-xl text-lg text-gray-600 dark:text-gray-300">
                     Set up your site, model your content, publish your first page, and fetch it live — in under ten minutes.
                 </p>
@@ -59,7 +59,7 @@ const tocItems = [
             <!-- Create site -->
             <div id="create-site" class="scroll-mt-24 space-y-5">
                 <div>
-                    <Heading as="h2" :level="3" class="text-gray-900 dark:text-white">Create your workspace</Heading>
+                    <Heading as="h2" :level="3">Create your workspace</Heading>
                     <p class="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                         A site is the top-level container for your content, API tokens, and domain settings. You can run multiple sites from a single account.
                     </p>
@@ -85,7 +85,7 @@ const tocItems = [
             <!-- API key -->
             <div id="api-key" class="scroll-mt-24 space-y-5">
                 <div>
-                    <Heading as="h2" :level="3" class="text-gray-900 dark:text-white">Get your API key</Heading>
+                    <Heading as="h2" :level="3">Get your API key</Heading>
                     <p class="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                         Tokens are scoped to a site and identify it automatically — you never pass a site ID in requests. There are two types:
                     </p>
@@ -127,7 +127,7 @@ const tocItems = [
             <div id="content-type" class="scroll-mt-24 space-y-5">
                 <div class="sm:flex sm:gap-10">
                     <div class="sm:flex-1">
-                        <Heading as="h2" :level="3" class="text-gray-900 dark:text-white">Model your content</Heading>
+                        <Heading as="h2" :level="3">Model your content</Heading>
                         <p class="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                             Content types define the fields available when writing a page — title, body, hero image, author, whatever your project needs. You can have as many types as you want: blog posts, landing pages, case studies.
                         </p>
@@ -156,7 +156,7 @@ const tocItems = [
 
             <!-- Publish -->
             <div id="publish" class="scroll-mt-24 space-y-5">
-<Heading as="h2" :level="3" class="text-gray-900 dark:text-white">Write and publish</Heading>
+<Heading as="h2" :level="3">Write and publish</Heading>
 
                 <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     Go to <strong class="font-medium text-gray-900 dark:text-white">Pages → New Page</strong>, pick your content type, fill in the fields, and click <strong class="font-medium text-gray-900 dark:text-white">Publish</strong>. The page is immediately live in the API.
@@ -182,7 +182,7 @@ const tocItems = [
             <!-- API call -->
             <div id="api-call" class="scroll-mt-24 space-y-5">
                 <div>
-                    <Heading as="h2" :level="3" class="text-gray-900 dark:text-white">Make your first API call</Heading>
+                    <Heading as="h2" :level="3">Make your first API call</Heading>
                     <p class="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                         Every request uses a Bearer token in the <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">Authorization</code> header. The API returns only published content and follows the <Link href="/docs/api/json-api" class="text-brand-600 hover:underline dark:text-brand-400">JSON:API</Link> spec.
                     </p>
@@ -210,7 +210,7 @@ curl https://api.papevi.app/api/v1/pages/my-first-post \
             <!-- Next steps -->
             <div id="next-steps" class="scroll-mt-24 space-y-4 border-t border-gray-200 pt-10 dark:border-white/8">
                 <div>
-                    <Heading as="h2" :level="3" class="text-gray-900 dark:text-white">Go further</Heading>
+                    <Heading as="h2" :level="3">Go further</Heading>
                     <p class="mt-1.5 text-sm text-gray-600 dark:text-gray-300">Dig into the full API reference and editor guides.</p>
                 </div>
                 <div class="grid gap-3 sm:grid-cols-2">

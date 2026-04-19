@@ -19,7 +19,7 @@ const stack = [
         <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
             <div class="space-y-5">
                 <p class="kicker">Platform</p>
-                <Heading as="h2" class="text-balance text-4xl font-bold tracking-[-0.025em] text-gray-900 sm:text-5xl dark:text-white">
+                <Heading as="h2" display="lg" class="text-balance">
                     A modern stack, ready for production.
                 </Heading>
                 <p class="text-lg text-gray-600 dark:text-gray-300">

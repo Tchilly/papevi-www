@@ -91,7 +91,7 @@ const sparseFieldsExample = 'curl "https://api.papevi.app/api/v1/pages?fields[pa
         <div class="space-y-10">
             <div class="space-y-3 border-b border-gray-200 pb-10 dark:border-white/8">
                 <p class="text-xs font-semibold uppercase tracking-[0.14em] text-brand-600 dark:text-brand-400">API Reference</p>
-                <Heading as="h1" :level="1" class="text-gray-900 dark:text-white">Pages API</Heading>
+                <Heading as="h1">Pages API</Heading>
                 <p class="max-w-xl text-lg text-gray-600 dark:text-gray-300">
                     Fetch published pages for your site. The API only returns pages with published content — draft and scheduled pages return <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-sm dark:bg-gray-800">404</code>. Custom content fields are merged directly into <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-sm dark:bg-gray-800">attributes</code>.
                 </p>
@@ -99,7 +99,7 @@ const sparseFieldsExample = 'curl "https://api.papevi.app/api/v1/pages?fields[pa
 
             <!-- Base URL -->
             <div class="space-y-3">
-                <Heading as="h2" id="base-url" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Base URL</Heading>
+                <Heading as="h2" id="base-url" :level="3" class="scroll-mt-24">Base URL</Heading>
                 <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
                     <Code lang="bash" :code="baseUrl" />
                 </div>
@@ -107,7 +107,7 @@ const sparseFieldsExample = 'curl "https://api.papevi.app/api/v1/pages?fields[pa
 
             <!-- Endpoints overview -->
             <div class="space-y-4">
-                <Heading as="h2" id="endpoints" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Endpoints</Heading>
+                <Heading as="h2" id="endpoints" :level="3" class="scroll-mt-24">Endpoints</Heading>
                 <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
                     <table class="w-full text-sm">
                         <thead class="bg-gray-50 text-xs text-gray-500 dark:bg-white/[0.03] dark:text-gray-400">
@@ -135,7 +135,7 @@ const sparseFieldsExample = 'curl "https://api.papevi.app/api/v1/pages?fields[pa
 
             <!-- GET /pages -->
             <div class="space-y-4">
-                <Heading as="h2" id="list-pages" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">GET /pages</Heading>
+                <Heading as="h2" id="list-pages" :level="3" class="scroll-mt-24">GET /pages</Heading>
                 <p class="text-sm text-gray-600 dark:text-gray-300">
                     Returns a paginated list of published pages for the authenticated site. Use <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">per_page</code> to control page size.
                 </p>
@@ -188,7 +188,7 @@ const sparseFieldsExample = 'curl "https://api.papevi.app/api/v1/pages?fields[pa
 
             <!-- GET /pages/{slug} -->
             <div class="space-y-4">
-                <Heading as="h2" id="get-pages-slug" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">GET /pages/{slug}</Heading>
+                <Heading as="h2" id="get-pages-slug" :level="3" class="scroll-mt-24">GET /pages/{slug}</Heading>
                 <p class="text-sm text-gray-600 dark:text-gray-300">
                     Returns a single published page by its slug. Unpublished pages return <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">404</code>. The page must belong to the site associated with your token.
                 </p>
@@ -200,7 +200,7 @@ const sparseFieldsExample = 'curl "https://api.papevi.app/api/v1/pages?fields[pa
 
             <!-- Response format -->
             <div class="space-y-4">
-                <Heading as="h2" id="response-format" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Response format</Heading>
+                <Heading as="h2" id="response-format" :level="3" class="scroll-mt-24">Response format</Heading>
                 <p class="text-sm text-gray-600 dark:text-gray-300">
                     Responses follow the <strong class="font-semibold text-gray-800 dark:text-gray-100">JSON:API</strong> specification. Custom content fields from your page type are merged directly into <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">attributes</code> — there is no <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">published_content</code> wrapper. The exact fields depend on your page type configuration.
                 </p>
@@ -220,7 +220,7 @@ const sparseFieldsExample = 'curl "https://api.papevi.app/api/v1/pages?fields[pa
 
             <!-- Code examples -->
             <div class="space-y-4">
-                <Heading as="h2" id="framework-examples" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Code examples</Heading>
+                <Heading as="h2" id="framework-examples" :level="3" class="scroll-mt-24">Code examples</Heading>
                 <p class="text-sm text-gray-600 dark:text-gray-300">
                     Ready-to-use clients for listing and rendering pages in common stacks.
                 </p>

@@ -22,7 +22,7 @@ const tocItems = [
         <div class="space-y-10">
             <div class="space-y-3 border-b border-gray-200 pb-10 dark:border-white/8">
                 <p class="text-xs font-semibold uppercase tracking-[0.14em] text-brand-600 dark:text-brand-400">Editor Guide</p>
-                <Heading as="h1" :level="1" class="text-gray-900 dark:text-white">Versioning &amp; Audit</Heading>
+                <Heading as="h1">Versioning &amp; Audit</Heading>
                 <p class="max-w-xl text-lg text-gray-600 dark:text-gray-300">
                     Every save creates a version. Every action leaves an audit log. Compare any two versions side-by-side, revert with one click, and prove exactly what happened and when.
                 </p>
@@ -30,7 +30,7 @@ const tocItems = [
 
             <!-- Versions -->
             <div class="space-y-4">
-                <Heading as="h2" id="version-history" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Version history</Heading>
+                <Heading as="h2" id="version-history" :level="3" class="scroll-mt-24">Version history</Heading>
                 <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     Each time content is saved a new <strong class="font-medium text-gray-900 dark:text-white">PageContent</strong> record is created. The published version is tracked by a pointer on the page — historical versions are always preserved.
                 </p>
@@ -53,7 +53,7 @@ const tocItems = [
 
             <!-- Audit trail -->
             <div class="space-y-4">
-                <Heading as="h2" id="audit-trail" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Audit trail</Heading>
+                <Heading as="h2" id="audit-trail" :level="3" class="scroll-mt-24">Audit trail</Heading>
                 <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     Accessible to admins via <strong class="font-medium text-gray-900 dark:text-white">Version History → View Audit Logs</strong>. Each log entry captures the full context of the action.
                 </p>
@@ -98,20 +98,20 @@ const tocItems = [
                 <div class="space-y-2 text-sm">
                     <p class="font-medium text-gray-900 dark:text-white">Event color coding in the timeline</p>
                     <div class="flex flex-wrap gap-2 text-xs">
-                        <span class="rounded-md border border-blue-200 bg-blue-50 px-2 py-1 text-blue-700 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-400">Blue — Created</span>
+                        <span class="rounded-md border border-brand-200 bg-brand-50 px-2 py-1 text-brand-700 dark:border-brand-500/20 dark:bg-brand-500/10 dark:text-brand-400">Brand — Created</span>
                         <span class="rounded-md border border-yellow-200 bg-yellow-50 px-2 py-1 text-yellow-700 dark:border-yellow-500/20 dark:bg-yellow-500/10 dark:text-yellow-400">Yellow — Updated</span>
                         <span class="rounded-md border border-red-200 bg-red-50 px-2 py-1 text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-400">Red — Deleted</span>
                         <span class="rounded-md border border-green-200 bg-green-50 px-2 py-1 text-green-700 dark:border-green-500/20 dark:bg-green-500/10 dark:text-green-400">Green — Published/Restored</span>
                         <span class="rounded-md border border-gray-200 bg-gray-100 px-2 py-1 text-gray-600 dark:border-white/10 dark:bg-white/5 dark:text-gray-300">Gray — Unpublished</span>
-                        <span class="rounded-md border border-purple-200 bg-purple-50 px-2 py-1 text-purple-700 dark:border-purple-500/20 dark:bg-purple-500/10 dark:text-purple-400">Purple — Reverted</span>
-                        <span class="rounded-md border border-indigo-200 bg-indigo-50 px-2 py-1 text-indigo-700 dark:border-indigo-500/20 dark:bg-indigo-500/10 dark:text-indigo-400">Indigo — Scheduled</span>
+                        <span class="rounded-md border border-orange-200 bg-orange-50 px-2 py-1 text-orange-700 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-400">Orange — Reverted</span>
+                        <span class="rounded-md border border-yellow-200 bg-yellow-50 px-2 py-1 text-yellow-700 dark:border-yellow-500/20 dark:bg-yellow-500/10 dark:text-yellow-400">Yellow — Scheduled</span>
                     </div>
                 </div>
             </div>
 
             <!-- Access control -->
             <div class="space-y-4">
-                <Heading as="h2" id="access-control" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Access control</Heading>
+                <Heading as="h2" id="access-control" :level="3" class="scroll-mt-24">Access control</Heading>
                 <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
                     <table class="w-full text-sm">
                         <thead class="bg-gray-50 text-xs text-gray-500 dark:bg-white/[0.03] dark:text-gray-400">
