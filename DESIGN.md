@@ -112,47 +112,78 @@ These values are the canonical palette derived from `resources/css/app.css` in `
 
 ### Font Family
 
-- **Primary**: `IBM Plex Sans`, with fallbacks from `--font-sans`
-- **Monospace**: `IBM Plex Mono`, with fallbacks from `--font-mono`
-- **OpenType Features**: Use defaults from IBM Plex variable setup in `app.css`
+| Token          | Family         | Role                                     |
+| -------------- | -------------- | ---------------------------------------- |
+| `--font-sans`  | IBM Plex Sans  | UI copy, body text, navigation, labels   |
+| `--font-serif` | IBM Plex Serif | Headings (`Heading.vue`), form inputs    |
+| `--font-mono`  | IBM Plex Mono  | Code blocks, keyboard hints, tech labels |
+
+**CSS tokens:**
+
+```css
+--font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+--font-serif: "IBM Plex Serif", ui-serif, Georgia, serif;
+--font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+--heading-font-family: var(--font-serif);
+```
+
+**OpenType Features**: Use defaults from IBM Plex variable setup in `app.css` (cv01, ss03 on Sans).
 
 ### Hierarchy
 
-| Role           | Font          | Size           | Weight | Line Height | Letter Spacing | Notes                                 |
-| -------------- | ------------- | -------------- | ------ | ----------- | -------------- | ------------------------------------- |
-| Display XL     | IBM Plex Sans | 56px (3.50rem) | 700    | 1.00        | -0.04em        | Hero marketing emphasis               |
-| Display Large  | IBM Plex Sans | 48px (3.00rem) | 700    | 1.00        | -0.03em        | Primary section hero                  |
-| Display        | IBM Plex Sans | 40px (2.50rem) | 600    | 1.05        | -0.02em        | Section headlines                     |
-| Heading 1      | IBM Plex Sans | 32px (2.00rem) | 700    | 1.10        | -0.02em        | Major section titles                  |
-| Heading 2      | IBM Plex Sans | 24px (1.50rem) | 700    | 1.25        | -0.01em        | Sub-section headings                  |
-| Heading 3      | IBM Plex Sans | 20px (1.25rem) | 500    | 1.33        | normal         | Card and module headings              |
-| Body Large     | IBM Plex Sans | 18px (1.13rem) | 400    | 1.55        | normal         | Introductory copy                     |
-| Body Emphasis  | IBM Plex Sans | 17px (1.06rem) | 500    | 1.50        | normal         | Emphasized body lines                 |
-| Body           | IBM Plex Sans | 16px (1.00rem) | 400    | 1.50        | normal         | Standard content                      |
-| Body Medium    | IBM Plex Sans | 16px (1.00rem) | 500    | 1.50        | normal         | Navigation and controls               |
-| Body Semibold  | IBM Plex Sans | 16px (1.00rem) | 600    | 1.50        | normal         | Strong emphasis                       |
-| Small          | IBM Plex Sans | 15px (0.94rem) | 400    | 1.50        | normal         | Secondary body                        |
-| Small Medium   | IBM Plex Sans | 15px (0.94rem) | 500    | 1.50        | normal         | Emphasized small text                 |
-| Small Semibold | IBM Plex Sans | 15px (0.94rem) | 600    | 1.50        | normal         | Strong small text                     |
-| Small Light    | IBM Plex Sans | 15px (0.94rem) | 400    | 1.47        | normal         | De-emphasized copy                    |
-| Caption Large  | IBM Plex Sans | 14px (0.88rem) | 500    | 1.40        | normal         | Sub-labels, categories                |
-| Caption        | IBM Plex Sans | 13px (0.81rem) | 400    | 1.40        | normal         | Metadata, timestamps                  |
-| Label          | IBM Plex Sans | 12px (0.75rem) | 500    | 1.40        | normal         | Buttons and micro labels              |
-| Micro          | IBM Plex Sans | 11px (0.69rem) | 500    | 1.30        | normal         | Tiny labels                           |
-| Tiny           | IBM Plex Sans | 10px (0.63rem) | 500    | 1.30        | normal         | Overline text                         |
-| Link Large     | IBM Plex Sans | 16px (1.00rem) | 500    | 1.50        | normal         | Primary links                         |
-| Link Medium    | IBM Plex Sans | 15px (0.94rem) | 500    | 1.50        | normal         | Navigation links                      |
-| Link Small     | IBM Plex Sans | 14px (0.88rem) | 500    | 1.40        | normal         | Compact links                         |
-| Link Caption   | IBM Plex Sans | 13px (0.81rem) | 500    | 1.40        | normal         | Footer/meta links                     |
-| Mono Body      | IBM Plex Mono | 14px (0.88rem) | 400    | 1.50        | normal         | Code and technical blocks             |
-| Mono Caption   | IBM Plex Mono | 13px (0.81rem) | 400    | 1.40        | normal         | Code labels                           |
-| Mono Label     | IBM Plex Mono | 12px (0.75rem) | 500    | 1.40        | normal         | Keyboard and compact technical labels |
+| Role           | Font           | Size           | Weight | Line Height | Letter Spacing | Notes                                 |
+| -------------- | -------------- | -------------- | ------ | ----------- | -------------- | ------------------------------------- |
+| Display XL     | IBM Plex Sans  | 56px (3.50rem) | 700    | 1.00        | -0.04em        | Hero marketing emphasis               |
+| Display Large  | IBM Plex Sans  | 48px (3.00rem) | 700    | 1.00        | -0.03em        | Primary section hero                  |
+| Display        | IBM Plex Sans  | 40px (2.50rem) | 600    | 1.05        | -0.02em        | Section headlines                     |
+| Heading 1      | IBM Plex Serif | 32px (2.00rem) | 700    | 1.10        | -0.025em       | Major section titles (`Heading.vue`)  |
+| Heading 2      | IBM Plex Serif | 24px (1.50rem) | 700    | 1.25        | -0.015em       | Sub-section headings (`Heading.vue`)  |
+| Heading 3      | IBM Plex Serif | 20px (1.25rem) | 600    | 1.33        | -0.01em        | Card and module headings              |
+| Body Large     | IBM Plex Sans  | 18px (1.13rem) | 400    | 1.55        | normal         | Introductory copy                     |
+| Body Emphasis  | IBM Plex Sans  | 17px (1.06rem) | 500    | 1.50        | normal         | Emphasized body lines                 |
+| Body           | IBM Plex Sans  | 16px (1.00rem) | 400    | 1.50        | normal         | Standard content                      |
+| Body Medium    | IBM Plex Sans  | 16px (1.00rem) | 500    | 1.50        | normal         | Navigation and controls               |
+| Body Semibold  | IBM Plex Sans  | 16px (1.00rem) | 600    | 1.50        | normal         | Strong emphasis                       |
+| Small          | IBM Plex Sans  | 15px (0.94rem) | 400    | 1.50        | normal         | Secondary body                        |
+| Small Medium   | IBM Plex Sans  | 15px (0.94rem) | 500    | 1.50        | normal         | Emphasized small text                 |
+| Small Semibold | IBM Plex Sans  | 15px (0.94rem) | 600    | 1.50        | normal         | Strong small text                     |
+| Small Light    | IBM Plex Sans  | 15px (0.94rem) | 400    | 1.47        | normal         | De-emphasized copy                    |
+| Caption Large  | IBM Plex Sans  | 14px (0.88rem) | 500    | 1.40        | normal         | Sub-labels, categories                |
+| Caption        | IBM Plex Sans  | 13px (0.81rem) | 400    | 1.40        | normal         | Metadata, timestamps                  |
+| Label          | IBM Plex Sans  | 12px (0.75rem) | 500    | 1.40        | normal         | Buttons and micro labels              |
+| Micro          | IBM Plex Sans  | 11px (0.69rem) | 500    | 1.30        | normal         | Tiny labels                           |
+| Tiny           | IBM Plex Sans  | 10px (0.63rem) | 500    | 1.30        | normal         | Overline text                         |
+| Link Large     | IBM Plex Sans  | 16px (1.00rem) | 500    | 1.50        | normal         | Primary links                         |
+| Link Medium    | IBM Plex Sans  | 15px (0.94rem) | 500    | 1.50        | normal         | Navigation links                      |
+| Link Small     | IBM Plex Sans  | 14px (0.88rem) | 500    | 1.40        | normal         | Compact links                         |
+| Link Caption   | IBM Plex Sans  | 13px (0.81rem) | 500    | 1.40        | normal         | Footer/meta links                     |
+| Mono Body      | IBM Plex Mono  | 14px (0.88rem) | 400    | 1.50        | normal         | Code and technical blocks             |
+| Mono Caption   | IBM Plex Mono  | 13px (0.81rem) | 400    | 1.40        | normal         | Code labels                           |
+| Mono Label     | IBM Plex Mono  | 12px (0.75rem) | 500    | 1.40        | normal         | Keyboard and compact technical labels |
+
+### Heading.vue Scale
+
+All headings rendered via `Heading.vue` use `font-serif` (IBM Plex Serif). The `level` prop controls visual size independently of the semantic element.
+
+| Level | Tailwind classes                                        |
+| ----- | ------------------------------------------------------- |
+| 1     | `text-4xl font-bold tracking-[-0.025em] leading-tight`  |
+| 2     | `text-2xl font-bold tracking-[-0.015em] leading-snug`   |
+| 3     | `text-xl font-semibold tracking-[-0.01em] leading-snug` |
+| 4     | `text-lg font-semibold leading-snug`                    |
+| 5     | `text-base font-medium leading-normal`                  |
+| 6     | `text-sm font-medium leading-normal`                    |
+
+When `level` is omitted, only `font-serif` is added — the caller controls sizing (used for marketing sections with responsive classes).
+
+Applied via `@layer base`: `input` (excl. checkbox/radio/range), `textarea`, and `select` also use `font-serif`.
 
 ### Principles
 
 - **Practical emphasis**: 500 is the primary UI emphasis weight.
 - **Readable density**: 13–16px dominates operational interfaces.
 - **Dark-safe contrast**: text roles use gray ramps to avoid eye strain.
+- **Serif headings**: all heading elements use IBM Plex Serif via `Heading.vue`.
 - **Mono separation**: IBM Plex Mono is reserved for technical/utility contexts.
 
 ## 4. Component Stylings
@@ -337,7 +368,8 @@ These values are the canonical palette derived from `resources/css/app.css` in `
 
 ### Do
 
-- Use IBM Plex Sans / IBM Plex Mono from `app.css`
+- Use IBM Plex Sans / IBM Plex Serif / IBM Plex Mono from `app.css`
+- Use `Heading.vue` for all heading elements — never raw `h1`–`h6`
 - Use only project color families: `gray`, `brand`, `red`, `orange`, `yellow`, `green`
 - Prefer existing variants/components before creating custom styling
 - Keep dark and light mode behavior in parity
