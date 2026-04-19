@@ -1,11 +1,204 @@
-@import 'tailwindcss';
+@import url("https://fonts.bunny.net/css?family=ibm-plex-sans:400,500,600,700|ibm-plex-mono:400,500&display=swap");
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+@import "tailwindcss";
+@plugin '@tailwindcss/forms';
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    --font-mono:
+        "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    --color-white: #eaeaea;
+    --color-black: #111111;
+
+    --color-gray-50: #eceeee;
+    --color-gray-100: #ced5d5;
+    --color-gray-200: #c9cbcc;
+    --color-gray-300: #c2c4c4;
+    --color-gray-400: #a6a7a7;
+    --color-gray-500: #7f8282;
+    --color-gray-600: #3d3f3f;
+    --color-gray-700: #323333;
+    --color-gray-800: #222323;
+    --color-gray-900: #1d1e1e;
+    --color-gray-950: #171717;
+
+    --color-brand-50: #cef5f7;
+    --color-brand-100: #a3e7ed;
+    --color-brand-200: #6dd3da;
+    --color-brand-300: #41bdc7;
+    --color-brand-400: #2eb3bf;
+    --color-brand-500: #29a2ad;
+    --color-brand-600: #238b95;
+    --color-brand-700: #1d757e;
+    --color-brand-800: #135e64;
+    --color-brand-900: #0d494f;
+    --color-brand-950: #0c3f44;
+
+    --color-red-50: #fbc4c5;
+    --color-red-100: #fab5b6;
+    --color-red-200: #f8999b;
+    --color-red-300: #f77679;
+    --color-red-400: #f65055;
+    --color-red-500: #e6252f;
+    --color-red-600: #c21d26;
+    --color-red-700: #a3171e;
+    --color-red-800: #811016;
+    --color-red-900: #650a0f;
+    --color-red-950: #55070b;
+
+    --color-orange-50: #fec8ba;
+    --color-orange-100: #fec0b0;
+    --color-orange-200: #fead95;
+    --color-orange-300: #fe956f;
+    --color-orange-400: #fe7f42;
+    --color-orange-500: #f46e0e;
+    --color-orange-600: #cf5c0a;
+    --color-orange-700: #ac4b07;
+    --color-orange-800: #863904;
+    --color-orange-900: #652902;
+    --color-orange-950: #582302;
+
+    --color-yellow-50: #ffe4c3;
+    --color-yellow-100: #ffddb2;
+    --color-yellow-200: #ffd394;
+    --color-yellow-300: #ffc55e;
+    --color-yellow-400: #febb00;
+    --color-yellow-500: #f0b100;
+    --color-yellow-600: #ca9500;
+    --color-yellow-700: #a67a00;
+    --color-yellow-800: #876200;
+    --color-yellow-900: #654900;
+    --color-yellow-950: #543c00;
+
+    --color-green-50: #f0fdf4;
+    --color-green-100: #5cfa6f;
+    --color-green-200: #55eb67;
+    --color-green-300: #4edb60;
+    --color-green-400: #48cc58;
+    --color-green-500: #00c950;
+    --color-green-600: #00a63e;
+    --color-green-700: #008236;
+    --color-green-800: #1e6126;
+    --color-green-900: #14471a;
+    --color-green-950: #0e3813;
+
+    --animate-float: float 8s ease-in-out infinite;
+    --animate-pulse-glow: pulseGlow 7s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes pulseGlow {
+    0%,
+    100% {
+        opacity: 0.35;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@layer base {
+    html {
+        font-family: var(--font-sans);
+        font-feature-settings: "cv01", "ss03";
+        font-optical-sizing: auto;
+    }
+
+    body {
+        @apply bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100;
+    }
+}
+
+@utility atmos-grid {
+    background-image:
+        linear-gradient(to right, rgb(255 255 255 / 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgb(255 255 255 / 0.03) 1px, transparent 1px);
+    background-size: 36px 36px;
+    background-position: -1px -1px;
+}
+
+@utility glass-panel {
+    @apply rounded-xl border border-gray-200 bg-white shadow-sm dark:border-white/10 dark:bg-gray-900/70 dark:shadow-none dark:backdrop-blur;
+}
+
+@utility brand-glow {
+    background: radial-gradient(
+        circle at center,
+        rgb(41 162 173 / 0.28),
+        transparent 66%
+    );
+}
+
+@utility hero-noise {
+    background-image: radial-gradient(
+        circle at 1px 1px,
+        rgb(255 255 255 / 0.08) 1px,
+        transparent 0
+    );
+    background-size: 14px 14px;
+    mask-image: linear-gradient(to bottom, black 35%, transparent 100%);
+}
+
+@utility kicker {
+    @apply inline-flex items-center gap-2 rounded-full border border-brand-500/40 bg-brand-400/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.16em] text-brand-600 dark:text-brand-300;
+}
+
+@utility product-frame {
+    @apply relative overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.15)] ring-1 ring-gray-100 dark:border-white/10 dark:bg-gray-900/80 dark:shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] dark:ring-white/5 dark:backdrop-blur;
+}
+
+@utility product-frame-bar {
+    @apply flex items-center gap-1.5 border-b border-gray-200 bg-gray-50/95 px-4 py-2.5 dark:border-white/10 dark:bg-gray-900/95;
+}
+
+@utility product-frame-dot {
+    @apply h-2.5 w-2.5 rounded-full bg-gray-300 dark:bg-white/15;
+}
+
+@utility product-placeholder {
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            rgb(41 162 173 / 0.08),
+            transparent 55%
+        ),
+        radial-gradient(
+            circle at 80% 85%,
+            rgb(19 94 100 / 0.1),
+            transparent 60%
+        ),
+        linear-gradient(
+            135deg,
+            rgb(243 246 247 / 0.95),
+            rgb(235 241 242 / 0.95)
+        );
+}
+
+.dark .product-placeholder {
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            rgb(41 162 173 / 0.18),
+            transparent 55%
+        ),
+        radial-gradient(
+            circle at 80% 85%,
+            rgb(19 94 100 / 0.32),
+            transparent 60%
+        ),
+        linear-gradient(135deg, rgb(29 30 30 / 0.95), rgb(23 23 23 / 0.95));
 }

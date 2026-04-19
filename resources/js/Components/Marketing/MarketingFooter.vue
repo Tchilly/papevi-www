@@ -1,0 +1,95 @@
+<script setup lang="ts">
+defineProps<{
+    laravelVersion: string;
+    phpVersion: string;
+}>();
+
+const year = new Date().getFullYear();
+</script>
+
+<template>
+    <footer class="border-t border-gray-200 bg-white px-6 py-12 sm:px-8 lg:px-12 dark:border-white/5 dark:bg-gray-950">
+        <div class="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="space-y-3">
+                <div class="flex items-center gap-3">
+                    <div class="flex h-9 w-9 items-center justify-center rounded-lg border border-brand-400/50 bg-brand-500/10">
+                        <span class="font-mono text-xs font-semibold text-brand-700 dark:text-brand-200">PC</span>
+                    </div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-white">Papevi CMS</p>
+                </div>
+                <p class="text-xs text-gray-500 dark:text-gray-400">
+                    Enterprise headless content platform for ambitious teams.
+                </p>
+            </div>
+
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-gray-500 dark:text-gray-400">
+                    Product
+                </p>
+                <ul class="mt-3 space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                    <li><a href="#features" class="transition hover:text-gray-900 dark:hover:text-white">Features</a></li>
+                    <li><a href="#workflow" class="transition hover:text-gray-900 dark:hover:text-white">Workflow</a></li>
+                    <li><a href="#platform" class="transition hover:text-gray-900 dark:hover:text-white">Platform</a></li>
+                    <li><a href="#faq" class="transition hover:text-gray-900 dark:hover:text-white">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-gray-500 dark:text-gray-400">
+                    Documentation
+                </p>
+                <ul class="mt-3 space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                    <li>
+                        <a
+                            href="https://github.com/Tchilly/papevi-cms/blob/development/README.md"
+                            class="transition hover:text-gray-900 dark:hover:text-white"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >Overview</a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://github.com/Tchilly/papevi-cms/blob/development/docs/api-tokens.md"
+                            class="transition hover:text-gray-900 dark:hover:text-white"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >API tokens</a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://github.com/Tchilly/papevi-cms/blob/development/docs/roles.md"
+                            class="transition hover:text-gray-900 dark:hover:text-white"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >Roles & permissions</a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://github.com/Tchilly/papevi-cms/blob/development/SECURITY.md"
+                            class="transition hover:text-gray-900 dark:hover:text-white"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >Security</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-gray-500 dark:text-gray-400">
+                    Built on
+                </p>
+                <ul class="mt-3 space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                    <li>Laravel v{{ laravelVersion }}</li>
+                    <li>PHP v{{ phpVersion }}</li>
+                    <li>Vue + Inertia</li>
+                    <li>PostgreSQL · Redis</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mx-auto mt-10 flex max-w-7xl flex-col items-center justify-between gap-3 border-t border-gray-200 pt-6 text-xs text-gray-500 sm:flex-row dark:border-white/5">
+            <p>&copy; {{ year }} Papevi CMS. All rights reserved.</p>
+            <p class="font-mono">papevi.app</p>
+        </div>
+    </footer>
+</template>

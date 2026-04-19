@@ -20,48 +20,89 @@ The color system remains tightly constrained to Papevi tokens from `app.css`: ne
 
 ## 2. Color Palette & Roles
 
+### Canonical Hex Tokens
+
+These values are the canonical palette derived from `resources/css/app.css` in `repli-cms` and mirrored in this repository.
+
+**Neutrals**
+
+- `white`: `#EAEAEA`
+- `black`: `#111111`
+- `gray-50`: `#ECEEEE`
+- `gray-100`: `#CED5D5`
+- `gray-200`: `#C9CBCC`
+- `gray-300`: `#C2C4C4`
+- `gray-400`: `#A6A7A7`
+- `gray-500`: `#7F8282`
+- `gray-600`: `#3D3F3F`
+- `gray-700`: `#323333`
+- `gray-800`: `#222323`
+- `gray-900`: `#1D1E1E`
+- `gray-950`: `#171717`
+
+**Brand**
+
+- `brand-50`: `#59EDFC`
+- `brand-100`: `#3FE6F5`
+- `brand-200`: `#3AD4E2`
+- `brand-300`: `#34C5D2`
+- `brand-400`: `#2EB3BF`
+- `brand-500`: `#29A2AD`
+- `brand-600`: `#238B95`
+- `brand-700`: `#1D757E`
+- `brand-800`: `#135E64`
+- `brand-900`: `#0D494F`
+- `brand-950`: `#0C3F44`
+
+**Semantic**
+
+- Success: `green-600` `#00A63E`, `green-700` `#008236`
+- Warning: `orange-600` `#CF5C0A`, `orange-700` `#AC4B07`
+- Pending: `yellow-600` `#CA9500`, `yellow-700` `#A67A00`
+- Error: `red-600` `#C21D26`, `red-700` `#A3171E`
+
 ### Background Surfaces
 
-- **Canvas Base** (`gray-950`): Deepest background for app shell and immersive dark sections.
-- **Panel Base** (`gray-900`): Sidebar/panel containers and section framing.
-- **Elevated Surface** (`gray-800`): Cards, overlays, and raised modules.
+- **Canvas Base** (`gray-950` / `#171717`): Deepest background for app shell and immersive dark sections.
+- **Panel Base** (`gray-900` / `#1D1E1E`): Sidebar/panel containers and section framing.
+- **Elevated Surface** (`gray-800` / `#222323`): Cards, overlays, and raised modules.
 - **Soft Surface** (`white/85` light, `gray-950/75` dark): Floating menus and translucent overlays.
 
 ### Text & Content
 
-- **Primary Text** (`gray-900` light / `gray-100` dark): Main labels, titles, body copy.
-- **Secondary Text** (`gray-600` light / `gray-300` dark): Descriptions and helper copy.
-- **Tertiary Text** (`gray-500` light / `gray-400` dark): Metadata, placeholders.
-- **Quaternary Text** (`gray-400` light / `gray-500` dark): Subtle labels and low-priority details.
+- **Primary Text** (`gray-900` `#1D1E1E` light / `gray-100` `#CED5D5` dark): Main labels, titles, body copy.
+- **Secondary Text** (`gray-600` `#3D3F3F` light / `gray-300` `#C2C4C4` dark): Descriptions and helper copy.
+- **Tertiary Text** (`gray-500` `#7F8282` light / `gray-400` `#A6A7A7` dark): Metadata, placeholders.
+- **Quaternary Text** (`gray-400` `#A6A7A7` light / `gray-500` `#7F8282` dark): Subtle labels and low-priority details.
 
 ### Brand & Accent
 
-- **Brand Primary** (`brand-800`): Primary action background and high-intent CTAs.
-- **Brand Interactive** (`brand-600` / `brand-500`): Focus ring and active interaction states.
-- **Brand Subtle** (`brand-400/10`): Soft highlighted backgrounds and contextual accents.
-- **Brand Deep** (`brand-950`): Tinted featured surfaces in dark contexts.
+- **Brand Primary** (`brand-800` / `#135E64`): Primary action background and high-intent CTAs.
+- **Brand Interactive** (`brand-600` `#238B95` / `brand-500` `#29A2AD`): Focus ring and active interaction states.
+- **Brand Subtle** (`brand-400/10` from `#2EB3BF`): Soft highlighted backgrounds and contextual accents.
+- **Brand Deep** (`brand-950` / `#0C3F44`): Tinted featured surfaces in dark contexts.
 
 ### Status Colors
 
-- **Success** (`green-600` / `green-700`): Positive confirmation, published/approved states.
-- **Warning** (`orange-600` / `orange-700`): Caution and warning states.
-- **Pending** (`yellow-600` / `yellow-700`): In-review and pending statuses.
-- **Error/Destructive** (`red-600` / `red-700`): Failure, danger, destructive actions.
+- **Success** (`green-600` `#00A63E` / `green-700` `#008236`): Positive confirmation, published/approved states.
+- **Warning** (`orange-600` `#CF5C0A` / `orange-700` `#AC4B07`): Caution and warning states.
+- **Pending** (`yellow-600` `#CA9500` / `yellow-700` `#A67A00`): In-review and pending statuses.
+- **Error/Destructive** (`red-600` `#C21D26` / `red-700` `#A3171E`): Failure, danger, destructive actions.
 
 ### Border & Divider
 
-- **Border Light** (`gray-200`, `gray-300`): Light mode field and panel outlines.
-- **Border Dark** (`gray-600`, `gray-700`): Dark mode field and panel outlines.
+- **Border Light** (`gray-200` `#C9CBCC`, `gray-300` `#C2C4C4`): Light mode field and panel outlines.
+- **Border Dark** (`gray-600` `#3D3F3F`, `gray-700` `#323333`): Dark mode field and panel outlines.
 - **Ring Subtle** (`ring-black/10`, `ring-white/10`): Overlay/card delineation.
-- **Divider** (`gray-100` light / `gray-700` dark): Section separators.
+- **Divider** (`gray-100` `#CED5D5` light / `gray-700` `#323333` dark): Section separators.
 
 ### Light Mode Neutrals (for light theme contexts)
 
-- **Light Background** (`white`)
-- **Light Surface** (`gray-50`, `gray-100`)
-- **Light Border** (`gray-200`, `gray-300`)
-- **Text Strong** (`gray-900`)
-- **Text Muted** (`gray-600`)
+- **Light Background** (`white` / `#EAEAEA`)
+- **Light Surface** (`gray-50` `#ECEEEE`, `gray-100` `#CED5D5`)
+- **Light Border** (`gray-200` `#C9CBCC`, `gray-300` `#C2C4C4`)
+- **Text Strong** (`gray-900` / `#1D1E1E`)
+- **Text Muted** (`gray-600` / `#3D3F3F`)
 
 ### Overlay
 
@@ -350,15 +391,15 @@ The color system remains tightly constrained to Papevi tokens from `app.css`: ne
 
 ### Quick Color Reference
 
-- Primary CTA: `brand-800` / `brand-900`
-- App Background: `gray-950`
-- Panel Background: `gray-900`
-- Elevated Surface: `gray-800`
-- Heading text: `gray-100` (dark) / `gray-900` (light)
-- Body text: `gray-300` (dark) / `gray-600` (light)
-- Muted text: `gray-400`
-- Border (default): `gray-700` dark / `gray-200` light
-- Focus ring: `brand-500` (light) / `brand-400` (dark)
+- Primary CTA: `brand-800` `#135E64` / `brand-900` `#0D494F`
+- App Background: `gray-950` `#171717`
+- Panel Background: `gray-900` `#1D1E1E`
+- Elevated Surface: `gray-800` `#222323`
+- Heading text: `gray-100` `#CED5D5` (dark) / `gray-900` `#1D1E1E` (light)
+- Body text: `gray-300` `#C2C4C4` (dark) / `gray-600` `#3D3F3F` (light)
+- Muted text: `gray-400` `#A6A7A7`
+- Border (default): `gray-700` `#323333` dark / `gray-200` `#C9CBCC` light
+- Focus ring: `brand-500` `#29A2AD` (light) / `brand-400` `#2EB3BF` (dark)
 
 ### Example Component Prompts
 
