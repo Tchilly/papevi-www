@@ -42,13 +42,13 @@ if (props.examples) {
             aria-label="Code examples"
         >
             <TabsIndicator
-                class="absolute bottom-0 left-0 h-px w-[--reka-tabs-indicator-size] translate-x-[--reka-tabs-indicator-position] bg-brand-400 transition-[width,transform] duration-200"
+                class="absolute bottom-0 left-0 h-0.5 w-[--reka-tabs-indicator-size] translate-x-[--reka-tabs-indicator-position] bg-brand-400 transition-[width,transform] duration-200"
             />
             <TabsTrigger
                 v-for="item in items"
                 :key="item.label"
                 :value="item.label"
-                class="relative px-4 py-2.5 text-xs font-medium text-gray-400 transition-colors select-none hover:text-gray-200 data-[state=active]:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-inset"
+                class="relative px-4 py-2.5 text-xs font-medium text-gray-500 transition-colors select-none hover:text-gray-200 data-[state=active]:bg-white/[0.06] data-[state=active]:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-inset"
             >
                 {{ item.label }}
             </TabsTrigger>
