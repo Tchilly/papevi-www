@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import hljs from 'highlight.js/lib/core';
 import typescript from 'highlight.js/lib/languages/typescript';
 import javascript from 'highlight.js/lib/languages/javascript';
@@ -49,11 +49,36 @@ const highlighted = computed(() => {
         return hljs.highlightAuto(props.code.trim()).value;
     }
 });
+const copied = ref(false);
+
+async function copy() {
+    await navigator.clipboard.writeText(props.code.trim());
+    copied.value = true;
+    setTimeout(() => (copied.value = false), 2000);
+}
 </script>
 
 <template>
     <!-- When inside a CodeTabs context, CodeTabs renders the content — this renders nothing -->
-    <pre v-if="!ctx || !label" class="overflow-x-auto p-5 text-sm leading-relaxed text-slate-200"><code class="font-mono" v-html="highlighted" /></pre>
+    <div v-if="!ctx || !label" class="group relative">
+        <pre class="overflow-x-auto p-5 text-sm leading-relaxed text-slate-200"><code class="font-mono" v-html="highlighted" /></pre>
+        <button
+            type="button"
+            aria-label="Copy code"
+            class="absolute right-3 top-3 rounded-md p-1.5 text-gray-500 opacity-0 transition hover:text-gray-200 group-hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400"
+            @click="copy"
+        >
+            <!-- Copy icon -->
+            <svg v-if="!copied" xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="9" y="9" width="13" height="13" rx="2" />
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            <!-- Check icon -->
+            <svg v-else xmlns="http://www.w3.org/2000/svg" class="size-4 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12" />
+            </svg>
+        </button>
+    </div>
 </template>
 
 <style>
