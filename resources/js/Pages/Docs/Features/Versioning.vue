@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import DocsToc from '@/Components/Docs/DocsToc.vue';
+import Heading from '@/Components/Ui/Heading.vue';
 import DocsLayout from '@/Layouts/DocsLayout.vue';
 import { Head } from '@inertiajs/vue3';
 
@@ -21,7 +22,7 @@ const tocItems = [
         <div class="space-y-10">
             <div class="space-y-3 border-b border-gray-200 pb-10 dark:border-white/8">
                 <p class="text-xs font-semibold uppercase tracking-[0.14em] text-brand-600 dark:text-brand-400">Editor Guide</p>
-                <h1 class="text-4xl font-bold tracking-[-0.025em] text-gray-900 dark:text-white">Versioning & Audit</h1>
+                <Heading as="h1" :level="1" class="text-gray-900 dark:text-white">Versioning &amp; Audit</Heading>
                 <p class="max-w-xl text-lg text-gray-600 dark:text-gray-300">
                     Every save creates a version. Every action leaves an audit log. Compare any two versions side-by-side, revert with one click, and prove exactly what happened and when.
                 </p>
@@ -29,7 +30,7 @@ const tocItems = [
 
             <!-- Versions -->
             <div class="space-y-4">
-                <h2 id="version-history" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Version history</h2>
+                <Heading as="h2" id="version-history" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Version history</Heading>
                 <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     Each time content is saved a new <strong class="font-medium text-gray-900 dark:text-white">PageContent</strong> record is created. The published version is tracked by a pointer on the page — historical versions are always preserved.
                 </p>
@@ -52,7 +53,7 @@ const tocItems = [
 
             <!-- Audit trail -->
             <div class="space-y-4">
-                <h2 id="audit-trail" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Audit trail</h2>
+                <Heading as="h2" id="audit-trail" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Audit trail</Heading>
                 <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     Accessible to admins via <strong class="font-medium text-gray-900 dark:text-white">Version History → View Audit Logs</strong>. Each log entry captures the full context of the action.
                 </p>
@@ -110,7 +111,7 @@ const tocItems = [
 
             <!-- Access control -->
             <div class="space-y-4">
-                <h2 id="access-control" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Access control</h2>
+                <Heading as="h2" id="access-control" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Access control</Heading>
                 <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
                     <table class="w-full text-sm">
                         <thead class="bg-gray-50 text-xs text-gray-500 dark:bg-white/[0.03] dark:text-gray-400">

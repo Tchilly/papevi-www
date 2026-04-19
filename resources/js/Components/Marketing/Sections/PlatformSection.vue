@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Heading from '@/Components/Ui/Heading.vue';
+
 const stack = [
     { name: 'Laravel 12', detail: 'Backend framework' },
     { name: 'Vue + Inertia', detail: 'Admin experience' },
@@ -17,9 +19,9 @@ const stack = [
         <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
             <div class="space-y-5">
                 <p class="kicker">Platform</p>
-                <h2 class="text-balance text-4xl font-bold tracking-[-0.025em] text-gray-900 sm:text-5xl dark:text-white">
+                <Heading as="h2" class="text-balance text-4xl font-bold tracking-[-0.025em] text-gray-900 sm:text-5xl dark:text-white">
                     A modern stack, ready for production.
-                </h2>
+                </Heading>
                 <p class="text-lg text-gray-600 dark:text-gray-300">
                     Built on Laravel and Vue. Tuned for high-throughput frontends with
                     Octane, Redis, and a Cloudflare-fronted edge.

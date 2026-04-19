@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Heading from '@/Components/Ui/Heading.vue';
 import { Link, usePage } from '@inertiajs/vue3';
 
 defineProps<{
@@ -32,11 +33,11 @@ const onImageError = (event: Event) => {
         <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 sm:px-8 lg:grid-cols-[1fr_1.15fr] lg:gap-16 lg:px-12 lg:py-28">
             <!-- Left column: copy + CTAs -->
             <div class="flex flex-col">
-                <h1 class="text-balance text-5xl font-bold leading-[1.04] tracking-[-0.035em] text-gray-900 sm:text-6xl dark:text-white">
+                <Heading as="h1" class="text-balance text-5xl font-bold leading-[1.04] tracking-[-0.035em] text-gray-900 sm:text-6xl dark:text-white">
                     The content platform for
                     <span class="bg-gradient-to-r from-brand-600 via-brand-500 to-brand-400 bg-clip-text text-transparent dark:from-brand-300 dark:via-brand-400 dark:to-brand-500">
                         ambitious teams</span>.
-                </h1>
+                </Heading>
 
                 <p class="mt-5 max-w-lg text-balance text-lg leading-relaxed text-gray-600 dark:text-gray-300">
                     Papevi CMS gives editors a workspace they love and developers an API

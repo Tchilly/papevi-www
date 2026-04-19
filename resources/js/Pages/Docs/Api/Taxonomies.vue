@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import DocsToc from '@/Components/Docs/DocsToc.vue';
+import Heading from '@/Components/Ui/Heading.vue';
 import DocsLayout from '@/Layouts/DocsLayout.vue';
 import { Head } from '@inertiajs/vue3';
 
@@ -24,7 +25,7 @@ const tocItems = [
         <div class="space-y-10">
             <div class="space-y-3 border-b border-gray-200 pb-10 dark:border-white/8">
                 <p class="text-xs font-semibold uppercase tracking-[0.14em] text-brand-600 dark:text-brand-400">API Reference</p>
-                <h1 class="text-4xl font-bold tracking-[-0.025em] text-gray-900 dark:text-white">Taxonomies API</h1>
+                <Heading as="h1" :level="1" class="text-gray-900 dark:text-white">Taxonomies API</Heading>
                 <p class="max-w-xl text-lg text-gray-600 dark:text-gray-300">
                     Fetch taxonomies and their terms for your site. Taxonomies categorise content — include terms to get the full hierarchy in one request.
                 </p>
@@ -32,13 +33,13 @@ const tocItems = [
 
             <!-- Base URL -->
             <div class="space-y-3">
-                <h2 id="base-url" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Base URL</h2>
+                <Heading as="h2" id="base-url" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Base URL</Heading>
                 <pre class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm"><code class="font-mono text-brand-300">https://api.papevi.app/api/v1</code></pre>
             </div>
 
             <!-- Endpoints overview -->
             <div class="space-y-4">
-                <h2 id="endpoints" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Endpoints</h2>
+                <Heading as="h2" id="endpoints" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Endpoints</Heading>
                 <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
                     <table class="w-full text-sm">
                         <thead class="bg-gray-50 text-xs text-gray-500 dark:bg-white/[0.03] dark:text-gray-400">
@@ -66,7 +67,7 @@ const tocItems = [
 
             <!-- GET /taxonomies -->
             <div class="space-y-4">
-                <h2 id="get-taxonomies" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">GET /taxonomies</h2>
+                <Heading as="h2" id="get-taxonomies" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">GET /taxonomies</Heading>
                 <p class="text-sm text-gray-600 dark:text-gray-300">Returns a paginated list of taxonomies for the authenticated site.</p>
 
                 <pre class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"><code class="font-mono text-gray-100">curl https://api.papevi.app/api/v1/taxonomies \
@@ -132,7 +133,7 @@ curl <span class="text-brand-300">"https://api.papevi.app/api/v1/taxonomies?filt
 
             <!-- GET /taxonomies/{id} -->
             <div class="space-y-4">
-                <h2 id="get-taxonomies-id" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">GET /taxonomies/{id}</h2>
+                <Heading as="h2" id="get-taxonomies-id" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">GET /taxonomies/{id}</Heading>
                 <p class="text-sm text-gray-600 dark:text-gray-300">Returns a single taxonomy. Returns <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">404</code> if it does not belong to your site.</p>
 
                 <pre class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"><code class="font-mono text-gray-100">curl <span class="text-brand-300">"https://api.papevi.app/api/v1/taxonomies/5?include=terms"</span> \
@@ -141,7 +142,7 @@ curl <span class="text-brand-300">"https://api.papevi.app/api/v1/taxonomies?filt
 
             <!-- Response format -->
             <div class="space-y-4">
-                <h2 id="response-format" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Response format</h2>
+                <Heading as="h2" id="response-format" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Response format</Heading>
                 <p class="text-sm text-gray-600 dark:text-gray-300">
                     Responses follow the <strong class="font-semibold text-gray-800 dark:text-gray-100">JSON:API</strong> specification.
                 </p>
@@ -191,7 +192,7 @@ curl <span class="text-brand-300">"https://api.papevi.app/api/v1/taxonomies?filt
 
             <!-- Attributes -->
             <div class="space-y-4">
-                <h2 id="attributes" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Attributes</h2>
+                <Heading as="h2" id="attributes" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Attributes</Heading>
                 <div class="space-y-4">
                     <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Taxonomy</p>
                     <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">

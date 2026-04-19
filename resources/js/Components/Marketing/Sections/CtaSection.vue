@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Heading from '@/Components/Ui/Heading.vue';
 import { Link, usePage } from '@inertiajs/vue3';
 
 defineProps<{
@@ -15,9 +16,9 @@ const page = usePage();
             <div class="grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
                 <div class="space-y-5">
                     <p class="kicker">Get started</p>
-                    <h2 class="text-balance text-4xl font-bold tracking-[-0.025em] text-gray-900 sm:text-5xl dark:text-white">
+                    <Heading as="h2" class="text-balance text-4xl font-bold tracking-[-0.025em] text-gray-900 sm:text-5xl dark:text-white">
                         Ready to publish without compromise?
-                    </h2>
+                    </Heading>
                     <p class="max-w-xl text-lg text-gray-600 dark:text-gray-300">
                         Spin up a workspace, model your content, and ship to any
                         frontend. Your editors and engineers will thank you.

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Heading from '@/Components/Ui/Heading.vue';
+
 const links = [
     { title: 'API & tokens', body: 'Authenticate, fetch pages, and manage tokens.', href: 'https://github.com/Tchilly/papevi-cms/blob/development/docs/api-tokens.md' },
     { title: 'PageType builder', body: 'Model structured content with reusable blocks.', href: 'https://github.com/Tchilly/papevi-cms/blob/development/docs/features/pages/page-type-features.md' },
@@ -16,9 +18,9 @@ const links = [
     >
         <div class="mx-auto max-w-3xl text-center">
             <p class="kicker mx-auto">Documentation</p>
-            <h2 class="mt-5 text-4xl font-bold tracking-[-0.025em] text-gray-900 sm:text-5xl dark:text-white">
+            <Heading as="h2" class="mt-5 text-4xl font-bold tracking-[-0.025em] text-gray-900 sm:text-5xl dark:text-white">
                 Start where you need to.
-            </h2>
+            </Heading>
             <p class="mx-auto mt-5 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
                 Practical guides for editors, developers, and operators — from API
                 tokens to GDPR media controls.
@@ -35,7 +37,7 @@ const links = [
                 class="glass-panel group flex h-full flex-col justify-between p-6 transition hover:border-brand-400/40"
             >
                 <div>
-                    <h3 class="flex items-center gap-2 text-base font-semibold text-gray-900 dark:text-white">
+                    <Heading as="h3" class="flex items-center gap-2 text-base font-semibold text-gray-900 dark:text-white">
                         {{ doc.title }}
                         <svg
                             class="size-4 shrink-0 text-brand-600 transition-transform group-hover:translate-x-0.5 dark:text-brand-400"
@@ -45,7 +47,7 @@ const links = [
                         >
                             <path d="M5 15L15 5M8 5h7v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                    </h3>
+                    </Heading>
                     <p class="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">{{ doc.body }}</p>
                 </div>
             </a>

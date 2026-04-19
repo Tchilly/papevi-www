@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Heading from '@/Components/Ui/Heading.vue';
+
 const features = [
     {
         eyebrow: 'Authoring',
@@ -48,9 +50,9 @@ const onImageError = (event: Event) => {
     >
         <div class="mx-auto max-w-3xl text-center">
             <p class="kicker mx-auto">Built for the modern web</p>
-            <h2 class="mt-5 text-4xl font-bold tracking-[-0.025em] text-gray-900 sm:text-5xl dark:text-white">
+            <Heading as="h2" class="mt-5 text-4xl font-bold tracking-[-0.025em] text-gray-900 sm:text-5xl dark:text-white">
                 Everything you need to ship content.
-            </h2>
+            </Heading>
             <p class="mx-auto mt-5 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
                 Three pillars — authoring, delivery, and governance — designed to work
                 together so teams can move quickly without losing control.
@@ -68,9 +70,9 @@ const onImageError = (event: Event) => {
                     <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-600 dark:text-brand-400">
                         {{ feature.eyebrow }}
                     </p>
-                    <h3 class="text-balance text-3xl font-bold tracking-[-0.02em] text-gray-900 sm:text-4xl dark:text-white">
+                    <Heading as="h3" class="text-balance text-3xl font-bold tracking-[-0.02em] text-gray-900 sm:text-4xl dark:text-white">
                         {{ feature.title }}
-                    </h3>
+                    </Heading>
                     <p class="text-base leading-relaxed text-gray-600 sm:text-lg dark:text-gray-300">
                         {{ feature.body }}
                     </p>

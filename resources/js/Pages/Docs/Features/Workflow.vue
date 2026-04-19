@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import DocsToc from '@/Components/Docs/DocsToc.vue';
+import Heading from '@/Components/Ui/Heading.vue';
 import DocsLayout from '@/Layouts/DocsLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
 
@@ -21,7 +22,7 @@ const tocItems = [
         <div class="space-y-10">
             <div class="space-y-3 border-b border-gray-200 pb-10 dark:border-white/8">
                 <p class="text-xs font-semibold uppercase tracking-[0.14em] text-brand-600 dark:text-brand-400">Editor Guide</p>
-                <h1 class="text-4xl font-bold tracking-[-0.025em] text-gray-900 dark:text-white">Workflow & Publishing</h1>
+                <Heading as="h1" :level="1" class="text-gray-900 dark:text-white">Workflow &amp; Publishing</Heading>
                 <p class="max-w-xl text-lg text-gray-600 dark:text-gray-300">
                     Every page moves through a deterministic set of states. Status is computed live from timestamps — there is no stored status field.
                 </p>
@@ -29,7 +30,7 @@ const tocItems = [
 
             <!-- States overview -->
             <div class="space-y-4">
-                <h2 id="content-states" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Content states</h2>
+                <Heading as="h2" id="content-states" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Content states</Heading>
 
                 <div class="space-y-3">
                     <div class="flex gap-4 rounded-xl border border-gray-200 p-5 dark:border-white/10">
@@ -111,7 +112,7 @@ const tocItems = [
 
             <!-- Scheduling -->
             <div class="space-y-4">
-                <h2 id="scheduling" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Scheduling</h2>
+                <Heading as="h2" id="scheduling" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Scheduling</Heading>
                 <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     Set <strong class="font-medium text-gray-900 dark:text-white">Publish at</strong> to schedule a go-live. Set <strong class="font-medium text-gray-900 dark:text-white">Unpublish at</strong> to expire content automatically. A background job processes both every minute.
                 </p>
@@ -151,7 +152,7 @@ const tocItems = [
 
             <!-- Role permissions -->
             <div class="space-y-4">
-                <h2 id="who-can-do-what" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Who can do what</h2>
+                <Heading as="h2" id="who-can-do-what" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Who can do what</Heading>
                 <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
                     <table class="w-full text-sm">
                         <thead class="bg-gray-50 text-xs text-gray-500 dark:bg-white/[0.03] dark:text-gray-400">

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Heading from '@/Components/Ui/Heading.vue';
 import {
     AccordionContent,
     AccordionHeader,
@@ -24,9 +25,9 @@ const items = [
         <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
             <div class="space-y-4">
                 <p class="kicker">FAQ</p>
-                <h2 class="text-balance text-4xl font-bold tracking-[-0.025em] text-gray-900 sm:text-5xl dark:text-white">
+                <Heading as="h2" class="text-balance text-4xl font-bold tracking-[-0.025em] text-gray-900 sm:text-5xl dark:text-white">
                     Common questions, clearly answered.
-                </h2>
+                </Heading>
                 <p class="text-base text-gray-600 dark:text-gray-300">
                     For anything else, the docs above go deeper into architecture,
                     APIs, and operational patterns.

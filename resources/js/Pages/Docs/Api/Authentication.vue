@@ -2,6 +2,7 @@
 import CodeTabs from '@/Components/Ui/CodeTabs.vue';
 import Code from '@/Components/Ui/Code.vue';
 import DocsToc from '@/Components/Docs/DocsToc.vue';
+import Heading from '@/Components/Ui/Heading.vue';
 import DocsLayout from '@/Layouts/DocsLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
 import { frameworkExamples } from './authExamples';
@@ -47,7 +48,7 @@ const testResponseExample =
         <div class="space-y-10">
             <div class="space-y-3 border-b border-gray-200 pb-10 dark:border-white/8">
                 <p class="text-xs font-semibold uppercase tracking-[0.14em] text-brand-600 dark:text-brand-400">API Reference</p>
-                <h1 class="text-4xl font-bold tracking-[-0.025em] text-gray-900 dark:text-white">Authentication</h1>
+                <Heading as="h1" :level="1" class="text-gray-900 dark:text-white">Authentication</Heading>
                 <p class="max-w-xl text-lg text-gray-600 dark:text-gray-300">
                     All API requests are authenticated with Bearer tokens. Tokens identify your site automatically — no site ID needed in URLs.
                 </p>
@@ -55,7 +56,7 @@ const testResponseExample =
 
             <!-- Token types -->
             <div class="space-y-4">
-                <h2 id="token-types" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Token types</h2>
+                <Heading as="h2" id="token-types" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Token types</Heading>
                 <div class="grid gap-4 sm:grid-cols-2">
                     <div class="rounded-xl border border-gray-200 p-5 dark:border-white/10">
                         <div class="mb-3 flex items-center gap-2">
@@ -84,7 +85,7 @@ const testResponseExample =
 
             <!-- Authorization header -->
             <div class="space-y-4">
-                <h2 id="authorization-header" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Authorization header</h2>
+                <Heading as="h2" id="authorization-header" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Authorization header</Heading>
                 <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     Include the token in every request using the standard <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">Authorization</code> header.
                 </p>
@@ -103,7 +104,7 @@ const testResponseExample =
 
             <!-- Test connection -->
             <div class="space-y-4">
-                <h2 id="test-connection" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Test connection</h2>
+                <Heading as="h2" id="test-connection" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Test connection</Heading>
                 <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     Use the test endpoint to verify your token and retrieve your <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">site_id</code>. Note this endpoint is at <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">/api/test</code> (no <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">v1</code> prefix).
                 </p>
@@ -119,7 +120,7 @@ const testResponseExample =
 
             <!-- Code examples -->
             <div class="space-y-4">
-                <h2 id="framework-examples" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Code examples</h2>
+                <Heading as="h2" id="framework-examples" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Code examples</Heading>
                 <p class="text-sm text-gray-600 dark:text-gray-300">
                     Ready-to-use clients for common stacks. Store your token in an environment variable — never in client-side code.
                 </p>
@@ -133,7 +134,7 @@ const testResponseExample =
 
             <!-- Domain verification -->
             <div class="space-y-4">
-                <h2 id="domain-verification" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Domain verification</h2>
+                <Heading as="h2" id="domain-verification" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Domain verification</Heading>
                 <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     Add your domain in <strong class="font-medium text-gray-900 dark:text-white">API Tokens → Verified Domains</strong>, then add this TXT record to your DNS:
                 </p>
@@ -162,7 +163,7 @@ const testResponseExample =
 
             <!-- Token management -->
             <div class="space-y-4">
-                <h2 id="managing-tokens" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Managing tokens</h2>
+                <Heading as="h2" id="managing-tokens" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Managing tokens</Heading>
 
                 <div class="space-y-3">
                     <div class="rounded-xl border border-gray-200 p-4 dark:border-white/10">
@@ -201,7 +202,7 @@ const testResponseExample =
 
             <!-- Security -->
             <div class="space-y-4">
-                <h2 id="security-practices" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Security practices</h2>
+                <Heading as="h2" id="security-practices" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Security practices</Heading>
                 <div class="grid gap-3 sm:grid-cols-2 text-sm">
                     <div class="rounded-xl border border-green-200 bg-green-50/50 p-4 dark:border-green-500/20 dark:bg-green-500/5">
                         <p class="font-medium text-green-800 dark:text-green-300">Do</p>
@@ -226,7 +227,7 @@ const testResponseExample =
 
             <!-- Error messages -->
             <div class="space-y-4">
-                <h2 id="error-responses" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Error responses</h2>
+                <Heading as="h2" id="error-responses" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Error responses</Heading>
                 <div class="space-y-2 text-sm">
                     <div class="flex gap-4 rounded-lg border border-gray-200 p-4 dark:border-white/10">
                         <code class="shrink-0 font-mono text-red-600 dark:text-red-400">401</code>

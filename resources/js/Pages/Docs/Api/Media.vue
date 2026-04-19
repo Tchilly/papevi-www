@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import DocsToc from '@/Components/Docs/DocsToc.vue';
+import Heading from '@/Components/Ui/Heading.vue';
 import DocsLayout from '@/Layouts/DocsLayout.vue';
 import { Head } from '@inertiajs/vue3';
 
@@ -24,7 +25,7 @@ const tocItems = [
         <div class="space-y-10">
             <div class="space-y-3 border-b border-gray-200 pb-10 dark:border-white/8">
                 <p class="text-xs font-semibold uppercase tracking-[0.14em] text-brand-600 dark:text-brand-400">API Reference</p>
-                <h1 class="text-4xl font-bold tracking-[-0.025em] text-gray-900 dark:text-white">Media API</h1>
+                <Heading as="h1" :level="1" class="text-gray-900 dark:text-white">Media API</Heading>
                 <p class="max-w-xl text-lg text-gray-600 dark:text-gray-300">
                     Fetch media files uploaded to your site. Responses include direct URLs for displaying images and other assets, along with available variants and thumbnails.
                 </p>
@@ -32,13 +33,13 @@ const tocItems = [
 
             <!-- Base URL -->
             <div class="space-y-3">
-                <h2 id="base-url" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Base URL</h2>
+                <Heading as="h2" id="base-url" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Base URL</Heading>
                 <pre class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm"><code class="font-mono text-brand-300">https://api.papevi.app/api/v1</code></pre>
             </div>
 
             <!-- Endpoints -->
             <div class="space-y-4">
-                <h2 id="endpoints" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Endpoints</h2>
+                <Heading as="h2" id="endpoints" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Endpoints</Heading>
                 <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
                     <table class="w-full text-sm">
                         <thead class="bg-gray-50 text-xs text-gray-500 dark:bg-white/[0.03] dark:text-gray-400">
@@ -66,7 +67,7 @@ const tocItems = [
 
             <!-- GET /media -->
             <div class="space-y-4">
-                <h2 id="get-media" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">GET /media</h2>
+                <Heading as="h2" id="get-media" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">GET /media</Heading>
                 <p class="text-sm text-gray-600 dark:text-gray-300">Returns a paginated list of media files for the authenticated site, sorted by newest first.</p>
 
                 <pre class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"><code class="font-mono text-gray-100">curl https://api.papevi.app/api/v1/media \
@@ -122,7 +123,7 @@ curl <span class="text-brand-300">"https://api.papevi.app/api/v1/media?filter[ty
 
             <!-- GET /media/{id} -->
             <div class="space-y-4">
-                <h2 id="get-media-id" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">GET /media/{id}</h2>
+                <Heading as="h2" id="get-media-id" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">GET /media/{id}</Heading>
                 <p class="text-sm text-gray-600 dark:text-gray-300">Returns a single media file. Returns <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">404</code> if it does not belong to your site.</p>
 
                 <pre class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"><code class="font-mono text-gray-100">curl https://api.papevi.app/api/v1/media/7 \
@@ -131,7 +132,7 @@ curl <span class="text-brand-300">"https://api.papevi.app/api/v1/media?filter[ty
 
             <!-- Response format -->
             <div class="space-y-4">
-                <h2 id="response-format" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Response format</h2>
+                <Heading as="h2" id="response-format" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Response format</Heading>
                 <p class="text-sm text-gray-600 dark:text-gray-300">
                     Responses follow the <strong class="font-semibold text-gray-800 dark:text-gray-100">JSON:API</strong> specification.
                 </p>
@@ -168,7 +169,7 @@ curl <span class="text-brand-300">"https://api.papevi.app/api/v1/media?filter[ty
 
             <!-- Attributes -->
             <div class="space-y-4">
-                <h2 id="attributes" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Attributes</h2>
+                <Heading as="h2" id="attributes" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Attributes</Heading>
                 <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
                     <table class="w-full text-sm">
                         <thead class="bg-gray-50 text-xs text-gray-500 dark:bg-white/[0.03] dark:text-gray-400">

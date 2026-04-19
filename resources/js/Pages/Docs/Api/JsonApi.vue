@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Code from '@/Components/Ui/Code.vue';
 import DocsToc from '@/Components/Docs/DocsToc.vue';
+import Heading from '@/Components/Ui/Heading.vue';
 import DocsLayout from '@/Layouts/DocsLayout.vue';
 import { Head } from '@inertiajs/vue3';
 
@@ -126,7 +127,7 @@ const errorExample =
         <div class="space-y-10">
             <div class="space-y-3 border-b border-gray-200 pb-10 dark:border-white/8">
                 <p class="text-xs font-semibold uppercase tracking-[0.14em] text-brand-600 dark:text-brand-400">API Reference</p>
-                <h1 class="text-4xl font-bold tracking-[-0.025em] text-gray-900 dark:text-white">JSON:API</h1>
+                <Heading as="h1" :level="1" class="text-gray-900 dark:text-white">JSON:API</Heading>
                 <p class="max-w-xl text-lg text-gray-600 dark:text-gray-300">
                     All Papevi API endpoints follow the <strong class="font-semibold">JSON:API 1.1</strong> specification — a standardised format for resource responses, relationships, and errors.
                 </p>
@@ -134,7 +135,7 @@ const errorExample =
 
             <!-- Overview -->
             <div class="space-y-4">
-                <h2 id="overview" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Overview</h2>
+                <Heading as="h2" id="overview" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Overview</Heading>
                 <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     JSON:API defines a consistent structure for every response, regardless of the resource type. This means the same code pattern works for pages, menus, media, and taxonomies alike.
                 </p>
@@ -156,7 +157,7 @@ const errorExample =
 
             <!-- Content type -->
             <div class="space-y-4">
-                <h2 id="content-type" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Content type</h2>
+                <Heading as="h2" id="content-type" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Content type</Heading>
                 <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     All responses use the JSON:API media type. You should include it as your <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">Accept</code> header, though it is not required.
                 </p>
@@ -167,7 +168,7 @@ const errorExample =
 
             <!-- Resource objects -->
             <div class="space-y-4">
-                <h2 id="resource-objects" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Resource objects</h2>
+                <Heading as="h2" id="resource-objects" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Resource objects</Heading>
                 <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     A single resource is returned under <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">data</code>. Every resource object has three required members:
                 </p>
@@ -206,7 +207,7 @@ const errorExample =
 
             <!-- Collections -->
             <div class="space-y-4">
-                <h2 id="collections" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Collections</h2>
+                <Heading as="h2" id="collections" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Collections</Heading>
                 <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     List endpoints return <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">data</code> as an array. The response also includes <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">meta</code> with pagination counts and <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">links</code> with cursor URLs.
                 </p>
@@ -252,7 +253,7 @@ const errorExample =
 
             <!-- Relationships -->
             <div class="space-y-4">
-                <h2 id="relationships" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Relationships &amp; includes</h2>
+                <Heading as="h2" id="relationships" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Relationships &amp; includes</Heading>
                 <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     Some resources have related resources (e.g. a menu has items, a taxonomy has terms). Use the <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">include</code> query parameter to sideload them in a single request instead of making separate calls.
                 </p>
@@ -286,7 +287,7 @@ const errorExample =
 
             <!-- Error objects -->
             <div class="space-y-4">
-                <h2 id="error-objects" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Error objects</h2>
+                <Heading as="h2" id="error-objects" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Error objects</Heading>
                 <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     Errors are returned in an <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">errors</code> array. Each error object includes a string <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">status</code> (the HTTP status code), a <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">title</code>, and a human-readable <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">detail</code>. Rate limit errors additionally include a <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">meta.retry_after</code> value in seconds.
                 </p>
@@ -335,7 +336,7 @@ const errorExample =
 
             <!-- Version member -->
             <div class="space-y-4">
-                <h2 id="version-member" class="scroll-mt-24 text-xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">Version member</h2>
+                <Heading as="h2" id="version-member" :level="3" class="scroll-mt-24 text-gray-900 dark:text-white">Version member</Heading>
                 <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     Every response includes a top-level <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">jsonapi</code> object declaring the spec version. This is always <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">1.1</code>.
                 </p>
