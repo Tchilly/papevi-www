@@ -1,14 +1,7 @@
 <script setup lang="ts">
 import Heading from '@/Components/Ui/Heading.vue';
 import Button from '@/Components/Ui/Button.vue';
-import { Link, usePage } from '@inertiajs/vue3';
-
-defineProps<{
-    canLogin?: boolean;
-    canRegister?: boolean;
-}>();
-
-const page = usePage();
+import { Link } from '@inertiajs/vue3';
 </script>
 
 <template>
@@ -21,28 +14,18 @@ const page = usePage();
                         Ready to publish without compromise?
                     </Heading>
                     <p class="max-w-xl text-lg text-gray-600 dark:text-gray-300">
-                        Spin up a workspace, model your content, and ship to any
-                        frontend. Your editors and engineers will thank you.
+                        Sign up for early access and be among the first to try
+                        Papevi CMS when we launch.
                     </p>
                 </div>
                 <div class="flex flex-col gap-3 sm:flex-row lg:flex-col">
                     <Button
-                        v-if="canLogin && !page.props.auth.user"
-                        :as="Link"
-                        :href="route(canRegister ? 'register' : 'login')"
+                        as="a"
+                        href="/#beta"
                         variant="brand"
                         size="lg"
                     >
-                        Start free
-                    </Button>
-                    <Button
-                        v-else-if="canLogin"
-                        :as="Link"
-                        :href="route('dashboard')"
-                        variant="brand"
-                        size="lg"
-                    >
-                        Open dashboard
+                        Sign up for beta
                     </Button>
                     <Button
                         :as="Link"

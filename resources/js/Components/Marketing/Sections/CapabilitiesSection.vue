@@ -15,7 +15,7 @@ const capabilities = [
 </script>
 
 <template>
-    <section class="border-t border-gray-100 bg-white px-6 py-24 sm:px-8 lg:px-12 dark:border-white/5 dark:bg-gray-950">
+    <section id="capabilities" class="border-t border-gray-100 bg-white px-6 py-24 sm:px-8 lg:px-12 dark:border-white/5 dark:bg-gray-950">
         <div class="mx-auto max-w-3xl text-center">
             <p class="kicker mx-auto">Capabilities</p>
             <Heading as="h2" display="lg" class="mt-5">

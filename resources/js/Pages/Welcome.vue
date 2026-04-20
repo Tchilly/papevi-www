@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import MarketingFooter from '@/Components/Marketing/MarketingFooter.vue';
 import MarketingHeader from '@/Components/Marketing/MarketingHeader.vue';
+import AboutSection from '@/Components/Marketing/Sections/AboutSection.vue';
+import BetaSignupSection from '@/Components/Marketing/Sections/BetaSignupSection.vue';
 import CapabilitiesSection from '@/Components/Marketing/Sections/CapabilitiesSection.vue';
-import CtaSection from '@/Components/Marketing/Sections/CtaSection.vue';
 import DocsSection from '@/Components/Marketing/Sections/DocsSection.vue';
 import FaqSection from '@/Components/Marketing/Sections/FaqSection.vue';
 import FeaturesSection from '@/Components/Marketing/Sections/FeaturesSection.vue';
@@ -12,10 +13,9 @@ import WorkflowSection from '@/Components/Marketing/Sections/WorkflowSection.vue
 import { Head } from '@inertiajs/vue3';
 
 defineProps<{
-    canLogin?: boolean;
-    canRegister?: boolean;
     laravelVersion: string;
     phpVersion: string;
+    betaSuccess?: string;
 }>();
 </script>
 
@@ -23,17 +23,18 @@ defineProps<{
     <Head title="Papevi CMS — The content platform for ambitious teams" />
 
     <div class="flex min-h-screen flex-col bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-white">
-        <MarketingHeader :can-login="canLogin" :can-register="canRegister" />
+        <MarketingHeader />
 
         <main>
-            <HeroSection :can-login="canLogin" :can-register="canRegister" />
+            <HeroSection />
             <FeaturesSection />
             <CapabilitiesSection />
             <WorkflowSection />
+            <AboutSection />
             <PlatformSection />
             <DocsSection />
             <FaqSection />
-            <CtaSection :can-login="canLogin" :can-register="canRegister" />
+            <BetaSignupSection />
         </main>
 
         <MarketingFooter :laravel-version="laravelVersion" :php-version="phpVersion" />

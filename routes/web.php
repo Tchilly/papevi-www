@@ -1,18 +1,42 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BetaSignupController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+        'betaSuccess' => session('beta_success'),
+    ]);
+});
+
+Route::get('/about', function () {
+    return Inertia::render('About', [
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+})->name('about');
+
+Route::get('/use-cases', function () {
+    return Inertia::render('UseCases', [
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+})->name('use-cases');
+
+Route::get('/pricing', function () {
+    return Inertia::render('Pricing', [
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+})->name('pricing');
+
+Route::post('/beta-signup', [BetaSignupController::class, 'store'])
+    ->middleware('throttle:3,1')
+    ->name('beta-signup');
 
 Route::get('/docs', function () {
     return Inertia::render('Docs/GettingStarted');
@@ -55,15 +79,3 @@ Route::get('/docs/features/workflow', function () {
 Route::get('/docs/features/versioning', function () {
     return Inertia::render('Docs/Features/Versioning');
 })->name('docs.features.versioning');
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-require __DIR__.'/auth.php';
