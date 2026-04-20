@@ -84,11 +84,11 @@ Brand palette is coral/salmon (OKLCH hue ≈22) — warm and expressive against 
 
 | Role           | Font           | Size           | Weight | Line Height | Letter Spacing | Notes                                 |
 | -------------- | -------------- | -------------- | ------ | ----------- | -------------- | ------------------------------------- |
-| Display XL     | IBM Plex Serif | 56px (3.50rem) | 700    | 1.00        | -0.04em        | Hero marketing emphasis               |
-| Display Large  | IBM Plex Serif | 48px (3.00rem) | 700    | 1.00        | -0.03em        | Primary section hero                  |
-| Display        | IBM Plex Serif | 40px (2.50rem) | 600    | 1.05        | -0.02em        | Section headlines                     |
-| Heading 1      | IBM Plex Serif | 32px (2.00rem) | 700    | 1.10        | -0.02em        | Major section titles                  |
-| Heading 2      | IBM Plex Serif | 24px (1.50rem) | 700    | 1.25        | -0.01em        | Sub-section headings                  |
+| Display XL     | IBM Plex Serif | 56px (3.50rem) | 500    | 1.06        | -0.02em        | Hero marketing emphasis               |
+| Display Large  | IBM Plex Serif | 48px (3.00rem) | 500    | 1.08        | -0.02em        | Primary section hero                  |
+| Display        | IBM Plex Serif | 40px (2.50rem) | 500    | 1.12        | -0.01em        | Section headlines                     |
+| Heading 1      | IBM Plex Serif | 32px (2.00rem) | 600    | 1.18        | -0.01em        | Major section titles                  |
+| Heading 2      | IBM Plex Serif | 24px (1.50rem) | 500    | 1.30        | normal         | Sub-section headings                  |
 | Heading 3      | IBM Plex Serif | 20px (1.25rem) | 500    | 1.33        | normal         | Card and module headings              |
 | Body Large     | IBM Plex Sans  | 18px (1.13rem) | 400    | 1.55        | normal         | Introductory copy                     |
 | Body Emphasis  | IBM Plex Sans  | 17px (1.06rem) | 500    | 1.50        | normal         | Emphasized body lines                 |

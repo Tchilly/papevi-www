@@ -4,13 +4,13 @@ import Button from '@/Components/Ui/Button.vue';
 import { useForm, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
 
-const page = usePage<{ betaSuccess?: string }>();
+const page = usePage();
 
 const form = useForm({
     email: '',
 });
 
-const betaSuccess = computed(() => page.props.betaSuccess);
+const betaSuccess = computed(() => (page.props as Record<string, unknown>).betaSuccess as string | undefined);
 
 function submit() {
     form.post(route('beta-signup'), {

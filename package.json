@@ -23,6 +23,7 @@
         "vue-tsc": "^2.0.24"
     },
     "dependencies": {
-        "highlight.js": "^11.11.1"
+        "highlight.js": "^11.11.1",
+        "tailwind-merge": "^3.5.0"
     }
 }
