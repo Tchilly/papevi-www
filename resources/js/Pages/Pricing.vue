@@ -4,16 +4,12 @@ import MarketingHeader from '@/Components/Marketing/MarketingHeader.vue';
 import CtaSection from '@/Components/Marketing/Sections/CtaSection.vue';
 import Heading from '@/Components/Ui/Heading.vue';
 import Button from '@/Components/Ui/Button.vue';
-import { Head, Link, usePage } from '@inertiajs/vue3';
+import { Head } from '@inertiajs/vue3';
 
 defineProps<{
-    canLogin?: boolean;
-    canRegister?: boolean;
     laravelVersion: string;
     phpVersion: string;
 }>();
-
-const page = usePage();
 
 type Plan = {
     name: string;
@@ -130,7 +126,7 @@ const addOns = [
     <Head title="Pricing — Papevi CMS" />
 
     <div class="flex min-h-screen flex-col bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-white">
-        <MarketingHeader :can-login="canLogin" :can-register="canRegister" />
+        <MarketingHeader />
 
         <main>
             <!-- Plans -->
@@ -201,24 +197,13 @@ const addOns = [
 
                         <div class="mt-8">
                             <Button
-                                v-if="canLogin && !page.props.auth.user"
-                                :as="Link"
-                                :href="route(canRegister ? 'register' : 'login')"
+                                as="a"
+                                href="/#beta"
                                 :variant="plan.highlighted ? 'brand' : 'outline'"
                                 size="lg"
                                 class="w-full"
                             >
                                 {{ plan.cta }}
-                            </Button>
-                            <Button
-                                v-else-if="canLogin"
-                                :as="Link"
-                                :href="route('dashboard')"
-                                :variant="plan.highlighted ? 'brand' : 'outline'"
-                                size="lg"
-                                class="w-full"
-                            >
-                                Open dashboard
                             </Button>
                         </div>
                     </div>
@@ -253,7 +238,7 @@ const addOns = [
                 </div>
             </section>
 
-            <CtaSection :can-login="canLogin" :can-register="canRegister" />
+            <CtaSection />
         </main>
 
         <MarketingFooter :laravel-version="laravelVersion" :php-version="phpVersion" />

@@ -6,8 +6,6 @@ import Heading from '@/Components/Ui/Heading.vue';
 import { Head } from '@inertiajs/vue3';
 
 defineProps<{
-    canLogin?: boolean;
-    canRegister?: boolean;
     laravelVersion: string;
     phpVersion: string;
 }>();
@@ -44,7 +42,7 @@ const useCases = [
     <Head title="Use Cases — Papevi CMS" />
 
     <div class="flex min-h-screen flex-col bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-white">
-        <MarketingHeader :can-login="canLogin" :can-register="canRegister" />
+        <MarketingHeader />
 
         <main>
             <section class="px-6 py-24 sm:px-8 lg:px-12">
@@ -71,7 +69,7 @@ const useCases = [
                 </div>
             </section>
 
-            <CtaSection :can-login="canLogin" :can-register="canRegister" />
+            <CtaSection />
         </main>
 
         <MarketingFooter :laravel-version="laravelVersion" :php-version="phpVersion" />

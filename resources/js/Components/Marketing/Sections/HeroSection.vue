@@ -1,14 +1,7 @@
 <script setup lang="ts">
 import Heading from '@/Components/Ui/Heading.vue';
 import Button from '@/Components/Ui/Button.vue';
-import { Link, usePage } from '@inertiajs/vue3';
-
-defineProps<{
-    canLogin?: boolean;
-    canRegister?: boolean;
-}>();
-
-const page = usePage();
+import { Link } from '@inertiajs/vue3';
 
 const onImageLoad = (event: Event) => {
     (event.target as HTMLImageElement).dataset.loaded = 'true';
@@ -47,9 +40,8 @@ const onImageError = (event: Event) => {
 
                 <div class="mt-8 flex flex-wrap gap-3">
                     <Button
-                        v-if="canLogin && !page.props.auth.user"
-                        :as="Link"
-                        :href="route(canRegister ? 'register' : 'login')"
+                        as="a"
+                        href="/#beta"
                         variant="brand"
                         size="lg"
                     >
@@ -58,16 +50,7 @@ const onImageError = (event: Event) => {
                                 <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </template>
-                        Start free
-                    </Button>
-                    <Button
-                        v-else-if="canLogin"
-                        :as="Link"
-                        :href="route('dashboard')"
-                        variant="brand"
-                        size="lg"
-                    >
-                        Open dashboard
+                        Get early access
                     </Button>
                     <Button
                         :as="Link"

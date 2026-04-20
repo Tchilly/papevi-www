@@ -1,16 +1,10 @@
 <script setup lang="ts">
-import { Link, usePage } from '@inertiajs/vue3';
+import { Link } from '@inertiajs/vue3';
 import Button from '@/Components/Ui/Button.vue';
 import SearchDialog from './SearchDialog.vue';
 import ThemeToggle from './ThemeToggle.vue';
 import { ref } from 'vue';
 
-defineProps<{
-    canLogin?: boolean;
-    canRegister?: boolean;
-}>();
-
-const page = usePage();
 const solutionsOpen = ref(false);
 const mobileOpen = ref(false);
 
@@ -108,37 +102,9 @@ const solutionsLinks = [
                 <Button :as="Link" :href="route('docs')" variant="ghost" size="sm" class="hidden sm:inline-flex">
                     Docs
                 </Button>
-
-                <template v-if="canLogin">
-                    <Button
-                        v-if="page.props.auth.user"
-                        :as="Link"
-                        :href="route('dashboard')"
-                        variant="brand"
-                        size="sm"
-                        class="hidden sm:inline-flex"
-                    >
-                        Dashboard
-                    </Button>
-                    <Button
-                        v-else-if="canRegister"
-                        :as="Link"
-                        :href="route('register')"
-                        variant="brand"
-                        size="sm"
-                    >
-                        Get started
-                    </Button>
-                    <Button
-                        v-else
-                        :as="Link"
-                        :href="route('login')"
-                        variant="brand"
-                        size="sm"
-                    >
-                        Log in
-                    </Button>
-                </template>
+                <Button as="a" href="/#beta" variant="brand" size="sm">
+                    Get started
+                </Button>
 
                 <!-- Mobile menu toggle -->
                 <button
@@ -213,33 +179,14 @@ const solutionsLinks = [
                         Docs
                     </Link>
 
-                    <template v-if="canLogin">
-                        <hr class="my-2 border-gray-200 dark:border-white/5" />
-                        <Link
-                            v-if="page.props.auth.user"
-                            :href="route('dashboard')"
-                            class="rounded-lg px-3 py-2 text-sm font-medium text-brand-600 transition hover:bg-brand-50 dark:text-brand-400 dark:hover:bg-brand-500/10"
-                            @click="mobileOpen = false"
-                        >
-                            Dashboard
-                        </Link>
-                        <Link
-                            v-else-if="canRegister"
-                            :href="route('register')"
-                            class="rounded-lg px-3 py-2 text-sm font-medium text-brand-600 transition hover:bg-brand-50 dark:text-brand-400 dark:hover:bg-brand-500/10"
-                            @click="mobileOpen = false"
-                        >
-                            Get started
-                        </Link>
-                        <Link
-                            v-else
-                            :href="route('login')"
-                            class="rounded-lg px-3 py-2 text-sm font-medium text-brand-600 transition hover:bg-brand-50 dark:text-brand-400 dark:hover:bg-brand-500/10"
-                            @click="mobileOpen = false"
-                        >
-                            Log in
-                        </Link>
-                    </template>
+                    <hr class="my-2 border-gray-200 dark:border-white/5" />
+                    <a
+                        href="/#beta"
+                        class="rounded-lg px-3 py-2 text-sm font-medium text-brand-600 transition hover:bg-brand-50 dark:text-brand-400 dark:hover:bg-brand-500/10"
+                        @click="mobileOpen = false"
+                    >
+                        Get started
+                    </a>
                 </nav>
             </div>
         </Transition>

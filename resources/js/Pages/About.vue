@@ -6,8 +6,6 @@ import CtaSection from '@/Components/Marketing/Sections/CtaSection.vue';
 import { Head } from '@inertiajs/vue3';
 
 defineProps<{
-    canLogin?: boolean;
-    canRegister?: boolean;
     laravelVersion: string;
     phpVersion: string;
 }>();
@@ -17,11 +15,11 @@ defineProps<{
     <Head title="About — Papevi CMS" />
 
     <div class="flex min-h-screen flex-col bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-white">
-        <MarketingHeader :can-login="canLogin" :can-register="canRegister" />
+        <MarketingHeader />
 
         <main>
             <AboutSection />
-            <CtaSection :can-login="canLogin" :can-register="canRegister" />
+            <CtaSection />
         </main>
 
         <MarketingFooter :laravel-version="laravelVersion" :php-version="phpVersion" />
