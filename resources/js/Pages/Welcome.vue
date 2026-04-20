@@ -14,8 +14,6 @@ import WorkflowSection from '@/Components/Marketing/Sections/WorkflowSection.vue
 import { Head } from '@inertiajs/vue3';
 
 defineProps<{
-    laravelVersion: string;
-    phpVersion: string;
     betaSuccess?: string;
 }>();
 </script>
@@ -39,6 +37,6 @@ defineProps<{
             <BetaSignupSection />
         </main>
 
-        <MarketingFooter :laravel-version="laravelVersion" :php-version="phpVersion" />
+        <MarketingFooter />
     </div>
 </template>

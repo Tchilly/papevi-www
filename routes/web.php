@@ -1,37 +1,25 @@
 <?php
 
 use App\Http\Controllers\BetaSignupController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
         'betaSuccess' => session('beta_success'),
     ]);
 });
 
 Route::get('/about', function () {
-    return Inertia::render('About', [
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    return Inertia::render('About');
 })->name('about');
 
 Route::get('/use-cases', function () {
-    return Inertia::render('UseCases', [
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    return Inertia::render('UseCases');
 })->name('use-cases');
 
 Route::get('/pricing', function () {
-    return Inertia::render('Pricing', [
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    return Inertia::render('Pricing');
 })->name('pricing');
 
 Route::post('/beta-signup', [BetaSignupController::class, 'store'])

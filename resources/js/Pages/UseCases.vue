@@ -5,10 +5,7 @@ import CtaSection from '@/Components/Marketing/Sections/CtaSection.vue';
 import Heading from '@/Components/Ui/Heading.vue';
 import { Head } from '@inertiajs/vue3';
 
-defineProps<{
-    laravelVersion: string;
-    phpVersion: string;
-}>();
+
 
 const useCases = [
     {
@@ -187,6 +184,6 @@ const onImageError = (event: Event) => {
             <CtaSection />
         </main>
 
-        <MarketingFooter :laravel-version="laravelVersion" :php-version="phpVersion" />
+        <MarketingFooter />
     </div>
 </template>

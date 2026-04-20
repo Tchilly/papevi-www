@@ -1,11 +1,6 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
 
-defineProps<{
-    laravelVersion?: string;
-    phpVersion?: string;
-}>();
-
 const year = new Date().getFullYear();
 </script>
 

@@ -5,10 +5,7 @@ import AboutSection from '@/Components/Marketing/Sections/AboutSection.vue';
 import CtaSection from '@/Components/Marketing/Sections/CtaSection.vue';
 import { Head } from '@inertiajs/vue3';
 
-defineProps<{
-    laravelVersion: string;
-    phpVersion: string;
-}>();
+
 </script>
 
 <template>
@@ -22,6 +19,6 @@ defineProps<{
             <CtaSection />
         </main>
 
-        <MarketingFooter :laravel-version="laravelVersion" :php-version="phpVersion" />
+        <MarketingFooter />
     </div>
 </template>
