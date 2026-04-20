@@ -39,6 +39,7 @@ const year = new Date().getFullYear();
                 <ul class="mt-3 space-y-2 text-sm text-gray-600 dark:text-gray-300">
                     <li><Link :href="route('about')" class="transition hover:text-gray-900 dark:hover:text-white">About</Link></li>
                     <li><Link :href="route('docs')" class="transition hover:text-gray-900 dark:hover:text-white">Documentation</Link></li>
+                    <li><Link :href="route('partners')" class="transition hover:text-gray-900 dark:hover:text-white">Partners</Link></li>
                     <li>
                         <a
                             href="https://github.com/Tchilly/papevi-cms"
@@ -55,17 +56,12 @@ const year = new Date().getFullYear();
                     Legal
                 </p>
                 <ul class="mt-3 space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                    <li><a href="/privacy" class="transition hover:text-gray-900 dark:hover:text-white">Privacy policy</a></li>
-                    <li><a href="/terms" class="transition hover:text-gray-900 dark:hover:text-white">Terms of service</a></li>
+                    <li><Link :href="route('privacy')" class="transition hover:text-gray-900 dark:hover:text-white">Privacy policy</Link></li>
+                    <li><Link :href="route('terms')" class="transition hover:text-gray-900 dark:hover:text-white">Terms of service</Link></li>
                     <li>
-                        <a
-                            href="https://github.com/Tchilly/papevi-cms/blob/development/SECURITY.md"
-                            class="transition hover:text-gray-900 dark:hover:text-white"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >Security policy</a>
+                        <Link :href="route('security')" class="transition hover:text-gray-900 dark:hover:text-white">Security policy</Link>
                     </li>
-                    <li><a href="/#trust" class="transition hover:text-gray-900 dark:hover:text-white">Trust &amp; compliance</a></li>
+                    <li><Link :href="route('trust')" class="transition hover:text-gray-900 dark:hover:text-white">Trust &amp; compliance</Link></li>
                 </ul>
             </div>
         </div>

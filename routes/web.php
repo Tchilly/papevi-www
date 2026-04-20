@@ -22,6 +22,26 @@ Route::get('/pricing', function () {
     return Inertia::render('Pricing');
 })->name('pricing');
 
+Route::get('/partners', function () {
+    return Inertia::render('Partners');
+})->name('partners');
+
+Route::get('/privacy', function () {
+    return Inertia::render('Legal/Privacy');
+})->name('privacy');
+
+Route::get('/terms', function () {
+    return Inertia::render('Legal/Terms');
+})->name('terms');
+
+Route::get('/security', function () {
+    return Inertia::render('Legal/Security');
+})->name('security');
+
+Route::get('/trust', function () {
+    return Inertia::render('Legal/Trust');
+})->name('trust');
+
 Route::post('/beta-signup', [BetaSignupController::class, 'store'])
     ->middleware('throttle:3,1')
     ->name('beta-signup');

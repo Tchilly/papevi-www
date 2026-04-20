@@ -36,6 +36,7 @@ const plans: Plan[] = [
         features: [
             'Unlimited page types',
             'REST API access',
+            'Built-in digital asset management (DAM)',
             'Basic editorial workflow',
             'Email support',
         ],
@@ -45,9 +46,9 @@ const plans: Plan[] = [
     {
         name: 'Grow',
         monthlyPrice: 59,
-        description: 'More sites, more team members, and the full workflow toolset.',
+        description: 'More users, higher limits, and the full workflow toolset — on a single site.',
         limits: [
-            { label: 'Sites', value: '2' },
+            { label: 'Sites', value: '1' },
             { label: 'Users', value: '15' },
             { label: 'API calls / month*', value: '2M' },
             { label: 'Media storage', value: '50 GB' },
@@ -55,7 +56,6 @@ const plans: Plan[] = [
         ],
         features: [
             'Everything in Starter',
-            'Approval workflows & audit log',
             'Scheduled publish & unpublish',
             'Multi-locale content',
             'Priority support',
@@ -72,14 +72,14 @@ const plans: Plan[] = [
             { label: 'Users', value: '50' },
             { label: 'API calls / month*', value: '5M' },
             { label: 'Media storage', value: '250 GB' },
-            { label: 'Revision retention', value: 'Unlimited' },
+            { label: 'Revision retention', value: '5 years' },
         ],
         features: [
             'Everything in Grow',
-            'SSO / SAML',
+            'Approval workflows & audit log',
+            'Webhooks',
             'GDPR media controls',
             'EU data residency',
-            'Bring your own database',
             'Priority support + SLA',
         ],
         cta: 'Start free trial',
@@ -94,11 +94,12 @@ const plans: Plan[] = [
             { label: 'Users', value: 'Unlimited' },
             { label: 'API calls / month', value: 'Unlimited' },
             { label: 'Media storage', value: 'Unlimited' },
-            { label: 'Revision retention', value: 'Unlimited' },
+            { label: 'Revision retention***', value: '7 years' },
         ],
         features: [
             'Everything in Scale',
-            'NIS-2 compliance controls*',
+            'Bring your own database',
+            'NIS-2 compliance controls**',
             'Custom roles & permissions',
             'Dedicated account manager',
             'Custom SLA & DPA',
@@ -325,6 +326,7 @@ function pricePeriod(monthly: number): string {
                 <div class="mx-auto mt-6 max-w-6xl space-y-1 text-right text-xs text-gray-500 dark:text-gray-400">
                     <p>* API requests are direct origin requests — no CDN caching on authenticated endpoints. Overages are billed at €10 per 500k additional requests.</p>
                     <p>** NIS-2 implementation is in progress. Current status available on request.</p>
+                    <p>*** 7-year retention aligns with EU accounting and audit trail obligations (VAT Directive, NIS-2 guidance).</p>
                 </div>
             </section>
 
@@ -340,29 +342,11 @@ function pricePeriod(monthly: number): string {
                             </div>
                             <Heading id="dev-mode-heading" as="h2" class="text-xl font-semibold text-gray-900 dark:text-white">Evaluate Papevi without a credit card.</Heading>
                             <p class="max-w-sm text-sm leading-relaxed text-gray-500 dark:text-gray-400">
-                                Full API access on a single rate-limited site — build and test before committing to a plan. Not suitable for production.
+                                Full API access on a single rate-limited site — 1 site, 2 users, 10k API calls/mo, and 1 GB storage. Build and test before committing to a plan.
                             </p>
                         </div>
 
                         <div class="flex shrink-0 flex-col items-start gap-5 sm:items-end">
-                            <dl aria-label="Free plan limits" class="flex flex-wrap gap-x-5 gap-y-1 text-sm sm:justify-end">
-                                <div class="flex items-baseline gap-1.5">
-                                    <dt class="text-gray-500 dark:text-gray-400">Sites</dt>
-                                    <dd class="font-medium text-gray-700 dark:text-gray-200">1</dd>
-                                </div>
-                                <div class="flex items-baseline gap-1.5">
-                                    <dt class="text-gray-500 dark:text-gray-400">Users</dt>
-                                    <dd class="font-medium text-gray-700 dark:text-gray-200">2</dd>
-                                </div>
-                                <div class="flex items-baseline gap-1.5">
-                                    <dt class="text-gray-500 dark:text-gray-400">API calls</dt>
-                                    <dd class="font-medium text-gray-700 dark:text-gray-200">10k / mo</dd>
-                                </div>
-                                <div class="flex items-baseline gap-1.5">
-                                    <dt class="text-gray-500 dark:text-gray-400">Storage</dt>
-                                    <dd class="font-medium text-gray-700 dark:text-gray-200">1 GB</dd>
-                                </div>
-                            </dl>
                             <Button as="a" href="/#beta" variant="outline" size="md" aria-label="Get free developer access to Papevi">
                                 Get dev access
                             </Button>
