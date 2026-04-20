@@ -25,6 +25,9 @@ const page = usePage();
             <div class="flex items-center gap-2">
                 <SearchDialog />
                 <ThemeToggle />
+                <Button :as="Link" :href="route('about')" variant="ghost" size="sm">
+                    About
+                </Button>
                 <Button :as="Link" :href="route('docs')" variant="ghost" size="sm">
                     Docs
                 </Button>

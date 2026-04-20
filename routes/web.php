@@ -14,6 +14,15 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/about', function () {
+    return Inertia::render('About', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+})->name('about');
+
 Route::get('/docs', function () {
     return Inertia::render('Docs/GettingStarted');
 })->name('docs');

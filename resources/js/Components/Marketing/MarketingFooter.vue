@@ -30,6 +30,7 @@ const year = new Date().getFullYear();
                     <li><a href="#features" class="transition hover:text-gray-900 dark:hover:text-white">Features</a></li>
                     <li><a href="#workflow" class="transition hover:text-gray-900 dark:hover:text-white">Workflow</a></li>
                     <li><a href="#platform" class="transition hover:text-gray-900 dark:hover:text-white">Platform</a></li>
+                    <li><a :href="route('about')" class="transition hover:text-gray-900 dark:hover:text-white">About</a></li>
                     <li><a href="#faq" class="transition hover:text-gray-900 dark:hover:text-white">FAQ</a></li>
                 </ul>
             </div>
