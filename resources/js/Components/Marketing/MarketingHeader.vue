@@ -99,7 +99,7 @@ const solutionsLinks = [
             <div class="flex items-center gap-2">
                 <SearchDialog />
                 <ThemeToggle />
-                <Button :as="Link" :href="route('docs')" variant="ghost" size="sm" class="hidden sm:inline-flex">
+                <Button :as="Link" :href="route('docs')" variant="outline" size="sm" class="hidden sm:inline-flex">
                     Docs
                 </Button>
                 <Button as="a" href="/#beta" variant="brand" size="sm">

@@ -344,9 +344,9 @@ const tabIndex = computed(() => {
 
 /* Outline */
 .button-outline {
-    border: 1px solid var(--color-gray-300, #c2c4c4);
-    background-color: var(--color-white, #eaeaea);
-    color: var(--color-gray-900, #1d1e1e);
+    border: 1px solid var(--color-gray-200, #e5e7eb);
+    background-color: var(--color-gray-50, #f9fafb);
+    color: var(--color-gray-600, #3d3f3f);
     box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
 }
 
@@ -362,8 +362,8 @@ const tabIndex = computed(() => {
 }
 
 :where(.dark, .dark *) .button-outline {
-    border-color: var(--color-gray-600, #3d3f3f);
-    background-color: transparent;
+    border-color: rgb(255 255 255 / 10%);
+    background-color: rgb(255 255 255 / 5%);
     color: var(--color-gray-100, #ced5d5);
 }
 
