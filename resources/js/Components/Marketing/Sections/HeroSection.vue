@@ -13,32 +13,45 @@ const onImageError = (event: Event) => {
 </script>
 
 <template>
-    <section class="relative overflow-hidden bg-white dark:bg-gray-950">
-        <!-- Subtle background glow -->
+    <section class="relative overflow-hidden bg-gray-950">
+        <!-- Brand glow — offset top-right -->
         <div
-            class="pointer-events-none absolute right-[-10%] top-[-15%] h-[600px] w-[600px] rounded-full bg-brand-400/8 blur-[120px] dark:bg-brand-500/10"
-            aria-hidden="true"
-        />
-        <div
-            class="pointer-events-none absolute bottom-0 left-[-5%] h-[400px] w-[400px] rounded-full bg-brand-300/6 blur-[100px] dark:bg-brand-600/8"
+            class="pointer-events-none absolute right-[-5%] top-[-10%] h-[700px] w-[700px] brand-glow opacity-70"
             aria-hidden="true"
         />
 
-        <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 sm:px-8 lg:grid-cols-[1fr_1.15fr] lg:gap-16 lg:px-12 lg:py-28">
+        <!-- Noise texture -->
+        <div class="pointer-events-none absolute inset-0 hero-noise opacity-30" aria-hidden="true" />
+
+        <!-- Subtle grid -->
+        <div class="pointer-events-none absolute inset-0 atmos-grid" aria-hidden="true" />
+
+        <!-- Bottom gradient fade -->
+        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-950 to-transparent" aria-hidden="true" />
+
+        <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 sm:px-8 lg:grid-cols-[1fr_1.15fr] lg:gap-16 lg:px-12 lg:py-32">
             <!-- Left column: copy + CTAs -->
             <div class="flex flex-col">
-                <Heading as="h1" display="xl" class="text-balance">
+                <!-- Kicker pill -->
+                <div class="mb-6 flex">
+                    <span class="inline-flex items-center gap-2 rounded-full border border-brand-400/30 bg-brand-400/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-brand-300">
+                        <span class="size-1.5 rounded-full bg-brand-400 animate-pulse" aria-hidden="true" />
+                        Now in beta
+                    </span>
+                </div>
+
+                <Heading as="h1" display="xl" class="text-balance text-white">
                     The content platform for
-                    <span class="bg-gradient-to-r from-brand-600 via-brand-500 to-brand-400 bg-clip-text text-transparent dark:from-brand-300 dark:via-brand-400 dark:to-brand-500">
+                    <span class="bg-gradient-to-r from-brand-300 via-brand-400 to-brand-500 bg-clip-text text-transparent">
                         ambitious teams</span>.
                 </Heading>
 
-                <p class="mt-5 max-w-lg text-balance text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+                <p class="mt-6 max-w-lg text-balance text-lg leading-relaxed text-gray-400">
                     Papevi CMS gives editors a workspace they love and developers an API
                     they trust — with workflow, audit, and compliance built in from day one.
                 </p>
 
-                <div class="mt-8 flex flex-wrap gap-3">
+                <div class="mt-10 flex flex-wrap gap-3">
                     <Button
                         as="a"
                         href="/#beta"

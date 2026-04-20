@@ -9,6 +9,7 @@ import FaqSection from '@/Components/Marketing/Sections/FaqSection.vue';
 import FeaturesSection from '@/Components/Marketing/Sections/FeaturesSection.vue';
 import HeroSection from '@/Components/Marketing/Sections/HeroSection.vue';
 import PlatformSection from '@/Components/Marketing/Sections/PlatformSection.vue';
+import TrustSection from '@/Components/Marketing/Sections/TrustSection.vue';
 import WorkflowSection from '@/Components/Marketing/Sections/WorkflowSection.vue';
 import { Head } from '@inertiajs/vue3';
 
@@ -34,6 +35,7 @@ defineProps<{
             <PlatformSection />
             <DocsSection />
             <FaqSection />
+            <TrustSection />
             <BetaSignupSection />
         </main>
 

@@ -2,8 +2,8 @@
 import { Link } from '@inertiajs/vue3';
 
 defineProps<{
-    laravelVersion: string;
-    phpVersion: string;
+    laravelVersion?: string;
+    phpVersion?: string;
 }>();
 
 const year = new Date().getFullYear();
@@ -52,33 +52,32 @@ const year = new Date().getFullYear();
                             rel="noopener noreferrer"
                         >GitHub</a>
                     </li>
+                </ul>
+            </div>
+
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-gray-500 dark:text-gray-400">
+                    Legal
+                </p>
+                <ul class="mt-3 space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                    <li><a href="/privacy" class="transition hover:text-gray-900 dark:hover:text-white">Privacy policy</a></li>
+                    <li><a href="/terms" class="transition hover:text-gray-900 dark:hover:text-white">Terms of service</a></li>
                     <li>
                         <a
                             href="https://github.com/Tchilly/papevi-cms/blob/development/SECURITY.md"
                             class="transition hover:text-gray-900 dark:hover:text-white"
                             target="_blank"
                             rel="noopener noreferrer"
-                        >Security</a>
+                        >Security policy</a>
                     </li>
-                </ul>
-            </div>
-
-            <div>
-                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-gray-500 dark:text-gray-400">
-                    Built on
-                </p>
-                <ul class="mt-3 space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                    <li>Laravel v{{ laravelVersion }}</li>
-                    <li>PHP v{{ phpVersion }}</li>
-                    <li>Vue + Inertia</li>
-                    <li>PostgreSQL · Redis</li>
+                    <li><a href="/#trust" class="transition hover:text-gray-900 dark:hover:text-white">Trust &amp; compliance</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="mx-auto mt-10 flex max-w-7xl flex-col items-center justify-between gap-3 border-t border-gray-200 pt-6 text-xs text-gray-500 sm:flex-row dark:border-white/5">
             <p>&copy; {{ year }} Papevi CMS. All rights reserved.</p>
-            <p class="font-mono">papevi.app</p>
+            <p class="font-mono">papevi.com</p>
         </div>
     </footer>
 </template>

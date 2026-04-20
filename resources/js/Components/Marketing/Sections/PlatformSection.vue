@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import Heading from '@/Components/Ui/Heading.vue';
 
-const stack = [
-    { name: 'Laravel 12', detail: 'Backend framework' },
-    { name: 'Vue + Inertia', detail: 'Admin experience' },
-    { name: 'PostgreSQL', detail: 'Primary datastore' },
-    { name: 'Redis', detail: 'Caching layer' },
-    { name: 'Octane / FrankenPHP', detail: 'High-throughput runtime' },
-    { name: 'Cloudflare CDN', detail: 'Edge delivery' },
+const qualities = [
+    { name: 'EU data centres', detail: 'Your data stays in Europe — hosted, processed, and backed up in EU-certified infrastructure.' },
+    { name: 'CDN-accelerated delivery', detail: 'Content delivered at edge speed, wherever your readers and customers are in the world.' },
+    { name: 'Scales with you', detail: 'From your first publish to millions of requests — no re-platforming, no migration headaches.' },
+    { name: 'Always-on availability', detail: 'Engineered for reliability with seamless updates pushed without downtime or disruption.' },
+    { name: 'Encrypted in transit and at rest', detail: 'Every request and every stored record is protected from end to end, always.' },
+    { name: 'Bring your own database', detail: 'SaaS-first by default, with the option to keep content in your own database on request.' },
 ];
 </script>
 
@@ -18,33 +18,20 @@ const stack = [
     >
         <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
             <div class="space-y-5">
-                <p class="kicker">Platform</p>
+                <p class="kicker">Infrastructure</p>
                 <Heading as="h2" display="lg" class="text-balance">
-                    A modern stack, ready for production.
+                    Built to keep up with you.
                 </Heading>
                 <p class="text-lg text-gray-600 dark:text-gray-300">
-                    Built on Laravel and Vue. Tuned for high-throughput frontends with
-                    Octane, Redis, and a Cloudflare-fronted edge.
+                    Papevi runs on hardened, EU-hosted infrastructure — tuned for speed,
+                    resilience, and growth without hidden limits or surprise migrations.
                 </p>
-                <div class="pt-2">
-                    <a
-                        href="https://github.com/Tchilly/papevi-cms"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 text-sm font-medium text-brand-600 transition hover:text-brand-500 dark:text-brand-400 dark:hover:text-brand-300"
-                    >
-                        View on GitHub
-                        <svg class="size-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                            <path d="M7 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </a>
-                </div>
             </div>
 
             <div class="grid gap-3 sm:grid-cols-2">
-                <div v-for="item in stack" :key="item.name" class="glass-panel p-5">
+                <div v-for="item in qualities" :key="item.name" class="glass-panel p-5">
                     <p class="text-sm font-semibold text-gray-900 dark:text-white">{{ item.name }}</p>
-                    <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">{{ item.detail }}</p>
+                    <p class="mt-1 text-sm leading-relaxed text-gray-600 dark:text-gray-300">{{ item.detail }}</p>
                 </div>
             </div>
         </div>

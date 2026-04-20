@@ -2,28 +2,28 @@
 import Heading from '@/Components/Ui/Heading.vue';
 
 const capabilities = [
-    { title: 'Headless architecture', body: 'API-first delivery with parameter-driven endpoints. Ship to web, mobile, kiosk, or any channel.' },
-    { title: 'PageType builder', body: 'Define structured content types with a visual builder. Schema-per-type for safety and flexibility.' },
-    { title: 'Block composition', body: 'Reusable, referenceable blocks behave as micro-pagetypes. Compose pages without rebuilding components.' },
-    { title: 'Multi-tenancy', body: 'One installation, many organizations and sites. Isolate content, share infrastructure.' },
-    { title: 'Roles & permissions', body: 'Admin, Site Owner, Editor, Moderator out of the box. Extend with fine-grained permissions.' },
-    { title: 'Audit & versioning', body: 'Every change tracked. Compare revisions, restore safely, and prove what shipped when.' },
-    { title: 'Scheduling', body: 'Plan launches and auto-unpublish events. Status is computed live from publish windows.' },
-    { title: 'GDPR media', body: 'Consent per person, retention rules, and privacy zones for sensitive assets.' },
-    { title: 'Performance', body: 'Built on Laravel, Octane-ready, Redis-cached, and tuned for enterprise traffic patterns.' },
+    { title: 'PageType builder', body: 'Design content structures visually. Each type gets its own field schema — flexible without losing consistency.' },
+    { title: 'Block composition', body: 'Reusable, structured blocks keep every page consistent — a pattern editors love and developers rely on.' },
+    { title: 'Revision history', body: 'Every version is saved. Browse edits, compare changes, and restore any earlier version instantly.' },
+    { title: 'Multiple sites, one workspace', body: 'One installation, many sites and organisations. Separate content, shared infrastructure and team.' },
+    { title: 'Localisation support', body: 'Create locale variants for any content type. Manage translations alongside originals with the same structure and workflow.' },
+    { title: 'Media library', body: 'Centralized assets with folder and tag organisation. Upload, resize, and reference across all your content.' },
+    { title: 'SEO & metadata', body: 'Set titles, descriptions, canonical URLs, and Open Graph data per entry — built in, no plugin required.' },
+    { title: 'Comment-driven review', body: 'Editors and reviewers collaborate with inline comments. No external tools, no lost feedback.' },
+    { title: 'Content relationships', body: 'Link and reference content across types. Build rich, connected experiences without duplication.' },
 ];
 </script>
 
 <template>
     <section id="capabilities" class="border-t border-gray-100 bg-white px-6 py-24 sm:px-8 lg:px-12 dark:border-white/5 dark:bg-gray-950">
         <div class="mx-auto max-w-3xl text-center">
-            <p class="kicker mx-auto">Capabilities</p>
+            <p class="kicker mx-auto">What's included</p>
             <Heading as="h2" display="lg" class="mt-5">
-                A complete content operations stack.
+                Everything in one platform.
             </Heading>
             <p class="mx-auto mt-5 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
-                Production-ready modules across content modeling, delivery, security,
-                and operations — documented and ready to use.
+                The editorial tools your team needs — content modeling, media, localisation,
+                review, and delivery — without stitching together extra services.
             </p>
         </div>
 

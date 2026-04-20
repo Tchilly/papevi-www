@@ -10,10 +10,10 @@ import {
 
 const items = [
     { value: 'faq-1', question: 'Who is Papevi for?', answer: 'Editorial teams, product organizations, and engineering groups that need a single CMS for multi-site, multi-tenant publishing with strong governance.' },
-    { value: 'faq-2', question: 'Is it really headless?', answer: 'Yes. Authoring lives in a Vue + Inertia admin, and content is delivered through a parameter-driven REST API ready for any frontend.' },
+    { value: 'faq-2', question: 'Is it really headless?', answer: 'Yes. Your team authors content in the Papevi admin, and it is delivered through a clean API any frontend, app, or channel can consume.' },
     { value: 'faq-3', question: 'How does workflow and scheduling work?', answer: 'Pages move through draft, review, approved, and published. Status is computed live from publish and unpublish timestamps so scheduling is deterministic.' },
     { value: 'faq-4', question: 'What about compliance and security?', answer: 'Role-based access control, audit history, encrypted recovery codes, 2FA, and GDPR media controls are part of the platform — not add-ons.' },
-    { value: 'faq-5', question: 'Can it scale?', answer: 'Cloudflare → Heroku Router → Octane/FrankenPHP → Redis → PostgreSQL is the target topology. Multi-tenant by design.' },
+    { value: 'faq-5', question: 'Can it scale?', answer: 'Yes. Papevi is multi-tenant from the ground up and runs on EU-hosted cloud infrastructure sized for enterprise traffic. As your audience grows, the platform grows with it.' },
 ];
 </script>
 
