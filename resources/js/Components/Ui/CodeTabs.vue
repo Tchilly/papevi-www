@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { TabsContent, TabsIndicator, TabsList, TabsRoot, TabsTrigger } from 'reka-ui';
+
 import Code from '@/Components/Ui/Code.vue';
 import { provideCodeTabs } from '@/composables/useCodeTabs';
 
@@ -32,7 +33,10 @@ if (props.examples) {
             Slot children (<Code label="..." />) render here first (hidden) so they
             self-register synchronously before the tab bar and content panels render.
         -->
-        <div class="hidden" aria-hidden="true">
+        <div
+            class="hidden"
+            aria-hidden="true"
+        >
             <slot />
         </div>
 
@@ -48,7 +52,7 @@ if (props.examples) {
                 v-for="item in items"
                 :key="item.label"
                 :value="item.label"
-                class="relative px-4 py-2.5 text-xs font-medium text-gray-500 transition-colors select-none hover:text-gray-200 data-[state=active]:bg-white/[0.06] data-[state=active]:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 focus-visible:ring-inset"
+                class="relative px-4 py-2.5 text-xs font-medium text-gray-500 transition-colors select-none hover:text-gray-200 focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:outline-none focus-visible:ring-inset data-[state=active]:bg-white/[0.06] data-[state=active]:text-white dark:focus-visible:ring-brand-400"
             >
                 {{ item.label }}
             </TabsTrigger>
@@ -61,7 +65,10 @@ if (props.examples) {
             :value="item.label"
             class="focus-visible:outline-none"
         >
-            <Code :code="item.code" :language="item.language" />
+            <Code
+                :code="item.code"
+                :language="item.language"
+            />
         </TabsContent>
     </TabsRoot>
 </template>

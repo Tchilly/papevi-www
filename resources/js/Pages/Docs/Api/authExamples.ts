@@ -18,15 +18,15 @@ export const frameworkExamples: Record<string, string> = {
     ].join('\n'),
     PHP: [
         '<?php',
-        "use Illuminate\\Support\\Facades\\Http;",
+        'use Illuminate\\Support\\Facades\\Http;',
         '',
-        '// config/services.php: \'papevi\' => [\'token\' => env(\'PAPEVI_TOKEN\')]',
+        "// config/services.php: 'papevi' => ['token' => env('PAPEVI_TOKEN')]",
         '',
         "$response = Http::withToken(config('services.papevi.token'))",
         "    ->baseUrl('https://api.papevi.app/api/v1')",
         "    ->get('/pages');",
         '',
-        '$pages = $response->json(\'data\');',
+        "$pages = $response->json('data');",
     ].join('\n'),
 
     'C#': [
@@ -37,7 +37,7 @@ export const frameworkExamples: Record<string, string> = {
         'public class PapeviClient',
         '{',
         '    private readonly HttpClient _client;',
-        "    private const string Base = \"https://api.papevi.app/api/v1\";",
+        '    private const string Base = "https://api.papevi.app/api/v1";',
         '',
         '    public PapeviClient(string token)',
         '    {',
@@ -53,4 +53,5 @@ export const frameworkExamples: Record<string, string> = {
         '        return await response.Content.ReadFromJsonAsync<T>();',
         '    }',
         '}',
-    ].join('\n'),};
+    ].join('\n'),
+};

@@ -24,13 +24,17 @@ const onImageError = (event: Event) => {
         class="border-t border-gray-100 bg-gray-50 px-6 py-24 sm:px-8 lg:px-12 dark:border-white/5 dark:bg-gray-900"
     >
         <div class="mx-auto max-w-3xl text-center">
-            <p class="kicker mx-auto">Workflow</p>
-            <Heading as="h2" display="lg" class="mt-5">
+            <p class="mx-auto kicker">Workflow</p>
+            <Heading
+                as="h2"
+                display="lg"
+                class="mt-5"
+            >
                 Review discipline by default.
             </Heading>
             <p class="mx-auto mt-5 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
-                Every page moves through a deterministic set of states with audit
-                history, comment-driven approvals, and live-status scheduling.
+                Every page moves through a deterministic set of states with audit history, comment-driven approvals, and
+                live-status scheduling.
             </p>
         </div>
 
@@ -38,7 +42,7 @@ const onImageError = (event: Event) => {
             <li
                 v-for="(stage, index) in stages"
                 :key="stage.state"
-                class="glass-panel relative p-5"
+                class="relative glass-panel p-5"
             >
                 <span class="font-mono text-xs text-brand-700 dark:text-brand-400">0{{ index + 1 }}</span>
                 <p class="mt-2 text-base font-semibold text-gray-900 dark:text-white">{{ stage.state }}</p>
@@ -56,7 +60,7 @@ const onImageError = (event: Event) => {
                         workflow.papevi.app
                     </span>
                 </div>
-                <div class="product-placeholder relative aspect-[16/9] w-full overflow-hidden">
+                <div class="relative aspect-[16/9] w-full overflow-hidden product-placeholder">
                     <img
                         src="/images/marketing/workflow.png"
                         alt="Workflow board"

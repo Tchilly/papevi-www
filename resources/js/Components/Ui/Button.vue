@@ -52,8 +52,8 @@ const tabIndex = computed(() => {
         :is="as"
         v-bind="attrs"
         :type="isNativeButton ? type : undefined"
-        :disabled="isNativeButton ? (isDisabled || undefined) : undefined"
-        :aria-disabled="!isNativeButton ? (isDisabled || undefined) : undefined"
+        :disabled="isNativeButton ? isDisabled || undefined : undefined"
+        :aria-disabled="!isNativeButton ? isDisabled || undefined : undefined"
         :aria-busy="loading || undefined"
         :role="!isNativeButton ? 'button' : undefined"
         :tabindex="tabIndex"
@@ -67,7 +67,10 @@ const tabIndex = computed(() => {
             group === 'last' && 'button-group-last',
         ]"
     >
-        <Transition name="btn-label" mode="out-in">
+        <Transition
+            name="btn-label"
+            mode="out-in"
+        >
             <span
                 v-if="loading"
                 key="loading"
@@ -84,7 +87,12 @@ const tabIndex = computed(() => {
                     width="100%"
                     height="100%"
                 >
-                    <circle cx="12" cy="12" r="10" stroke-opacity="0.25" />
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke-opacity="0.25"
+                    />
                     <path d="M12 2a10 10 0 0 1 10 10" />
                 </svg>
             </span>
@@ -121,8 +129,8 @@ const tabIndex = computed(() => {
     white-space: nowrap;
     justify-content: center;
     align-items: center;
-    transition-property: color, background-color, border-color, text-decoration-color,
-        fill, stroke, opacity, box-shadow, transform;
+    transition-property:
+        color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform;
     transition-duration: 75ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-flex;
@@ -512,11 +520,15 @@ const tabIndex = computed(() => {
 
 /* ── Label transition ─────────────────────── */
 .btn-label-leave-active {
-    transition: opacity 90ms ease-in, transform 90ms ease-in;
+    transition:
+        opacity 90ms ease-in,
+        transform 90ms ease-in;
 }
 
 .btn-label-enter-active {
-    transition: opacity 150ms ease-out, transform 150ms ease-out;
+    transition:
+        opacity 150ms ease-out,
+        transform 150ms ease-out;
 }
 
 .btn-label-leave-to {

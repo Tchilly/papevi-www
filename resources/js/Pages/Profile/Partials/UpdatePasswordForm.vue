@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import Heading from '@/Components/Ui/Heading.vue';
+import { useForm } from '@inertiajs/vue3';
+import { ref } from 'vue';
+
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
-import { useForm } from '@inertiajs/vue3';
-import { ref } from 'vue';
+import Heading from '@/Components/Ui/Heading.vue';
 
 const passwordInput = ref<HTMLInputElement | null>(null);
 const currentPasswordInput = ref<HTMLInputElement | null>(null);
@@ -39,17 +40,27 @@ const updatePassword = () => {
 <template>
     <section>
         <header>
-            <Heading as="h2" :level="4" class="text-gray-900 dark:text-gray-100">Update Password</Heading>
+            <Heading
+                as="h2"
+                :level="4"
+                class="text-gray-900 dark:text-gray-100"
+                >Update Password</Heading
+            >
 
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                Ensure your account is using a long, random password to stay
-                secure.
+                Ensure your account is using a long, random password to stay secure.
             </p>
         </header>
 
-        <form @submit.prevent="updatePassword" class="mt-6 space-y-6">
+        <form
+            @submit.prevent="updatePassword"
+            class="mt-6 space-y-6"
+        >
             <div>
-                <InputLabel for="current_password" value="Current Password" />
+                <InputLabel
+                    for="current_password"
+                    value="Current Password"
+                />
 
                 <TextInput
                     id="current_password"
@@ -67,7 +78,10 @@ const updatePassword = () => {
             </div>
 
             <div>
-                <InputLabel for="password" value="New Password" />
+                <InputLabel
+                    for="password"
+                    value="New Password"
+                />
 
                 <TextInput
                     id="password"
@@ -78,7 +92,10 @@ const updatePassword = () => {
                     autocomplete="new-password"
                 />
 
-                <InputError :message="form.errors.password" class="mt-2" />
+                <InputError
+                    :message="form.errors.password"
+                    class="mt-2"
+                />
             </div>
 
             <div>

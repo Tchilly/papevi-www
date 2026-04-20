@@ -1,11 +1,10 @@
 <script setup lang="ts">
+import { Head } from '@inertiajs/vue3';
+
 import MarketingFooter from '@/Components/Marketing/MarketingFooter.vue';
 import MarketingHeader from '@/Components/Marketing/MarketingHeader.vue';
 import CtaSection from '@/Components/Marketing/Sections/CtaSection.vue';
 import Heading from '@/Components/Ui/Heading.vue';
-import { Head } from '@inertiajs/vue3';
-
-
 
 const useCases = [
     {
@@ -60,7 +59,7 @@ const useCases = [
         body: 'Start a new client site in minutes. Reusable page types and blocks reduce repetition across projects, and clients get a workspace they can manage themselves.',
         bullets: [
             'New client workspace ready in minutes with reusable page types and blocks already in place',
-            'Clients get a clean, self-manageable CMS — they won\'t need you for every edit',
+            "Clients get a clean, self-manageable CMS — they won't need you for every edit",
         ],
     },
     {
@@ -81,26 +80,27 @@ const structuredData = {
     '@graph': [
         {
             '@type': 'WebPage',
-            'name': 'Papevi CMS Use Cases — Built for teams that move fast',
-            'description': 'Explore how marketing teams, publishers, developers, regulated industries, agencies, and SaaS products use Papevi CMS to manage structured content at scale.',
-            'inLanguage': 'en',
-            'breadcrumb': {
+            name: 'Papevi CMS Use Cases — Built for teams that move fast',
+            description:
+                'Explore how marketing teams, publishers, developers, regulated industries, agencies, and SaaS products use Papevi CMS to manage structured content at scale.',
+            inLanguage: 'en',
+            breadcrumb: {
                 '@type': 'BreadcrumbList',
-                'itemListElement': [
-                    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': '/' },
-                    { '@type': 'ListItem', 'position': 2, 'name': 'Use Cases', 'item': '/use-cases' },
+                itemListElement: [
+                    { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
+                    { '@type': 'ListItem', position: 2, name: 'Use Cases', item: '/use-cases' },
                 ],
             },
         },
         {
             '@type': 'ItemList',
-            'name': 'Papevi CMS Use Cases',
-            'itemListElement': useCases.map((item, i) => ({
+            name: 'Papevi CMS Use Cases',
+            itemListElement: useCases.map((item, i) => ({
                 '@type': 'ListItem',
-                'position': i + 1,
-                'name': item.eyebrow,
-                'description': item.body,
-                'url': `/use-cases#${item.id}`,
+                position: i + 1,
+                name: item.eyebrow,
+                description: item.body,
+                url: `/use-cases#${item.id}`,
             })),
         },
     ],
@@ -118,17 +118,61 @@ const onImageError = (event: Event) => {
 <template>
     <Head>
         <title>Papevi CMS Use Cases — Built for teams that move fast</title>
-        <meta head-key="description" name="description" content="Explore how marketing teams, publishers, developers, regulated industries, agencies, and SaaS products use Papevi CMS to manage structured content at scale." />
-        <meta head-key="robots" name="robots" content="index, follow" />
-        <link head-key="canonical" rel="canonical" :href="route('use-cases')" />
-        <meta head-key="og:type" property="og:type" content="website" />
-        <meta head-key="og:title" property="og:title" content="Papevi CMS Use Cases — Built for teams that move fast" />
-        <meta head-key="og:description" property="og:description" content="Explore how marketing teams, publishers, developers, regulated industries, agencies, and SaaS products use Papevi CMS." />
-        <meta head-key="og:url" property="og:url" :content="route('use-cases')" />
-        <meta head-key="twitter:card" name="twitter:card" content="summary" />
-        <meta head-key="twitter:title" name="twitter:title" content="Papevi CMS Use Cases — Built for teams that move fast" />
-        <meta head-key="twitter:description" name="twitter:description" content="Explore how marketing teams, publishers, developers, and SaaS products use Papevi CMS to manage content at scale." />
-        <component :is="'script'" type="application/ld+json" v-text="JSON.stringify(structuredData)" />
+        <meta
+            head-key="description"
+            name="description"
+            content="Explore how marketing teams, publishers, developers, regulated industries, agencies, and SaaS products use Papevi CMS to manage structured content at scale."
+        />
+        <meta
+            head-key="robots"
+            name="robots"
+            content="index, follow"
+        />
+        <link
+            head-key="canonical"
+            rel="canonical"
+            :href="route('use-cases')"
+        />
+        <meta
+            head-key="og:type"
+            property="og:type"
+            content="website"
+        />
+        <meta
+            head-key="og:title"
+            property="og:title"
+            content="Papevi CMS Use Cases — Built for teams that move fast"
+        />
+        <meta
+            head-key="og:description"
+            property="og:description"
+            content="Explore how marketing teams, publishers, developers, regulated industries, agencies, and SaaS products use Papevi CMS."
+        />
+        <meta
+            head-key="og:url"
+            property="og:url"
+            :content="route('use-cases')"
+        />
+        <meta
+            head-key="twitter:card"
+            name="twitter:card"
+            content="summary"
+        />
+        <meta
+            head-key="twitter:title"
+            name="twitter:title"
+            content="Papevi CMS Use Cases — Built for teams that move fast"
+        />
+        <meta
+            head-key="twitter:description"
+            name="twitter:description"
+            content="Explore how marketing teams, publishers, developers, and SaaS products use Papevi CMS to manage content at scale."
+        />
+        <component
+            :is="'script'"
+            type="application/ld+json"
+            v-text="JSON.stringify(structuredData)"
+        />
     </Head>
 
     <div class="flex min-h-screen flex-col bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-white">
@@ -136,29 +180,53 @@ const onImageError = (event: Event) => {
 
         <main id="main-content">
             <!-- Header + quick-nav cards -->
-            <section class="border-b border-gray-100 bg-gray-50 px-6 py-24 sm:px-8 lg:px-12 dark:border-white/5 dark:bg-gray-900">
+            <section
+                class="border-b border-gray-100 bg-gray-50 px-6 py-24 sm:px-8 lg:px-12 dark:border-white/5 dark:bg-gray-900"
+            >
                 <div class="mx-auto max-w-3xl text-center">
-                    <p class="kicker mx-auto">Use cases</p>
-                    <Heading as="h1" display="lg" class="mt-5 text-balance">
+                    <p class="mx-auto kicker">Use cases</p>
+                    <Heading
+                        as="h1"
+                        display="lg"
+                        class="mt-5 text-balance"
+                    >
                         Built for teams that move fast.
                     </Heading>
                     <p class="mx-auto mt-5 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
-                        Whether you're a startup shipping landing pages or an enterprise managing
-                        multi-brand content — Papevi adapts to how your team works.
+                        Whether you're a startup shipping landing pages or an enterprise managing multi-brand content —
+                        Papevi adapts to how your team works.
                     </p>
                 </div>
 
-                <nav aria-label="Jump to a use case" class="mx-auto mt-14 grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <nav
+                    aria-label="Jump to a use case"
+                    class="mx-auto mt-14 grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-3"
+                >
                     <a
                         v-for="item in useCases"
                         :key="item.id"
                         :href="`#${item.id}`"
                         :aria-label="`Jump to: ${item.eyebrow}`"
-                        class="glass-panel group flex items-center justify-between gap-3 p-4 transition hover:border-brand-400/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 focus-visible:ring-offset-1"
+                        class="group flex items-center justify-between gap-3 glass-panel p-4 transition hover:border-brand-400/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-1 dark:focus-visible:ring-brand-400"
                     >
-                        <p class="text-sm font-semibold text-gray-900 transition group-hover:text-brand-700 dark:text-white dark:group-hover:text-brand-300">{{ item.eyebrow }}</p>
-                        <svg class="size-4 shrink-0 text-gray-400 transition group-hover:translate-x-0.5 group-hover:text-brand-600 dark:group-hover:text-brand-400" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                            <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                        <p
+                            class="text-sm font-semibold text-gray-900 transition group-hover:text-brand-700 dark:text-white dark:group-hover:text-brand-300"
+                        >
+                            {{ item.eyebrow }}
+                        </p>
+                        <svg
+                            class="size-4 shrink-0 text-gray-400 transition group-hover:translate-x-0.5 group-hover:text-brand-600 dark:group-hover:text-brand-400"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M4 10h12M11 5l5 5-5 5"
+                                stroke="currentColor"
+                                stroke-width="1.6"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
                         </svg>
                     </a>
                 </nav>
@@ -175,10 +243,15 @@ const onImageError = (event: Event) => {
                     :class="{ 'lg:[&>*:first-child]:order-2': index % 2 === 1 }"
                 >
                     <div class="space-y-5">
-                        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-600 dark:text-brand-400">
+                        <p class="text-xs font-semibold tracking-[0.18em] text-brand-600 uppercase dark:text-brand-400">
                             {{ item.eyebrow }}
                         </p>
-                        <Heading :id="`${item.id}-title`" as="h2" display="md" class="text-balance">
+                        <Heading
+                            :id="`${item.id}-title`"
+                            as="h2"
+                            display="md"
+                            class="text-balance"
+                        >
                             {{ item.title }}
                         </Heading>
                         <p class="text-base leading-relaxed text-gray-600 sm:text-lg dark:text-gray-300">
@@ -190,9 +263,22 @@ const onImageError = (event: Event) => {
                                 :key="bullet"
                                 class="flex items-start gap-3 text-sm text-gray-700 dark:text-gray-200"
                             >
-                                <span class="mt-1 inline-flex size-4 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-700 dark:bg-brand-500/20 dark:text-brand-400">
-                                    <svg class="size-3" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                                        <path d="M2.5 6.5l2.5 2.5 4.5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                <span
+                                    class="mt-1 inline-flex size-4 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-700 dark:bg-brand-500/20 dark:text-brand-400"
+                                >
+                                    <svg
+                                        class="size-3"
+                                        viewBox="0 0 12 12"
+                                        fill="none"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            d="M2.5 6.5l2.5 2.5 4.5-5"
+                                            stroke="currentColor"
+                                            stroke-width="1.8"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
                                     </svg>
                                 </span>
                                 <span>{{ bullet }}</span>
@@ -209,7 +295,7 @@ const onImageError = (event: Event) => {
                                 papevi.com / {{ item.id }}
                             </span>
                         </div>
-                        <div class="product-placeholder relative aspect-[4/3] w-full overflow-hidden">
+                        <div class="relative aspect-[4/3] w-full overflow-hidden product-placeholder">
                             <img
                                 :src="`/images/marketing/use-case-${index + 1}.png`"
                                 :alt="item.title"

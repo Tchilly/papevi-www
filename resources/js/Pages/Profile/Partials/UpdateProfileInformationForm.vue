@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import Heading from '@/Components/Ui/Heading.vue';
+import { Link, useForm, usePage } from '@inertiajs/vue3';
+
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
-import { Link, useForm, usePage } from '@inertiajs/vue3';
+import Heading from '@/Components/Ui/Heading.vue';
 
 defineProps<{
-    mustVerifyEmail?: Boolean;
-    status?: String;
+    mustVerifyEmail?: boolean;
+    status?: string;
 }>();
 
 const user = usePage().props.auth.user;
@@ -22,7 +23,12 @@ const form = useForm({
 <template>
     <section>
         <header>
-            <Heading as="h2" :level="4" class="text-gray-900 dark:text-gray-100">Profile Information</Heading>
+            <Heading
+                as="h2"
+                :level="4"
+                class="text-gray-900 dark:text-gray-100"
+                >Profile Information</Heading
+            >
 
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
                 Update your account's profile information and email address.
@@ -34,7 +40,10 @@ const form = useForm({
             class="mt-6 space-y-6"
         >
             <div>
-                <InputLabel for="name" value="Name" />
+                <InputLabel
+                    for="name"
+                    value="Name"
+                />
 
                 <TextInput
                     id="name"
@@ -46,11 +55,17 @@ const form = useForm({
                     autocomplete="name"
                 />
 
-                <InputError class="mt-2" :message="form.errors.name" />
+                <InputError
+                    class="mt-2"
+                    :message="form.errors.name"
+                />
             </div>
 
             <div>
-                <InputLabel for="email" value="Email" />
+                <InputLabel
+                    for="email"
+                    value="Email"
+                />
 
                 <TextInput
                     id="email"
@@ -61,7 +76,10 @@ const form = useForm({
                     autocomplete="username"
                 />
 
-                <InputError class="mt-2" :message="form.errors.email" />
+                <InputError
+                    class="mt-2"
+                    :message="form.errors.email"
+                />
             </div>
 
             <div v-if="mustVerifyEmail && user.email_verified_at === null">
@@ -71,7 +89,7 @@ const form = useForm({
                         :href="route('verification.send')"
                         method="post"
                         as="button"
-                        class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-600 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-brand-300 dark:focus:ring-offset-gray-900"
+                        class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:ring-2 focus:ring-brand-600 focus:ring-offset-2 focus:outline-none dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-brand-300 dark:focus:ring-offset-gray-900"
                     >
                         Click here to re-send the verification email.
                     </Link>

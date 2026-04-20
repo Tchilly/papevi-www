@@ -1,6 +1,7 @@
-import { PageProps as InertiaPageProps } from '@inertiajs/core';
-import { route as ziggyRoute } from 'ziggy-js';
-import { PageProps as AppPageProps } from './';
+import type { PageProps as InertiaPageProps } from '@inertiajs/core';
+import type { route as ziggyRoute } from 'ziggy-js';
+
+import type { PageProps as AppPageProps } from './';
 
 declare global {
     /* eslint-disable no-var */

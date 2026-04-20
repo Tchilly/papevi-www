@@ -5,8 +5,7 @@ export type Appearance = 'light' | 'dark' | 'system';
 const STORAGE_KEY = 'appearance';
 
 const prefersDark = (): boolean =>
-    typeof window !== 'undefined' &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches;
+    typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 const applyTheme = (value: Appearance): void => {
     if (typeof document === 'undefined') {

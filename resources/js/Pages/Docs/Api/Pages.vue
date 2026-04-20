@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import CodeTabs from '@/Components/Ui/CodeTabs.vue';
-import Code from '@/Components/Ui/Code.vue';
+import { Head } from '@inertiajs/vue3';
+
 import DocsToc from '@/Components/Docs/DocsToc.vue';
+import Code from '@/Components/Ui/Code.vue';
+import CodeTabs from '@/Components/Ui/CodeTabs.vue';
 import Heading from '@/Components/Ui/Heading.vue';
 import DocsLayout from '@/Layouts/DocsLayout.vue';
-import { Head } from '@inertiajs/vue3';
+
 import { pagesExamples } from './pagesExamples';
 
 const tocItems = [
@@ -52,7 +54,8 @@ const listPagesJson =
     '  "jsonapi": { "version": "1.1" }\n' +
     '}';
 
-const getPagesSlugCurl = 'curl https://api.papevi.app/api/v1/pages/getting-started \\\n  -H "Authorization: Bearer <token>"';
+const getPagesSlugCurl =
+    'curl https://api.papevi.app/api/v1/pages/getting-started \\\n  -H "Authorization: Bearer <token>"';
 
 const singlePageJson =
     '// GET /pages/{slug} — custom fields merged into attributes\n' +
@@ -77,7 +80,8 @@ const singlePageJson =
     '  "jsonapi": { "version": "1.1" }\n' +
     '}';
 
-const sparseFieldsExample = 'curl "https://api.papevi.app/api/v1/pages?fields[pages]=slug,title" \\\n  -H "Authorization: Bearer <token>"';
+const sparseFieldsExample =
+    'curl "https://api.papevi.app/api/v1/pages?fields[pages]=slug,title" \\\n  -H "Authorization: Bearer <token>"';
 </script>
 
 <template>
@@ -90,24 +94,46 @@ const sparseFieldsExample = 'curl "https://api.papevi.app/api/v1/pages?fields[pa
 
         <div class="space-y-10">
             <div class="space-y-3 border-b border-gray-200 pb-10 dark:border-white/8">
-                <p class="text-xs font-semibold uppercase tracking-[0.14em] text-brand-600 dark:text-brand-400">API Reference</p>
+                <p class="text-xs font-semibold tracking-[0.14em] text-brand-600 uppercase dark:text-brand-400">
+                    API Reference
+                </p>
                 <Heading as="h1">Pages API</Heading>
                 <p class="max-w-xl text-lg text-gray-600 dark:text-gray-300">
-                    Fetch published pages for your site. The API only returns pages with published content — draft and scheduled pages return <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-sm dark:bg-gray-800">404</code>. Custom content fields are merged directly into <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-sm dark:bg-gray-800">attributes</code>.
+                    Fetch published pages for your site. The API only returns pages with published content — draft and
+                    scheduled pages return
+                    <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-sm dark:bg-gray-800">404</code>.
+                    Custom content fields are merged directly into
+                    <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-sm dark:bg-gray-800">attributes</code
+                    >.
                 </p>
             </div>
 
             <!-- Base URL -->
             <div class="space-y-3">
-                <Heading as="h2" id="base-url" :level="3" class="scroll-mt-24">Base URL</Heading>
+                <Heading
+                    as="h2"
+                    id="base-url"
+                    :level="3"
+                    class="scroll-mt-24"
+                    >Base URL</Heading
+                >
                 <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
-                    <Code lang="bash" :code="baseUrl" />
+                    <Code
+                        lang="bash"
+                        :code="baseUrl"
+                    />
                 </div>
             </div>
 
             <!-- Endpoints overview -->
             <div class="space-y-4">
-                <Heading as="h2" id="endpoints" :level="3" class="scroll-mt-24">Endpoints</Heading>
+                <Heading
+                    as="h2"
+                    id="endpoints"
+                    :level="3"
+                    class="scroll-mt-24"
+                    >Endpoints</Heading
+                >
                 <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
                     <table class="w-full text-sm">
                         <thead class="bg-gray-50 text-xs text-gray-500 dark:bg-white/[0.03] dark:text-gray-400">
@@ -119,12 +145,16 @@ const sparseFieldsExample = 'curl "https://api.papevi.app/api/v1/pages?fields[pa
                         </thead>
                         <tbody class="divide-y divide-gray-100 text-gray-700 dark:divide-white/8 dark:text-gray-200">
                             <tr>
-                                <td class="px-5 py-3"><code class="font-mono text-xs text-green-600 dark:text-green-400">GET</code></td>
+                                <td class="px-5 py-3">
+                                    <code class="font-mono text-xs text-green-600 dark:text-green-400">GET</code>
+                                </td>
                                 <td class="px-5 py-3"><code class="font-mono text-xs">/pages</code></td>
                                 <td class="px-5 py-3">List pages for your site</td>
                             </tr>
                             <tr>
-                                <td class="px-5 py-3"><code class="font-mono text-xs text-green-600 dark:text-green-400">GET</code></td>
+                                <td class="px-5 py-3">
+                                    <code class="font-mono text-xs text-green-600 dark:text-green-400">GET</code>
+                                </td>
                                 <td class="px-5 py-3"><code class="font-mono text-xs">/pages/{slug}</code></td>
                                 <td class="px-5 py-3">Get a single page by slug</td>
                             </tr>
@@ -135,13 +165,24 @@ const sparseFieldsExample = 'curl "https://api.papevi.app/api/v1/pages?fields[pa
 
             <!-- GET /pages -->
             <div class="space-y-4">
-                <Heading as="h2" id="list-pages" :level="3" class="scroll-mt-24">GET /pages</Heading>
+                <Heading
+                    as="h2"
+                    id="list-pages"
+                    :level="3"
+                    class="scroll-mt-24"
+                    >GET /pages</Heading
+                >
                 <p class="text-sm text-gray-600 dark:text-gray-300">
-                    Returns a paginated list of published pages for the authenticated site. Use <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">per_page</code> to control page size.
+                    Returns a paginated list of published pages for the authenticated site. Use
+                    <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">per_page</code>
+                    to control page size.
                 </p>
 
                 <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
-                    <Code lang="bash" :code="listPagesCurl" />
+                    <Code
+                        lang="bash"
+                        :code="listPagesCurl"
+                    />
                 </div>
 
                 <div class="space-y-3">
@@ -155,21 +196,30 @@ const sparseFieldsExample = 'curl "https://api.papevi.app/api/v1/pages?fields[pa
                                     <th class="px-5 py-3 text-left font-medium">Description</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-gray-100 text-gray-700 dark:divide-white/8 dark:text-gray-200">
+                            <tbody
+                                class="divide-y divide-gray-100 text-gray-700 dark:divide-white/8 dark:text-gray-200"
+                            >
                                 <tr>
                                     <td class="px-5 py-3"><code class="font-mono text-xs">per_page</code></td>
                                     <td class="px-5 py-3 text-xs text-gray-500">integer</td>
-                                    <td class="px-5 py-3">Results per page (default <code class="font-mono text-xs">15</code>)</td>
+                                    <td class="px-5 py-3">
+                                        Results per page (default <code class="font-mono text-xs">15</code>)
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="px-5 py-3"><code class="font-mono text-xs">page</code></td>
                                     <td class="px-5 py-3 text-xs text-gray-500">integer</td>
-                                    <td class="px-5 py-3">Page number (default <code class="font-mono text-xs">1</code>)</td>
+                                    <td class="px-5 py-3">
+                                        Page number (default <code class="font-mono text-xs">1</code>)
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="px-5 py-3"><code class="font-mono text-xs">sort</code></td>
                                     <td class="px-5 py-3 text-xs text-gray-500">string</td>
-                                    <td class="px-5 py-3">Field name to sort by. Prefix with <code class="font-mono text-xs">-</code> for descending (e.g. <code class="font-mono text-xs">-created_at</code>)</td>
+                                    <td class="px-5 py-3">
+                                        Field name to sort by. Prefix with <code class="font-mono text-xs">-</code> for
+                                        descending (e.g. <code class="font-mono text-xs">-created_at</code>)
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="px-5 py-3"><code class="font-mono text-xs">filter[slug]</code></td>
@@ -182,31 +232,62 @@ const sparseFieldsExample = 'curl "https://api.papevi.app/api/v1/pages?fields[pa
                 </div>
 
                 <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
-                    <Code lang="json" :code="listPagesJson" />
+                    <Code
+                        lang="json"
+                        :code="listPagesJson"
+                    />
                 </div>
             </div>
 
             <!-- GET /pages/{slug} -->
             <div class="space-y-4">
-                <Heading as="h2" id="get-pages-slug" :level="3" class="scroll-mt-24">GET /pages/{slug}</Heading>
+                <Heading
+                    as="h2"
+                    id="get-pages-slug"
+                    :level="3"
+                    class="scroll-mt-24"
+                    >GET /pages/{slug}</Heading
+                >
                 <p class="text-sm text-gray-600 dark:text-gray-300">
-                    Returns a single published page by its slug. Unpublished pages return <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">404</code>. The page must belong to the site associated with your token.
+                    Returns a single published page by its slug. Unpublished pages return
+                    <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">404</code>. The
+                    page must belong to the site associated with your token.
                 </p>
 
                 <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
-                    <Code lang="bash" :code="getPagesSlugCurl" />
+                    <Code
+                        lang="bash"
+                        :code="getPagesSlugCurl"
+                    />
                 </div>
             </div>
 
             <!-- Response format -->
             <div class="space-y-4">
-                <Heading as="h2" id="response-format" :level="3" class="scroll-mt-24">Response format</Heading>
+                <Heading
+                    as="h2"
+                    id="response-format"
+                    :level="3"
+                    class="scroll-mt-24"
+                    >Response format</Heading
+                >
                 <p class="text-sm text-gray-600 dark:text-gray-300">
-                    Responses follow the <strong class="font-semibold text-gray-800 dark:text-gray-100">JSON:API</strong> specification. Custom content fields from your page type are merged directly into <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">attributes</code> — there is no <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">published_content</code> wrapper. The exact fields depend on your page type configuration.
+                    Responses follow the
+                    <strong class="font-semibold text-gray-800 dark:text-gray-100">JSON:API</strong> specification.
+                    Custom content fields from your page type are merged directly into
+                    <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">attributes</code>
+                    — there is no
+                    <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800"
+                        >published_content</code
+                    >
+                    wrapper. The exact fields depend on your page type configuration.
                 </p>
 
                 <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
-                    <Code lang="json" :code="singlePageJson" />
+                    <Code
+                        lang="json"
+                        :code="singlePageJson"
+                    />
                 </div>
 
                 <p class="text-sm text-gray-600 dark:text-gray-300">
@@ -214,24 +295,57 @@ const sparseFieldsExample = 'curl "https://api.papevi.app/api/v1/pages?fields[pa
                 </p>
 
                 <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
-                    <Code lang="bash" :code="sparseFieldsExample" />
+                    <Code
+                        lang="bash"
+                        :code="sparseFieldsExample"
+                    />
                 </div>
             </div>
 
             <!-- Code examples -->
             <div class="space-y-4">
-                <Heading as="h2" id="framework-examples" :level="3" class="scroll-mt-24">Code examples</Heading>
+                <Heading
+                    as="h2"
+                    id="framework-examples"
+                    :level="3"
+                    class="scroll-mt-24"
+                    >Code examples</Heading
+                >
                 <p class="text-sm text-gray-600 dark:text-gray-300">
                     Ready-to-use clients for listing and rendering pages in common stacks.
                 </p>
 
                 <CodeTabs>
-                    <Code label="TypeScript" lang="typescript" :code="pagesExamples['TypeScript']" />
-                    <Code label="Vue 3" lang="typescript" :code="pagesExamples['Vue 3']" />
-                    <Code label="React" lang="typescript" :code="pagesExamples['React']" />
-                    <Code label="Svelte" lang="html" :code="pagesExamples['Svelte']" />
-                    <Code label="PHP" lang="php" :code="pagesExamples['PHP']" />
-                    <Code label="C#" lang="csharp" :code="pagesExamples['C#']" />
+                    <Code
+                        label="TypeScript"
+                        lang="typescript"
+                        :code="pagesExamples['TypeScript']"
+                    />
+                    <Code
+                        label="Vue 3"
+                        lang="typescript"
+                        :code="pagesExamples['Vue 3']"
+                    />
+                    <Code
+                        label="React"
+                        lang="typescript"
+                        :code="pagesExamples['React']"
+                    />
+                    <Code
+                        label="Svelte"
+                        lang="html"
+                        :code="pagesExamples['Svelte']"
+                    />
+                    <Code
+                        label="PHP"
+                        lang="php"
+                        :code="pagesExamples['PHP']"
+                    />
+                    <Code
+                        label="C#"
+                        lang="csharp"
+                        :code="pagesExamples['C#']"
+                    />
                 </CodeTabs>
             </div>
         </div>

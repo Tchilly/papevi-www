@@ -12,7 +12,7 @@ const pillars = [
         icon: `<path d="M12 2C8.134 2 5 5.134 5 9c0 4.5 7 13 7 13s7-8.5 7-13c0-3.866-3.134-7-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="none"/>`,
         label: 'GDPR',
         title: 'GDPR by design',
-        body: "Data residency in the EU, media consent and retention controls, right-to-erasure tooling, and a Data Processing Agreement available on request.",
+        body: 'Data residency in the EU, media consent and retention controls, right-to-erasure tooling, and a Data Processing Agreement available on request.',
     },
     {
         icon: `<path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="none"/>`,
@@ -48,7 +48,7 @@ const pillars = [
     >
         <!-- Subtle left glow — dark mode only -->
         <div
-            class="pointer-events-none absolute left-[-10%] top-1/2 hidden h-[500px] w-[500px] -translate-y-1/2 brand-glow opacity-10 dark:block"
+            class="pointer-events-none absolute top-1/2 left-[-10%] hidden h-[500px] w-[500px] -translate-y-1/2 opacity-10 brand-glow dark:block"
             aria-hidden="true"
         />
 
@@ -56,11 +56,16 @@ const pillars = [
             <!-- Header -->
             <div class="max-w-2xl">
                 <p class="kicker">Trust &amp; compliance</p>
-                <Heading as="h2" display="md" class="mt-5 text-balance">
+                <Heading
+                    as="h2"
+                    display="md"
+                    class="mt-5 text-balance"
+                >
                     Built for regulated teams and demanding auditors.
                 </Heading>
                 <p class="mt-4 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-                    Papevi ships with the compliance controls that procurement teams ask for — not as add-ons, but as core platform features.
+                    Papevi ships with the compliance controls that procurement teams ask for — not as add-ons, but as
+                    core platform features.
                 </p>
             </div>
 
@@ -72,17 +77,36 @@ const pillars = [
                     class="group relative flex flex-col gap-4 rounded-xl border border-gray-200 bg-white p-7 dark:border-white/8 dark:bg-gray-950"
                 >
                     <!-- Top accent line on hover -->
-                    <div class="absolute inset-x-0 top-0 h-px rounded-t-xl bg-gradient-to-r from-transparent via-brand-400/0 to-transparent transition group-hover:via-brand-400/50" aria-hidden="true" />
+                    <div
+                        class="absolute inset-x-0 top-0 h-px rounded-t-xl bg-gradient-to-r from-transparent via-brand-400/0 to-transparent transition group-hover:via-brand-400/50"
+                        aria-hidden="true"
+                    />
 
                     <!-- Icon -->
-                    <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-brand-200 bg-brand-50 dark:border-brand-400/20 dark:bg-brand-400/10">
-                        <svg class="size-5 text-brand-700 dark:text-brand-400" viewBox="0 0 24 24" fill="none" aria-hidden="true" v-html="pillar.icon" />
+                    <div
+                        class="flex h-10 w-10 items-center justify-center rounded-xl border border-brand-200 bg-brand-50 dark:border-brand-400/20 dark:bg-brand-400/10"
+                    >
+                        <svg
+                            class="size-5 text-brand-700 dark:text-brand-400"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            aria-hidden="true"
+                            v-html="pillar.icon"
+                        />
                     </div>
 
                     <!-- Label / title -->
                     <div>
-                        <p class="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-brand-700 dark:text-brand-400">{{ pillar.label }}</p>
-                        <Heading as="h3" class="mt-1">{{ pillar.title }}</Heading>
+                        <p
+                            class="font-mono text-[10px] font-semibold tracking-[0.14em] text-brand-700 uppercase dark:text-brand-400"
+                        >
+                            {{ pillar.label }}
+                        </p>
+                        <Heading
+                            as="h3"
+                            class="mt-1"
+                            >{{ pillar.title }}</Heading
+                        >
                     </div>
 
                     <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">{{ pillar.body }}</p>

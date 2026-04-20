@@ -1,21 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
     --font-sans:
-        "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif,
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-        "Noto Color Emoji";
-    --font-serif:
-        "IBM Plex Serif", ui-serif, Georgia, Cambria, "Times New Roman", Times,
-        serif;
+        'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+    --font-serif: 'IBM Plex Serif', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
     --font-mono:
-        "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-        "Liberation Mono", "Courier New", monospace;
+        'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+        monospace;
 
     --heading-font-family: var(--font-serif);
 
@@ -197,7 +194,7 @@
 @layer base {
     html {
         font-family: var(--font-sans);
-        font-feature-settings: "cv01", "ss03";
+        font-feature-settings: 'cv01', 'ss03';
         font-optical-sizing: auto;
     }
 
@@ -205,7 +202,7 @@
         @apply bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100;
     }
 
-    input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+    input:not([type='checkbox']):not([type='radio']):not([type='range']),
     textarea,
     select {
         font-family: var(--font-serif);
@@ -225,25 +222,17 @@
 }
 
 @utility brand-glow {
-    background: radial-gradient(
-        circle at center,
-        oklch(68% 0.198 22 / 0.28),
-        transparent 66%
-    );
+    background: radial-gradient(circle at center, oklch(68% 0.198 22 / 0.28), transparent 66%);
 }
 
 @utility hero-noise {
-    background-image: radial-gradient(
-        circle at 1px 1px,
-        rgb(255 255 255 / 0.08) 1px,
-        transparent 0
-    );
+    background-image: radial-gradient(circle at 1px 1px, rgb(255 255 255 / 0.08) 1px, transparent 0);
     background-size: 14px 14px;
     mask-image: linear-gradient(to bottom, black 35%, transparent 100%);
 }
 
 @utility kicker {
-    @apply inline-flex items-center gap-2 rounded-full border border-brand-500/40 bg-brand-400/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.16em] text-brand-700 dark:text-brand-300;
+    @apply inline-flex items-center gap-2 rounded-full border border-brand-500/40 bg-brand-400/10 px-3 py-1 text-xs font-medium tracking-[0.16em] text-brand-700 uppercase dark:text-brand-300;
 }
 
 @utility product-frame {
@@ -260,34 +249,14 @@
 
 @utility product-placeholder {
     background:
-        radial-gradient(
-            circle at 20% 15%,
-            oklch(68% 0.198 22 / 0.08),
-            transparent 55%
-        ),
-        radial-gradient(
-            circle at 80% 85%,
-            oklch(48.5% 0.158 22 / 0.1),
-            transparent 60%
-        ),
-        linear-gradient(
-            135deg,
-            rgb(243 246 247 / 0.95),
-            rgb(235 241 242 / 0.95)
-        );
+        radial-gradient(circle at 20% 15%, oklch(68% 0.198 22 / 0.08), transparent 55%),
+        radial-gradient(circle at 80% 85%, oklch(48.5% 0.158 22 / 0.1), transparent 60%),
+        linear-gradient(135deg, rgb(243 246 247 / 0.95), rgb(235 241 242 / 0.95));
 }
 
 .dark .product-placeholder {
     background:
-        radial-gradient(
-            circle at 20% 15%,
-            oklch(68% 0.198 22 / 0.18),
-            transparent 55%
-        ),
-        radial-gradient(
-            circle at 80% 85%,
-            oklch(58% 0.185 22 / 0.32),
-            transparent 60%
-        ),
+        radial-gradient(circle at 20% 15%, oklch(68% 0.198 22 / 0.18), transparent 55%),
+        radial-gradient(circle at 80% 85%, oklch(58% 0.185 22 / 0.32), transparent 60%),
         linear-gradient(135deg, rgb(29 30 30 / 0.95), rgb(23 23 23 / 0.95));
 }

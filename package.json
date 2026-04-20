@@ -4,7 +4,12 @@
     "type": "module",
     "scripts": {
         "build": "vue-tsc && vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "format": "oxfmt resources/",
+        "format:check": "oxfmt --check resources/",
+        "format:dirty": "git diff --name-only --diff-filter=ACMR \"*.vue\" \"*.ts\" \"*.js\" | grep \"^resources/js/\" | xargs oxfmt",
+        "lint": "oxlint resources/js --fix",
+        "lint:strict": "oxlint resources/js"
     },
     "devDependencies": {
         "@inertiajs/vue3": "^3.0.3",
@@ -14,6 +19,8 @@
         "autoprefixer": "^10.4.12",
         "concurrently": "^9.0.1",
         "laravel-vite-plugin": "^3.0.0",
+        "oxfmt": "^0.46.0",
+        "oxlint": "^1.61.0",
         "postcss": "^8.4.31",
         "reka-ui": "^2.9.6",
         "tailwindcss": "^4.2.2",

@@ -14,7 +14,11 @@ withDefaults(
 </script>
 
 <template>
-    <Button variant="brand" size="md" v-bind="$props">
+    <Button
+        variant="brand"
+        size="md"
+        v-bind="$props"
+    >
         <slot />
     </Button>
 </template>

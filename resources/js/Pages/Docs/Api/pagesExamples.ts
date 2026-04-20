@@ -103,13 +103,13 @@ export const pagesExamples: Record<string, string> = {
 
     PHP: [
         '<?php',
-        "use Illuminate\\Support\\Facades\\Http;",
+        'use Illuminate\\Support\\Facades\\Http;',
         '',
         "$response = Http::withToken(config('services.papevi.token'))",
         "    ->baseUrl('https://api.papevi.app/api/v1')",
         "    ->get('/pages', ['sort' => '-created_at']);",
         '',
-        'foreach ($response->json(\'data\') as $page) {',
+        "foreach ($response->json('data') as $page) {",
         "    echo $page['attributes']['title'] . ' (' . $page['attributes']['slug'] . ')' . PHP_EOL;",
         '}',
     ].join('\n'),

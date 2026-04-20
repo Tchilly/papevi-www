@@ -50,9 +50,14 @@ onBeforeUnmount(() => {
 
 <template>
     <nav aria-label="Page contents">
-        <p class="mb-3 text-[11px] font-semibold uppercase tracking-[0.13em] text-gray-400 dark:text-gray-500">On this page</p>
+        <p class="mb-3 text-[11px] font-semibold tracking-[0.13em] text-gray-400 uppercase dark:text-gray-500">
+            On this page
+        </p>
         <ul class="space-y-px border-l border-gray-200 dark:border-white/10">
-            <li v-for="item in items" :key="item.id">
+            <li
+                v-for="item in items"
+                :key="item.id"
+            >
                 <a
                     :href="`#${item.id}`"
                     class="-ml-px block border-l-2 py-1 pl-3 text-sm transition"

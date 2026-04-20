@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import { Head } from '@inertiajs/vue3';
+
 import DocsToc from '@/Components/Docs/DocsToc.vue';
 import Heading from '@/Components/Ui/Heading.vue';
 import DocsLayout from '@/Layouts/DocsLayout.vue';
-import { Head } from '@inertiajs/vue3';
 
 const tocItems = [
     { id: 'base-url', label: 'Base URL' },
@@ -23,22 +24,39 @@ const tocItems = [
 
         <div class="space-y-10">
             <div class="space-y-3 border-b border-gray-200 pb-10 dark:border-white/8">
-                <p class="text-xs font-semibold uppercase tracking-[0.14em] text-brand-600 dark:text-brand-400">API Reference</p>
+                <p class="text-xs font-semibold tracking-[0.14em] text-brand-600 uppercase dark:text-brand-400">
+                    API Reference
+                </p>
                 <Heading as="h1">Site API</Heading>
                 <p class="max-w-xl text-lg text-gray-600 dark:text-gray-300">
-                    Read metadata about your site. Your API token is scoped to a single site, so this endpoint returns the site it belongs to.
+                    Read metadata about your site. Your API token is scoped to a single site, so this endpoint returns
+                    the site it belongs to.
                 </p>
             </div>
 
             <!-- Base URL -->
             <div class="space-y-3">
-                <Heading as="h2" id="base-url" :level="3" class="scroll-mt-24">Base URL</Heading>
-                <pre class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm"><code class="font-mono text-brand-300">https://api.papevi.app/api/v1</code></pre>
+                <Heading
+                    as="h2"
+                    id="base-url"
+                    :level="3"
+                    class="scroll-mt-24"
+                    >Base URL</Heading
+                >
+                <pre
+                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm"
+                ><code class="font-mono text-brand-300">https://api.papevi.app/api/v1</code></pre>
             </div>
 
             <!-- Endpoints -->
             <div class="space-y-4">
-                <Heading as="h2" id="endpoints" :level="3" class="scroll-mt-24">Endpoints</Heading>
+                <Heading
+                    as="h2"
+                    id="endpoints"
+                    :level="3"
+                    class="scroll-mt-24"
+                    >Endpoints</Heading
+                >
                 <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
                     <table class="w-full text-sm">
                         <thead class="bg-gray-50 text-xs text-gray-500 dark:bg-white/[0.03] dark:text-gray-400">
@@ -50,7 +68,9 @@ const tocItems = [
                         </thead>
                         <tbody class="divide-y divide-gray-100 text-gray-700 dark:divide-white/8 dark:text-gray-200">
                             <tr>
-                                <td class="px-5 py-3"><code class="font-mono text-xs text-green-600 dark:text-green-400">GET</code></td>
+                                <td class="px-5 py-3">
+                                    <code class="font-mono text-xs text-green-600 dark:text-green-400">GET</code>
+                                </td>
                                 <td class="px-5 py-3"><code class="font-mono text-xs">/sites/{id}</code></td>
                                 <td class="px-5 py-3">Get site metadata</td>
                             </tr>
@@ -61,23 +81,43 @@ const tocItems = [
 
             <!-- GET /sites/{id} -->
             <div class="space-y-4">
-                <Heading as="h2" id="get-sites-id" :level="3" class="scroll-mt-24">GET /sites/{id}</Heading>
+                <Heading
+                    as="h2"
+                    id="get-sites-id"
+                    :level="3"
+                    class="scroll-mt-24"
+                    >GET /sites/{id}</Heading
+                >
                 <p class="text-sm text-gray-600 dark:text-gray-300">
-                    Returns the site associated with the API token. The <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">{id}</code> must match the site ID of your token — any other ID returns <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">404</code>.
+                    Returns the site associated with the API token. The
+                    <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">{id}</code> must
+                    match the site ID of your token — any other ID returns
+                    <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">404</code>.
                 </p>
 
-                <pre class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"><code class="font-mono text-gray-100">curl https://api.papevi.app/api/v1/sites/1 \
+                <pre
+                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"
+                ><code class="font-mono text-gray-100">curl https://api.papevi.app/api/v1/sites/1 \
   -H <span class="text-brand-300">"Authorization: Bearer &lt;token&gt;"</span></code></pre>
             </div>
 
             <!-- Response format -->
             <div class="space-y-4">
-                <Heading as="h2" id="response-format" :level="3" class="scroll-mt-24">Response format</Heading>
+                <Heading
+                    as="h2"
+                    id="response-format"
+                    :level="3"
+                    class="scroll-mt-24"
+                    >Response format</Heading
+                >
                 <p class="text-sm text-gray-600 dark:text-gray-300">
-                    Responses follow the <strong class="font-semibold text-gray-800 dark:text-gray-100">JSON:API</strong> specification.
+                    Responses follow the
+                    <strong class="font-semibold text-gray-800 dark:text-gray-100">JSON:API</strong> specification.
                 </p>
 
-                <pre class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"><code class="font-mono text-gray-100"><span class="text-gray-500">// GET /sites/{id}</span>
+                <pre
+                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"
+                ><code class="font-mono text-gray-100"><span class="text-gray-500">// GET /sites/{id}</span>
 {
   <span class="text-green-400">"data"</span>: {
     <span class="text-green-400">"type"</span>: <span class="text-brand-300">"sites"</span>,
@@ -101,7 +141,13 @@ const tocItems = [
 
             <!-- Attributes -->
             <div class="space-y-4">
-                <Heading as="h2" id="attributes" :level="3" class="scroll-mt-24">Attributes</Heading>
+                <Heading
+                    as="h2"
+                    id="attributes"
+                    :level="3"
+                    class="scroll-mt-24"
+                    >Attributes</Heading
+                >
                 <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
                     <table class="w-full text-sm">
                         <thead class="bg-gray-50 text-xs text-gray-500 dark:bg-white/[0.03] dark:text-gray-400">
@@ -112,16 +158,63 @@ const tocItems = [
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100 text-gray-700 dark:divide-white/8 dark:text-gray-200">
-                            <tr><td class="px-5 py-3"><code class="font-mono text-xs">name</code></td><td class="px-5 py-3 text-xs text-gray-500">string</td><td class="px-5 py-3">Site display name</td></tr>
-                            <tr><td class="px-5 py-3"><code class="font-mono text-xs">slug</code></td><td class="px-5 py-3 text-xs text-gray-500">string</td><td class="px-5 py-3">URL-safe identifier</td></tr>
-                            <tr><td class="px-5 py-3"><code class="font-mono text-xs">description</code></td><td class="px-5 py-3 text-xs text-gray-500">string|null</td><td class="px-5 py-3">Optional description</td></tr>
-                            <tr><td class="px-5 py-3"><code class="font-mono text-xs">color</code></td><td class="px-5 py-3 text-xs text-gray-500">string|null</td><td class="px-5 py-3">Brand colour hex code</td></tr>
-                            <tr><td class="px-5 py-3"><code class="font-mono text-xs">language</code></td><td class="px-5 py-3 text-xs text-gray-500">string</td><td class="px-5 py-3">Default language code (e.g. <code class="font-mono text-xs">en</code>)</td></tr>
-                            <tr><td class="px-5 py-3"><code class="font-mono text-xs">timezone</code></td><td class="px-5 py-3 text-xs text-gray-500">string</td><td class="px-5 py-3">Site timezone (e.g. <code class="font-mono text-xs">UTC</code>, <code class="font-mono text-xs">Europe/London</code>)</td></tr>
-                            <tr><td class="px-5 py-3"><code class="font-mono text-xs">currency</code></td><td class="px-5 py-3 text-xs text-gray-500">string</td><td class="px-5 py-3">Currency code (e.g. <code class="font-mono text-xs">USD</code>)</td></tr>
-                            <tr><td class="px-5 py-3"><code class="font-mono text-xs">is_active</code></td><td class="px-5 py-3 text-xs text-gray-500">boolean</td><td class="px-5 py-3">Whether the site is active</td></tr>
-                            <tr><td class="px-5 py-3"><code class="font-mono text-xs">created_at</code></td><td class="px-5 py-3 text-xs text-gray-500">ISO 8601</td><td class="px-5 py-3">Creation timestamp</td></tr>
-                            <tr><td class="px-5 py-3"><code class="font-mono text-xs">updated_at</code></td><td class="px-5 py-3 text-xs text-gray-500">ISO 8601</td><td class="px-5 py-3">Last updated timestamp</td></tr>
+                            <tr>
+                                <td class="px-5 py-3"><code class="font-mono text-xs">name</code></td>
+                                <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                                <td class="px-5 py-3">Site display name</td>
+                            </tr>
+                            <tr>
+                                <td class="px-5 py-3"><code class="font-mono text-xs">slug</code></td>
+                                <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                                <td class="px-5 py-3">URL-safe identifier</td>
+                            </tr>
+                            <tr>
+                                <td class="px-5 py-3"><code class="font-mono text-xs">description</code></td>
+                                <td class="px-5 py-3 text-xs text-gray-500">string|null</td>
+                                <td class="px-5 py-3">Optional description</td>
+                            </tr>
+                            <tr>
+                                <td class="px-5 py-3"><code class="font-mono text-xs">color</code></td>
+                                <td class="px-5 py-3 text-xs text-gray-500">string|null</td>
+                                <td class="px-5 py-3">Brand colour hex code</td>
+                            </tr>
+                            <tr>
+                                <td class="px-5 py-3"><code class="font-mono text-xs">language</code></td>
+                                <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                                <td class="px-5 py-3">
+                                    Default language code (e.g. <code class="font-mono text-xs">en</code>)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-5 py-3"><code class="font-mono text-xs">timezone</code></td>
+                                <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                                <td class="px-5 py-3">
+                                    Site timezone (e.g. <code class="font-mono text-xs">UTC</code>,
+                                    <code class="font-mono text-xs">Europe/London</code>)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-5 py-3"><code class="font-mono text-xs">currency</code></td>
+                                <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                                <td class="px-5 py-3">
+                                    Currency code (e.g. <code class="font-mono text-xs">USD</code>)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-5 py-3"><code class="font-mono text-xs">is_active</code></td>
+                                <td class="px-5 py-3 text-xs text-gray-500">boolean</td>
+                                <td class="px-5 py-3">Whether the site is active</td>
+                            </tr>
+                            <tr>
+                                <td class="px-5 py-3"><code class="font-mono text-xs">created_at</code></td>
+                                <td class="px-5 py-3 text-xs text-gray-500">ISO 8601</td>
+                                <td class="px-5 py-3">Creation timestamp</td>
+                            </tr>
+                            <tr>
+                                <td class="px-5 py-3"><code class="font-mono text-xs">updated_at</code></td>
+                                <td class="px-5 py-3 text-xs text-gray-500">ISO 8601</td>
+                                <td class="px-5 py-3">Last updated timestamp</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
