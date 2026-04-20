@@ -294,8 +294,8 @@ import Heading from '@/Components/Ui/Heading.vue';
                         >
                         <div class="mt-4 space-y-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                             <p>
-                                These terms are governed by the laws of Norway. Disputes shall be submitted to the
-                                exclusive jurisdiction of the courts of Norway, unless you are a consumer in an EU
+                                These terms are governed by the laws of Sweden. Disputes shall be submitted to the
+                                exclusive jurisdiction of the courts of Sweden, unless you are a consumer in an EU
                                 member state in which case mandatory local consumer protection laws apply.
                             </p>
                         </div>

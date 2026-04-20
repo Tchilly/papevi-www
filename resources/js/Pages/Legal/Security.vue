@@ -94,8 +94,15 @@ import Heading from '@/Components/Ui/Heading.vue';
                         <div class="mt-4 space-y-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                             <ul class="list-disc space-y-2 pl-5">
                                 <li>
-                                    All services run inside private VPCs with no public access except via defined
-                                    ingress points.
+                                    Papevi is hosted on
+                                    <a
+                                        class="text-brand-600 hover:underline dark:text-brand-400"
+                                        href="https://cloud.laravel.com"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                        >Laravel Cloud</a
+                                    >, a managed platform running on AWS Frankfurt (eu-central-1). Network isolation,
+                                    VPC configuration, and physical security are managed by Laravel Cloud and AWS.
                                 </li>
                                 <li>
                                     Data is encrypted at rest (AES-256) and in transit (TLS 1.2+). TLS 1.0 and 1.1 are
@@ -103,13 +110,15 @@ import Heading from '@/Components/Ui/Heading.vue';
                                 </li>
                                 <li>
                                     Database servers are not publicly reachable. Access is restricted to application
-                                    servers by network policy.
+                                    servers within the same private network.
                                 </li>
                                 <li>
-                                    Secrets and credentials are managed via a secrets manager — never stored in
-                                    environment files or version control.
+                                    Secrets and credentials are stored in Laravel Cloud's encrypted environment variable
+                                    store — never committed to version control.
                                 </li>
-                                <li>Infrastructure is provisioned as code and change-controlled.</li>
+                                <li>
+                                    Deployments are triggered by version-controlled git pushes with full audit history.
+                                </li>
                             </ul>
                         </div>
                     </section>
@@ -158,8 +167,8 @@ import Heading from '@/Components/Ui/Heading.vue';
                                     <strong class="font-semibold text-gray-800 dark:text-gray-100"
                                         >Dependencies:</strong
                                     >
-                                    automated dependency scanning runs on every commit. Critical CVEs are patched within
-                                    24 hours.
+                                    we use GitHub's dependency scanning and security alerts to monitor for known
+                                    vulnerabilities. Critical CVEs are reviewed and addressed promptly.
                                 </li>
                             </ul>
                         </div>
@@ -175,7 +184,7 @@ import Heading from '@/Components/Ui/Heading.vue';
                             <ul class="list-disc space-y-2 pl-5">
                                 <li>
                                     Production access is restricted to engineers who require it for their role, via
-                                    MFA-gated SSO.
+                                    MFA-gated access.
                                 </li>
                                 <li>All production access is logged and audited.</li>
                                 <li>

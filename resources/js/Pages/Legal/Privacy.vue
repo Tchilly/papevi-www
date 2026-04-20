@@ -184,13 +184,32 @@ import Heading from '@/Components/Ui/Heading.vue';
                                 </li>
                                 <li>
                                     <strong class="font-semibold text-gray-800 dark:text-gray-100"
-                                        >AWS / Hetzner</strong
+                                        >Laravel Cloud</strong
                                     >
-                                    — cloud infrastructure and object storage (EU regions).
+                                    — cloud infrastructure and application hosting. Laravel Holdings Inc. is US-based,
+                                    GDPR compliant, EU–U.S. Data Privacy Framework (DPF) certified, and SOC 2 Type II
+                                    audited. Cross-border transfers from the EEA are protected by Standard Contractual
+                                    Clauses. DPA available at
+                                    <a
+                                        class="text-brand-600 hover:underline dark:text-brand-400"
+                                        href="https://trust.laravel.com"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                        >trust.laravel.com</a
+                                    >.
                                 </li>
                                 <li>
-                                    <strong class="font-semibold text-gray-800 dark:text-gray-100">Postmark</strong> —
-                                    transactional email delivery.
+                                    <strong class="font-semibold text-gray-800 dark:text-gray-100">Resend</strong> —
+                                    transactional email delivery. Plus Five Five, Inc. is US-based, GDPR compliant with
+                                    a full DPA (EU Standard Contractual Clauses, governed by Irish law), EU–U.S. Data
+                                    Privacy Framework certified, and SOC 2 Type II audited. DPA available at
+                                    <a
+                                        class="text-brand-600 hover:underline dark:text-brand-400"
+                                        href="https://resend.com/legal/dpa"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                        >resend.com/legal/dpa</a
+                                    >.
                                 </li>
                             </ul>
                             <p>
@@ -208,13 +227,12 @@ import Heading from '@/Components/Ui/Heading.vue';
                         >
                         <div class="mt-4 space-y-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                             <p>
-                                By default, all customer data is stored and processed within the European Union.
-                                Customers on the Scale or Enterprise plan can select EU data residency as a hard
-                                guarantee in their contract.
+                                All customer data is stored and processed within the European Union. Our infrastructure
+                                runs in the AWS Frankfurt (eu-central-1) region.
                             </p>
                             <p>
-                                Where data is transferred outside the EU, we rely on Standard Contractual Clauses (SCCs)
-                                approved by the European Commission.
+                                Where data is transferred outside the EU — for example, by email delivery subprocessors
+                                — we rely on Standard Contractual Clauses (SCCs) approved by the European Commission.
                             </p>
                         </div>
                     </section>

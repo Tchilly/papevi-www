@@ -2,6 +2,7 @@
 import { Head } from '@inertiajs/vue3';
 
 import DocsToc from '@/Components/Docs/DocsToc.vue';
+import Code from '@/Components/Ui/Code.vue';
 import Heading from '@/Components/Ui/Heading.vue';
 import DocsLayout from '@/Layouts/DocsLayout.vue';
 
@@ -12,6 +13,32 @@ const tocItems = [
     { id: 'response-format', label: 'Response format' },
     { id: 'attributes', label: 'Attributes' },
 ];
+
+const baseUrl = 'https://api.papevi.app/api/v1';
+
+const getSiteCurl = 'curl https://api.papevi.app/api/v1/sites/1 \\\n  -H "Authorization: Bearer <token>"';
+
+const siteResponseJson =
+    '// GET /sites/{id}\n' +
+    '{\n' +
+    '  "data": {\n' +
+    '    "type": "sites",\n' +
+    '    "id": "1",\n' +
+    '    "attributes": {\n' +
+    '      "name": "My Website",\n' +
+    '      "slug": "my-website",\n' +
+    '      "description": null,\n' +
+    '      "color": "#3b82f6",\n' +
+    '      "language": "en",\n' +
+    '      "timezone": "UTC",\n' +
+    '      "currency": "USD",\n' +
+    '      "is_active": true,\n' +
+    '      "created_at": "2025-01-01T12:00:00+00:00",\n' +
+    '      "updated_at": "2025-03-10T09:00:00+00:00"\n' +
+    '    }\n' +
+    '  },\n' +
+    '  "jsonapi": { "version": "1.1" }\n' +
+    '}';
 </script>
 
 <template>
@@ -43,9 +70,7 @@ const tocItems = [
                     class="scroll-mt-24"
                     >Base URL</Heading
                 >
-                <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm"
-                ><code class="font-mono text-brand-300">https://api.papevi.app/api/v1</code></pre>
+                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950"><Code lang="bash" :code="baseUrl" /></div>
             </div>
 
             <!-- Endpoints -->
@@ -95,10 +120,7 @@ const tocItems = [
                     <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">404</code>.
                 </p>
 
-                <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"
-                ><code class="font-mono text-gray-100">curl https://api.papevi.app/api/v1/sites/1 \
-  -H <span class="text-brand-300">"Authorization: Bearer &lt;token&gt;"</span></code></pre>
+                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950"><Code lang="bash" :code="getSiteCurl" /></div>
             </div>
 
             <!-- Response format -->
@@ -115,28 +137,7 @@ const tocItems = [
                     <strong class="font-semibold text-gray-800 dark:text-gray-100">JSON:API</strong> specification.
                 </p>
 
-                <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"
-                ><code class="font-mono text-gray-100"><span class="text-gray-500">// GET /sites/{id}</span>
-{
-  <span class="text-green-400">"data"</span>: {
-    <span class="text-green-400">"type"</span>: <span class="text-brand-300">"sites"</span>,
-    <span class="text-green-400">"id"</span>: <span class="text-brand-300">"1"</span>,
-    <span class="text-green-400">"attributes"</span>: {
-      <span class="text-green-400">"name"</span>: <span class="text-brand-300">"My Website"</span>,
-      <span class="text-green-400">"slug"</span>: <span class="text-brand-300">"my-website"</span>,
-      <span class="text-green-400">"description"</span>: <span class="text-gray-500">null</span>,
-      <span class="text-green-400">"color"</span>: <span class="text-brand-300">"#3b82f6"</span>,
-      <span class="text-green-400">"language"</span>: <span class="text-brand-300">"en"</span>,
-      <span class="text-green-400">"timezone"</span>: <span class="text-brand-300">"UTC"</span>,
-      <span class="text-green-400">"currency"</span>: <span class="text-brand-300">"USD"</span>,
-      <span class="text-green-400">"is_active"</span>: <span class="text-brand-300">true</span>,
-      <span class="text-green-400">"created_at"</span>: <span class="text-brand-300">"2025-01-01T12:00:00+00:00"</span>,
-      <span class="text-green-400">"updated_at"</span>: <span class="text-brand-300">"2025-03-10T09:00:00+00:00"</span>
-    }
-  },
-  <span class="text-green-400">"jsonapi"</span>: { <span class="text-green-400">"version"</span>: <span class="text-brand-300">"1.1"</span> }
-}</code></pre>
+                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950"><Code lang="json" :code="siteResponseJson" /></div>
             </div>
 
             <!-- Attributes -->

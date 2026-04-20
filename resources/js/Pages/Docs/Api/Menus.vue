@@ -2,6 +2,7 @@
 import { Head } from '@inertiajs/vue3';
 
 import DocsToc from '@/Components/Docs/DocsToc.vue';
+import Code from '@/Components/Ui/Code.vue';
 import Heading from '@/Components/Ui/Heading.vue';
 import DocsLayout from '@/Layouts/DocsLayout.vue';
 
@@ -13,6 +14,64 @@ const tocItems = [
     { id: 'response-format', label: 'Response format' },
     { id: 'attributes', label: 'Attributes' },
 ];
+
+const baseUrl = 'https://api.papevi.app/api/v1';
+
+const listMenusCurl = 'curl https://api.papevi.app/api/v1/menus \\\n  -H "Authorization: Bearer <token>"';
+
+const listMenusExampleCurl =
+    '# Fetch the primary menu with its items\n' +
+    'curl "https://api.papevi.app/api/v1/menus?filter[is_primary]=true&include=items" \\\n' +
+    '  -H "Authorization: Bearer <token>"';
+
+const getMenuSlugCurl =
+    'curl "https://api.papevi.app/api/v1/menus/main-menu?include=items" \\\n  -H "Authorization: Bearer <token>"';
+
+const menuResponseJson =
+    '// GET /menus/{slug}?include=items\n' +
+    '{\n' +
+    '  "data": {\n' +
+    '    "type": "menus",\n' +
+    '    "id": "1",\n' +
+    '    "attributes": {\n' +
+    '      "name": "Primary Navigation",\n' +
+    '      "slug": "primary-navigation",\n' +
+    '      "description": null,\n' +
+    '      "language": "en",\n' +
+    '      "is_primary": true,\n' +
+    '      "created_at": "2025-01-01T12:00:00+00:00",\n' +
+    '      "updated_at": "2025-03-10T09:00:00+00:00"\n' +
+    '    },\n' +
+    '    "relationships": {\n' +
+    '      "items": {\n' +
+    '        "data": [\n' +
+    '          { "type": "menu-items", "id": "10" }\n' +
+    '        ]\n' +
+    '      }\n' +
+    '    }\n' +
+    '  },\n' +
+    '  "included": [\n' +
+    '    {\n' +
+    '      "type": "menu-items",\n' +
+    '      "id": "10",\n' +
+    '      "attributes": {\n' +
+    '        "title": "Home",\n' +
+    '        "link_type": "page",\n' +
+    '        "url": "/",\n' +
+    '        "external_url": null,\n' +
+    '        "resolved_url": "/",\n' +
+    '        "page_slug": "home",\n' +
+    '        "target": "_self",\n' +
+    '        "is_visible": true,\n' +
+    '        "order": 1,\n' +
+    '        "icon": null,\n' +
+    '        "created_at": "2025-01-01T12:00:00+00:00",\n' +
+    '        "updated_at": "2025-01-01T12:00:00+00:00"\n' +
+    '      }\n' +
+    '    }\n' +
+    '  ],\n' +
+    '  "jsonapi": { "version": "1.1" }\n' +
+    '}';
 </script>
 
 <template>
@@ -47,9 +106,12 @@ const tocItems = [
                     class="scroll-mt-24"
                     >Base URL</Heading
                 >
-                <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm"
-                ><code class="font-mono text-brand-300">https://api.papevi.app/api/v1</code></pre>
+                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                    <Code
+                        lang="bash"
+                        :code="baseUrl"
+                    />
+                </div>
             </div>
 
             <!-- Endpoints overview -->
@@ -103,10 +165,12 @@ const tocItems = [
                     Returns a paginated list of menus for the authenticated site.
                 </p>
 
-                <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"
-                ><code class="font-mono text-gray-100">curl https://api.papevi.app/api/v1/menus \
-  -H <span class="text-brand-300">"Authorization: Bearer &lt;token&gt;"</span></code></pre>
+                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                    <Code
+                        lang="bash"
+                        :code="listMenusCurl"
+                    />
+                </div>
 
                 <div class="space-y-3">
                     <p class="text-sm font-medium text-gray-900 dark:text-white">Query parameters</p>
@@ -179,11 +243,12 @@ const tocItems = [
                 </div>
 
                 <p class="text-sm font-medium text-gray-900 dark:text-white">Example</p>
-                <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"
-                ><code class="font-mono text-gray-100"><span class="text-gray-500"># Fetch the primary menu with its items</span>
-curl <span class="text-brand-300">"https://api.papevi.app/api/v1/menus?filter[is_primary]=true&amp;include=items"</span> \
-  -H <span class="text-brand-300">"Authorization: Bearer &lt;token&gt;"</span></code></pre>
+                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                    <Code
+                        lang="bash"
+                        :code="listMenusExampleCurl"
+                    />
+                </div>
             </div>
 
             <!-- GET /menus/{slug} -->
@@ -201,10 +266,12 @@ curl <span class="text-brand-300">"https://api.papevi.app/api/v1/menus?filter[is
                     menu does not belong to your site.
                 </p>
 
-                <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"
-                ><code class="font-mono text-gray-100">curl <span class="text-brand-300">"https://api.papevi.app/api/v1/menus/main-menu?include=items"</span> \
-  -H <span class="text-brand-300">"Authorization: Bearer &lt;token&gt;"</span></code></pre>
+                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                    <Code
+                        lang="bash"
+                        :code="getMenuSlugCurl"
+                    />
+                </div>
             </div>
 
             <!-- Response format -->
@@ -221,52 +288,12 @@ curl <span class="text-brand-300">"https://api.papevi.app/api/v1/menus?filter[is
                     <strong class="font-semibold text-gray-800 dark:text-gray-100">JSON:API</strong> specification.
                 </p>
 
-                <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"
-                ><code class="font-mono text-gray-100"><span class="text-gray-500">// GET /menus/{slug}?include=items</span>
-{
-  <span class="text-green-400">"data"</span>: {
-    <span class="text-green-400">"type"</span>: <span class="text-brand-300">"menus"</span>,
-    <span class="text-green-400">"id"</span>: <span class="text-brand-300">"1"</span>,
-    <span class="text-green-400">"attributes"</span>: {
-      <span class="text-green-400">"name"</span>: <span class="text-brand-300">"Primary Navigation"</span>,
-      <span class="text-green-400">"slug"</span>: <span class="text-brand-300">"primary-navigation"</span>,
-      <span class="text-green-400">"description"</span>: <span class="text-gray-500">null</span>,
-      <span class="text-green-400">"language"</span>: <span class="text-brand-300">"en"</span>,
-      <span class="text-green-400">"is_primary"</span>: <span class="text-brand-300">true</span>,
-      <span class="text-green-400">"created_at"</span>: <span class="text-brand-300">"2025-01-01T12:00:00+00:00"</span>,
-      <span class="text-green-400">"updated_at"</span>: <span class="text-brand-300">"2025-03-10T09:00:00+00:00"</span>
-    },
-    <span class="text-green-400">"relationships"</span>: {
-      <span class="text-green-400">"items"</span>: {
-        <span class="text-green-400">"data"</span>: [
-          { <span class="text-green-400">"type"</span>: <span class="text-brand-300">"menu-items"</span>, <span class="text-green-400">"id"</span>: <span class="text-brand-300">"10"</span> }
-        ]
-      }
-    }
-  },
-  <span class="text-green-400">"included"</span>: [
-    {
-      <span class="text-green-400">"type"</span>: <span class="text-brand-300">"menu-items"</span>,
-      <span class="text-green-400">"id"</span>: <span class="text-brand-300">"10"</span>,
-      <span class="text-green-400">"attributes"</span>: {
-        <span class="text-green-400">"title"</span>: <span class="text-brand-300">"Home"</span>,
-        <span class="text-green-400">"link_type"</span>: <span class="text-brand-300">"page"</span>,
-        <span class="text-green-400">"url"</span>: <span class="text-brand-300">"/"</span>,
-        <span class="text-green-400">"external_url"</span>: <span class="text-gray-500">null</span>,
-        <span class="text-green-400">"resolved_url"</span>: <span class="text-brand-300">"/"</span>,
-        <span class="text-green-400">"page_slug"</span>: <span class="text-brand-300">"home"</span>,
-        <span class="text-green-400">"target"</span>: <span class="text-brand-300">"_self"</span>,
-        <span class="text-green-400">"is_visible"</span>: <span class="text-brand-300">true</span>,
-        <span class="text-green-400">"order"</span>: 1,
-        <span class="text-green-400">"icon"</span>: <span class="text-gray-500">null</span>,
-        <span class="text-green-400">"created_at"</span>: <span class="text-brand-300">"2025-01-01T12:00:00+00:00"</span>,
-        <span class="text-green-400">"updated_at"</span>: <span class="text-brand-300">"2025-01-01T12:00:00+00:00"</span>
-      }
-    }
-  ],
-  <span class="text-green-400">"jsonapi"</span>: { <span class="text-green-400">"version"</span>: <span class="text-brand-300">"1.1"</span> }
-}</code></pre>
+                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                    <Code
+                        lang="json"
+                        :code="menuResponseJson"
+                    />
+                </div>
             </div>
 
             <!-- Menu attributes -->

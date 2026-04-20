@@ -2,6 +2,7 @@
 import { Head } from '@inertiajs/vue3';
 
 import DocsToc from '@/Components/Docs/DocsToc.vue';
+import Code from '@/Components/Ui/Code.vue';
 import Heading from '@/Components/Ui/Heading.vue';
 import DocsLayout from '@/Layouts/DocsLayout.vue';
 
@@ -13,6 +14,61 @@ const tocItems = [
     { id: 'response-format', label: 'Response format' },
     { id: 'attributes', label: 'Attributes' },
 ];
+
+const baseUrl = 'https://api.papevi.app/api/v1';
+
+const listTaxonomiesCurl =
+    'curl https://api.papevi.app/api/v1/taxonomies \\\n  -H "Authorization: Bearer <token>"';
+
+const listTaxonomiesExampleCurl =
+    '# Fetch the "category" taxonomy with all its terms\n' +
+    'curl "https://api.papevi.app/api/v1/taxonomies?filter[slug]=category&include=terms" \\\n  -H "Authorization: Bearer <token>"';
+
+const getTaxonomyIdCurl =
+    'curl "https://api.papevi.app/api/v1/taxonomies/5?include=terms" \\\n  -H "Authorization: Bearer <token>"';
+
+const taxonomyResponseJson =
+    '// GET /taxonomies/{id}?include=terms\n' +
+    '{\n' +
+    '  "data": {\n' +
+    '    "type": "taxonomies",\n' +
+    '    "id": "5",\n' +
+    '    "attributes": {\n' +
+    '      "name": "Category",\n' +
+    '      "slug": "category",\n' +
+    '      "description": null,\n' +
+    '      "hierarchical": true,\n' +
+    '      "multiple_selection": true,\n' +
+    '      "required": false,\n' +
+    '      "max_depth": 3,\n' +
+    '      "language": "en",\n' +
+    '      "created_at": "2025-01-01T12:00:00+00:00",\n' +
+    '      "updated_at": "2025-03-10T09:00:00+00:00"\n' +
+    '    },\n' +
+    '    "relationships": {\n' +
+    '      "terms": {\n' +
+    '        "data": [\n' +
+    '          { "type": "taxonomy-terms", "id": "20" }\n' +
+    '        ]\n' +
+    '      }\n' +
+    '    }\n' +
+    '  },\n' +
+    '  "included": [\n' +
+    '    {\n' +
+    '      "type": "taxonomy-terms",\n' +
+    '      "id": "20",\n' +
+    '      "attributes": {\n' +
+    '        "name": "Technology",\n' +
+    '        "slug": "technology",\n' +
+    '        "description": null,\n' +
+    '        "order": 1,\n' +
+    '        "created_at": "2025-01-01T12:00:00+00:00",\n' +
+    '        "updated_at": "2025-01-01T12:00:00+00:00"\n' +
+    '      }\n' +
+    '    }\n' +
+    '  ],\n' +
+    '  "jsonapi": { "version": "1.1" }\n' +
+    '}';
 </script>
 
 <template>
@@ -44,9 +100,12 @@ const tocItems = [
                     class="scroll-mt-24"
                     >Base URL</Heading
                 >
-                <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm"
-                ><code class="font-mono text-brand-300">https://api.papevi.app/api/v1</code></pre>
+                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                    <Code
+                        lang="bash"
+                        :code="baseUrl"
+                    />
+                </div>
             </div>
 
             <!-- Endpoints overview -->
@@ -100,10 +159,12 @@ const tocItems = [
                     Returns a paginated list of taxonomies for the authenticated site.
                 </p>
 
-                <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"
-                ><code class="font-mono text-gray-100">curl https://api.papevi.app/api/v1/taxonomies \
-  -H <span class="text-brand-300">"Authorization: Bearer &lt;token&gt;"</span></code></pre>
+                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                    <Code
+                        lang="bash"
+                        :code="listTaxonomiesCurl"
+                    />
+                </div>
 
                 <div class="space-y-3">
                     <p class="text-sm font-medium text-gray-900 dark:text-white">Query parameters</p>
@@ -176,11 +237,12 @@ const tocItems = [
                 </div>
 
                 <p class="text-sm font-medium text-gray-900 dark:text-white">Example</p>
-                <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"
-                ><code class="font-mono text-gray-100"><span class="text-gray-500"># Fetch the "category" taxonomy with all its terms</span>
-curl <span class="text-brand-300">"https://api.papevi.app/api/v1/taxonomies?filter[slug]=category&amp;include=terms"</span> \
-  -H <span class="text-brand-300">"Authorization: Bearer &lt;token&gt;"</span></code></pre>
+                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                    <Code
+                        lang="bash"
+                        :code="listTaxonomiesExampleCurl"
+                    />
+                </div>
             </div>
 
             <!-- GET /taxonomies/{id} -->
@@ -198,10 +260,12 @@ curl <span class="text-brand-300">"https://api.papevi.app/api/v1/taxonomies?filt
                     does not belong to your site.
                 </p>
 
-                <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"
-                ><code class="font-mono text-gray-100">curl <span class="text-brand-300">"https://api.papevi.app/api/v1/taxonomies/5?include=terms"</span> \
-  -H <span class="text-brand-300">"Authorization: Bearer &lt;token&gt;"</span></code></pre>
+                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                    <Code
+                        lang="bash"
+                        :code="getTaxonomyIdCurl"
+                    />
+                </div>
             </div>
 
             <!-- Response format -->
@@ -218,49 +282,12 @@ curl <span class="text-brand-300">"https://api.papevi.app/api/v1/taxonomies?filt
                     <strong class="font-semibold text-gray-800 dark:text-gray-100">JSON:API</strong> specification.
                 </p>
 
-                <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"
-                ><code class="font-mono text-gray-100"><span class="text-gray-500">// GET /taxonomies/{id}?include=terms</span>
-{
-  <span class="text-green-400">"data"</span>: {
-    <span class="text-green-400">"type"</span>: <span class="text-brand-300">"taxonomies"</span>,
-    <span class="text-green-400">"id"</span>: <span class="text-brand-300">"5"</span>,
-    <span class="text-green-400">"attributes"</span>: {
-      <span class="text-green-400">"name"</span>: <span class="text-brand-300">"Category"</span>,
-      <span class="text-green-400">"slug"</span>: <span class="text-brand-300">"category"</span>,
-      <span class="text-green-400">"description"</span>: <span class="text-gray-500">null</span>,
-      <span class="text-green-400">"hierarchical"</span>: <span class="text-brand-300">true</span>,
-      <span class="text-green-400">"multiple_selection"</span>: <span class="text-brand-300">true</span>,
-      <span class="text-green-400">"required"</span>: <span class="text-brand-300">false</span>,
-      <span class="text-green-400">"max_depth"</span>: 3,
-      <span class="text-green-400">"language"</span>: <span class="text-brand-300">"en"</span>,
-      <span class="text-green-400">"created_at"</span>: <span class="text-brand-300">"2025-01-01T12:00:00+00:00"</span>,
-      <span class="text-green-400">"updated_at"</span>: <span class="text-brand-300">"2025-03-10T09:00:00+00:00"</span>
-    },
-    <span class="text-green-400">"relationships"</span>: {
-      <span class="text-green-400">"terms"</span>: {
-        <span class="text-green-400">"data"</span>: [
-          { <span class="text-green-400">"type"</span>: <span class="text-brand-300">"taxonomy-terms"</span>, <span class="text-green-400">"id"</span>: <span class="text-brand-300">"20"</span> }
-        ]
-      }
-    }
-  },
-  <span class="text-green-400">"included"</span>: [
-    {
-      <span class="text-green-400">"type"</span>: <span class="text-brand-300">"taxonomy-terms"</span>,
-      <span class="text-green-400">"id"</span>: <span class="text-brand-300">"20"</span>,
-      <span class="text-green-400">"attributes"</span>: {
-        <span class="text-green-400">"name"</span>: <span class="text-brand-300">"Technology"</span>,
-        <span class="text-green-400">"slug"</span>: <span class="text-brand-300">"technology"</span>,
-        <span class="text-green-400">"description"</span>: <span class="text-gray-500">null</span>,
-        <span class="text-green-400">"order"</span>: 1,
-        <span class="text-green-400">"created_at"</span>: <span class="text-brand-300">"2025-01-01T12:00:00+00:00"</span>,
-        <span class="text-green-400">"updated_at"</span>: <span class="text-brand-300">"2025-01-01T12:00:00+00:00"</span>
-      }
-    }
-  ],
-  <span class="text-green-400">"jsonapi"</span>: { <span class="text-green-400">"version"</span>: <span class="text-brand-300">"1.1"</span> }
-}</code></pre>
+                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                    <Code
+                        lang="json"
+                        :code="taxonomyResponseJson"
+                    />
+                </div>
             </div>
 
             <!-- Attributes -->

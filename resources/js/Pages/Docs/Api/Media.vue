@@ -2,6 +2,7 @@
 import { Head } from '@inertiajs/vue3';
 
 import DocsToc from '@/Components/Docs/DocsToc.vue';
+import Code from '@/Components/Ui/Code.vue';
 import Heading from '@/Components/Ui/Heading.vue';
 import DocsLayout from '@/Layouts/DocsLayout.vue';
 
@@ -13,6 +14,46 @@ const tocItems = [
     { id: 'response-format', label: 'Response format' },
     { id: 'attributes', label: 'Attributes' },
 ];
+
+const baseUrl = 'https://api.papevi.app/api/v1';
+
+const listMediaCurl = 'curl https://api.papevi.app/api/v1/media \\\n  -H "Authorization: Bearer <token>"';
+
+const listMediaExampleCurl =
+    '# Fetch all images, 20 per page\n' +
+    'curl "https://api.papevi.app/api/v1/media?filter[type]=image&per_page=20" \\\n  -H "Authorization: Bearer <token>"';
+
+const getMediaIdCurl = 'curl https://api.papevi.app/api/v1/media/7 \\\n  -H "Authorization: Bearer <token>"';
+
+const mediaResponseJson =
+    '// GET /media/{id}\n' +
+    '{\n' +
+    '  "data": {\n' +
+    '    "type": "media",\n' +
+    '    "id": "7",\n' +
+    '    "attributes": {\n' +
+    '      "type": "image",\n' +
+    '      "filename": "hero-photo.jpg",\n' +
+    '      "original_filename": "hero photo.jpg",\n' +
+    '      "mime_type": "image/jpeg",\n' +
+    '      "size": 245760,\n' +
+    '      "alt": "Hero photo",\n' +
+    '      "caption": null,\n' +
+    '      "dimensions": { "width": 1920, "height": 1080 },\n' +
+    '      "metadata": {},\n' +
+    '      "url": "https://cdn.papevi.app/media/hero-photo.jpg",\n' +
+    '      "view_url": "https://cdn.papevi.app/view/hero-photo.jpg",\n' +
+    '      "thumbnail_url": "https://cdn.papevi.app/thumb/hero-photo.jpg",\n' +
+    '      "variants": {\n' +
+    '        "sm": "https://cdn.papevi.app/media/hero-photo-sm.jpg",\n' +
+    '        "md": "https://cdn.papevi.app/media/hero-photo-md.jpg"\n' +
+    '      },\n' +
+    '      "created_at": "2025-01-01T12:00:00+00:00",\n' +
+    '      "updated_at": "2025-01-01T12:00:00+00:00"\n' +
+    '    }\n' +
+    '  },\n' +
+    '  "jsonapi": { "version": "1.1" }\n' +
+    '}';
 </script>
 
 <template>
@@ -44,9 +85,7 @@ const tocItems = [
                     class="scroll-mt-24"
                     >Base URL</Heading
                 >
-                <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm"
-                ><code class="font-mono text-brand-300">https://api.papevi.app/api/v1</code></pre>
+                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950"><Code lang="bash" :code="baseUrl" /></div>
             </div>
 
             <!-- Endpoints -->
@@ -100,10 +139,7 @@ const tocItems = [
                     Returns a paginated list of media files for the authenticated site, sorted by newest first.
                 </p>
 
-                <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"
-                ><code class="font-mono text-gray-100">curl https://api.papevi.app/api/v1/media \
-  -H <span class="text-brand-300">"Authorization: Bearer &lt;token&gt;"</span></code></pre>
+                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950"><Code lang="bash" :code="listMediaCurl" /></div>
 
                 <div class="space-y-3">
                     <p class="text-sm font-medium text-gray-900 dark:text-white">Query parameters</p>
@@ -164,11 +200,7 @@ const tocItems = [
                 </div>
 
                 <p class="text-sm font-medium text-gray-900 dark:text-white">Example</p>
-                <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"
-                ><code class="font-mono text-gray-100"><span class="text-gray-500"># Fetch all images, 20 per page</span>
-curl <span class="text-brand-300">"https://api.papevi.app/api/v1/media?filter[type]=image&amp;per_page=20"</span> \
-  -H <span class="text-brand-300">"Authorization: Bearer &lt;token&gt;"</span></code></pre>
+                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950"><Code lang="bash" :code="listMediaExampleCurl" /></div>
             </div>
 
             <!-- GET /media/{id} -->
@@ -186,10 +218,7 @@ curl <span class="text-brand-300">"https://api.papevi.app/api/v1/media?filter[ty
                     does not belong to your site.
                 </p>
 
-                <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"
-                ><code class="font-mono text-gray-100">curl https://api.papevi.app/api/v1/media/7 \
-  -H <span class="text-brand-300">"Authorization: Bearer &lt;token&gt;"</span></code></pre>
+                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950"><Code lang="bash" :code="getMediaIdCurl" /></div>
             </div>
 
             <!-- Response format -->
@@ -206,36 +235,7 @@ curl <span class="text-brand-300">"https://api.papevi.app/api/v1/media?filter[ty
                     <strong class="font-semibold text-gray-800 dark:text-gray-100">JSON:API</strong> specification.
                 </p>
 
-                <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"
-                ><code class="font-mono text-gray-100"><span class="text-gray-500">// GET /media/{id}</span>
-{
-  <span class="text-green-400">"data"</span>: {
-    <span class="text-green-400">"type"</span>: <span class="text-brand-300">"media"</span>,
-    <span class="text-green-400">"id"</span>: <span class="text-brand-300">"7"</span>,
-    <span class="text-green-400">"attributes"</span>: {
-      <span class="text-green-400">"type"</span>: <span class="text-brand-300">"image"</span>,
-      <span class="text-green-400">"filename"</span>: <span class="text-brand-300">"hero-photo.jpg"</span>,
-      <span class="text-green-400">"original_filename"</span>: <span class="text-brand-300">"hero photo.jpg"</span>,
-      <span class="text-green-400">"mime_type"</span>: <span class="text-brand-300">"image/jpeg"</span>,
-      <span class="text-green-400">"size"</span>: 245760,
-      <span class="text-green-400">"alt"</span>: <span class="text-brand-300">"Hero photo"</span>,
-      <span class="text-green-400">"caption"</span>: <span class="text-gray-500">null</span>,
-      <span class="text-green-400">"dimensions"</span>: { <span class="text-green-400">"width"</span>: 1920, <span class="text-green-400">"height"</span>: 1080 },
-      <span class="text-green-400">"metadata"</span>: {},
-      <span class="text-green-400">"url"</span>: <span class="text-brand-300">"https://cdn.papevi.app/media/hero-photo.jpg"</span>,
-      <span class="text-green-400">"view_url"</span>: <span class="text-brand-300">"https://cdn.papevi.app/view/hero-photo.jpg"</span>,
-      <span class="text-green-400">"thumbnail_url"</span>: <span class="text-brand-300">"https://cdn.papevi.app/thumb/hero-photo.jpg"</span>,
-      <span class="text-green-400">"variants"</span>: {
-        <span class="text-green-400">"sm"</span>: <span class="text-brand-300">"https://cdn.papevi.app/media/hero-photo-sm.jpg"</span>,
-        <span class="text-green-400">"md"</span>: <span class="text-brand-300">"https://cdn.papevi.app/media/hero-photo-md.jpg"</span>
-      },
-      <span class="text-green-400">"created_at"</span>: <span class="text-brand-300">"2025-01-01T12:00:00+00:00"</span>,
-      <span class="text-green-400">"updated_at"</span>: <span class="text-brand-300">"2025-01-01T12:00:00+00:00"</span>
-    }
-  },
-  <span class="text-green-400">"jsonapi"</span>: { <span class="text-green-400">"version"</span>: <span class="text-brand-300">"1.1"</span> }
-}</code></pre>
+                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950"><Code lang="json" :code="mediaResponseJson" /></div>
             </div>
 
             <!-- Attributes -->
