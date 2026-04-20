@@ -23,6 +23,24 @@ Route::get('/about', function () {
     ]);
 })->name('about');
 
+Route::get('/use-cases', function () {
+    return Inertia::render('UseCases', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+})->name('use-cases');
+
+Route::get('/pricing', function () {
+    return Inertia::render('Pricing', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+})->name('pricing');
+
 Route::get('/docs', function () {
     return Inertia::render('Docs/GettingStarted');
 })->name('docs');

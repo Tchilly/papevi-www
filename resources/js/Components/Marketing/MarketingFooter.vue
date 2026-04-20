@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Link } from '@inertiajs/vue3';
+
 defineProps<{
     laravelVersion: string;
     phpVersion: string;
@@ -27,42 +29,28 @@ const year = new Date().getFullYear();
                     Product
                 </p>
                 <ul class="mt-3 space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                    <li><a href="#features" class="transition hover:text-gray-900 dark:hover:text-white">Features</a></li>
-                    <li><a href="#workflow" class="transition hover:text-gray-900 dark:hover:text-white">Workflow</a></li>
-                    <li><a href="#platform" class="transition hover:text-gray-900 dark:hover:text-white">Platform</a></li>
-                    <li><a :href="route('about')" class="transition hover:text-gray-900 dark:hover:text-white">About</a></li>
-                    <li><a href="#faq" class="transition hover:text-gray-900 dark:hover:text-white">FAQ</a></li>
+                    <li><a href="/#features" class="transition hover:text-gray-900 dark:hover:text-white">Features</a></li>
+                    <li><a href="/#workflow" class="transition hover:text-gray-900 dark:hover:text-white">Workflow</a></li>
+                    <li><a href="/#platform" class="transition hover:text-gray-900 dark:hover:text-white">Platform</a></li>
+                    <li><Link :href="route('use-cases')" class="transition hover:text-gray-900 dark:hover:text-white">Use Cases</Link></li>
+                    <li><Link :href="route('pricing')" class="transition hover:text-gray-900 dark:hover:text-white">Pricing</Link></li>
                 </ul>
             </div>
 
             <div>
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-gray-500 dark:text-gray-400">
-                    Documentation
+                    Company
                 </p>
                 <ul class="mt-3 space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                    <li><Link :href="route('about')" class="transition hover:text-gray-900 dark:hover:text-white">About</Link></li>
+                    <li><Link :href="route('docs')" class="transition hover:text-gray-900 dark:hover:text-white">Documentation</Link></li>
                     <li>
                         <a
-                            href="https://github.com/Tchilly/papevi-cms/blob/development/README.md"
+                            href="https://github.com/Tchilly/papevi-cms"
                             class="transition hover:text-gray-900 dark:hover:text-white"
                             target="_blank"
                             rel="noopener noreferrer"
-                        >Overview</a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://github.com/Tchilly/papevi-cms/blob/development/docs/api-tokens.md"
-                            class="transition hover:text-gray-900 dark:hover:text-white"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >API tokens</a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://github.com/Tchilly/papevi-cms/blob/development/docs/roles.md"
-                            class="transition hover:text-gray-900 dark:hover:text-white"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >Roles & permissions</a>
+                        >GitHub</a>
                     </li>
                     <li>
                         <a
