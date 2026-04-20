@@ -134,7 +134,7 @@ const onImageError = (event: Event) => {
     <div class="flex min-h-screen flex-col bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-white">
         <MarketingHeader />
 
-        <main>
+        <main id="main-content">
             <!-- Header + quick-nav cards -->
             <section class="border-b border-gray-100 bg-gray-50 px-6 py-24 sm:px-8 lg:px-12 dark:border-white/5 dark:bg-gray-900">
                 <div class="mx-auto max-w-3xl text-center">

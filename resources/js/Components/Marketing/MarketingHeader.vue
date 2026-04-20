@@ -17,6 +17,11 @@ const solutionsLinks = [
 </script>
 
 <template>
+    <!-- Skip navigation (2.4.1 Bypass Blocks) -->
+    <a
+        href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-gray-900 focus:shadow-lg focus:ring-2 focus:ring-brand-600 focus:outline-none dark:focus:bg-gray-900 dark:focus:text-white dark:focus:ring-brand-400"
+    >Skip to main content</a>
     <header class="sticky top-0 z-30 border-b border-gray-200 bg-white/90 backdrop-blur dark:border-white/5 dark:bg-gray-950/90">
         <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 sm:px-8 lg:px-12">
             <!-- Left: Logo + Main nav -->
@@ -59,12 +64,14 @@ const solutionsLinks = [
                         >
                             <div
                                 v-show="solutionsOpen"
+                                role="menu"
                                 class="absolute left-0 top-full z-40 mt-1 w-52 rounded-xl border border-gray-200 bg-white p-1.5 shadow-lg dark:border-white/10 dark:bg-gray-900"
                             >
                                 <a
                                     v-for="item in solutionsLinks"
                                     :key="item.label"
                                     :href="item.href"
+                                    role="menuitem"
                                     class="flex rounded-lg px-3 py-2 text-sm text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
                                     @click="solutionsOpen = false"
                                 >
@@ -111,6 +118,8 @@ const solutionsLinks = [
                     type="button"
                     class="inline-flex items-center justify-center rounded-md p-2 text-gray-700 transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 lg:hidden dark:text-gray-200 dark:hover:bg-gray-800"
                     aria-label="Toggle menu"
+                    :aria-expanded="mobileOpen"
+                    aria-controls="mobile-nav"
                     @click="mobileOpen = !mobileOpen"
                 >
                     <svg v-if="!mobileOpen" class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -134,6 +143,7 @@ const solutionsLinks = [
         >
             <div
                 v-show="mobileOpen"
+                id="mobile-nav"
                 class="border-t border-gray-200 bg-white px-6 pb-6 pt-4 lg:hidden dark:border-white/5 dark:bg-gray-950"
             >
                 <nav class="flex flex-col gap-1" aria-label="Mobile navigation">

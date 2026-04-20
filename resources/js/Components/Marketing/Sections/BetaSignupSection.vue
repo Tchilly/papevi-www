@@ -57,6 +57,8 @@ function submit() {
             <!-- Success state -->
             <div
                 v-if="betaSuccess"
+                role="status"
+                aria-live="polite"
                 class="mx-auto max-w-md rounded-2xl border border-green-500/20 bg-green-500/5 px-8 py-6"
             >
                 <svg class="mx-auto size-8 text-green-400" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -83,9 +85,9 @@ function submit() {
                         placeholder="you@company.com"
                         required
                         autocomplete="email"
-                        class="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-500 backdrop-blur focus:border-brand-400/60 focus:outline-none focus:ring-2 focus:ring-brand-400/30"
+                        class="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-500 backdrop-blur focus:border-brand-300/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300"
                     />
-                    <p v-if="form.errors.email" class="mt-2 text-left text-sm text-red-400">
+                    <p v-if="form.errors.email" role="alert" class="mt-2 text-left text-sm text-red-400">
                         {{ form.errors.email }}
                     </p>
                 </div>

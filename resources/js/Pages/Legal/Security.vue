@@ -16,7 +16,7 @@ import { Head } from '@inertiajs/vue3';
     <div class="flex min-h-screen flex-col bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-white">
         <MarketingHeader />
 
-        <main>
+        <main id="main-content">
             <div class="mx-auto max-w-3xl px-6 py-24 sm:px-8 lg:px-12">
                 <p class="kicker">Legal</p>
                 <Heading as="h1" display="md" class="mt-5">Security Policy</Heading>

@@ -212,7 +212,7 @@ function pricePeriod(monthly: number): string {
     <div class="flex min-h-screen flex-col bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-white">
         <MarketingHeader />
 
-        <main>
+        <main id="main-content">
             <!-- Header -->
             <section class="px-6 pb-0 pt-24 sm:px-8 lg:px-12">
                 <div class="mx-auto max-w-3xl text-center">

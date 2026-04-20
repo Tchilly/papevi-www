@@ -39,6 +39,11 @@ const isActive = (path: string) => page.url === path;
 </script>
 
 <template>
+    <!-- Skip navigation (2.4.1 Bypass Blocks) -->
+    <a
+        href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-gray-900 focus:shadow-lg focus:ring-2 focus:ring-brand-600 focus:outline-none dark:focus:bg-gray-900 dark:focus:text-white dark:focus:ring-brand-400"
+    >Skip to main content</a>
     <div class="min-h-screen bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100">
         <!-- Header -->
         <header
@@ -155,7 +160,7 @@ const isActive = (path: string) => page.url === path;
             <!-- Content + TOC -->
             <div class="flex min-w-0 flex-1 justify-center">
                 <div class="flex w-full max-w-328 items-start px-6 sm:px-10">
-                    <main class="min-w-0 flex-1 py-12 lg:py-16">
+                    <main id="main-content" class="min-w-0 flex-1 py-12 lg:py-16">
                         <slot />
                     </main>
 

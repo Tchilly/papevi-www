@@ -98,11 +98,12 @@ onUnmounted(() => window.removeEventListener('keydown', onKey));
                         v-model="query"
                         type="text"
                         placeholder="Search docs, page types, editor help…"
+                        aria-label="Search documentation"
                         autofocus
                         class="w-full border-0 bg-transparent p-0 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-0 dark:text-white dark:placeholder:text-gray-500"
                     />
                     <DialogClose
-                        class="rounded border border-gray-200 px-1.5 font-mono text-[10px] text-gray-700 transition hover:text-gray-900 dark:border-white/10 dark:text-gray-400 dark:hover:text-white"
+                        class="inline-flex h-6 min-w-[2rem] items-center justify-center rounded border border-gray-200 px-1.5 font-mono text-[10px] text-gray-700 transition hover:text-gray-900 dark:border-white/10 dark:text-gray-400 dark:hover:text-white"
                         aria-label="Close"
                     >ESC</DialogClose>
                 </div>

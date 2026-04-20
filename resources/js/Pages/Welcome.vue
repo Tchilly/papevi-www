@@ -69,7 +69,7 @@ const structuredData = {
     <div class="flex min-h-screen flex-col bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-white">
         <MarketingHeader />
 
-        <main>
+        <main id="main-content">
             <HeroSection />
             <FeaturesSection />
             <CapabilitiesSection />

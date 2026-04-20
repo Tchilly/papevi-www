@@ -59,7 +59,7 @@ const pillars = [
     <div class="flex min-h-screen flex-col bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-white">
         <MarketingHeader />
 
-        <main>
+        <main id="main-content">
             <!-- Header -->
             <section aria-labelledby="trust-heading" class="border-b border-gray-100 px-6 pb-16 pt-24 sm:px-8 lg:px-12 dark:border-white/5">
                 <div class="mx-auto max-w-3xl">
