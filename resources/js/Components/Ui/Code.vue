@@ -65,7 +65,7 @@ async function copy() {
         <button
             type="button"
             aria-label="Copy code"
-            class="absolute right-3 top-3 rounded-md p-1.5 text-gray-500 opacity-0 transition hover:text-gray-200 group-hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400"
+            class="absolute right-3 top-3 rounded-md p-1.5 text-gray-500 opacity-0 transition hover:text-gray-200 group-hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400"
             @click="copy"
         >
             <!-- Copy icon -->

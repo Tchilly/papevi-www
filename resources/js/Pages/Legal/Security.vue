@@ -32,7 +32,7 @@ import { Head } from '@inertiajs/vue3';
                         <div class="mt-4 space-y-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                             <p>If you believe you have found a security vulnerability in Papevi, please disclose it responsibly:</p>
                             <ul class="mt-3 list-disc space-y-2 pl-5">
-                                <li>Email <a href="mailto:security@papevi.com" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 dark:text-white dark:hover:text-brand-400">security@papevi.com</a> with a clear description of the issue, steps to reproduce, and your assessment of the impact.</li>
+                                <li>Email <a href="mailto:security@papevi.com" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-white dark:hover:text-brand-400">security@papevi.com</a> with a clear description of the issue, steps to reproduce, and your assessment of the impact.</li>
                                 <li>Do not disclose the issue publicly until we have had a reasonable opportunity to investigate and patch it.</li>
                                 <li>We will acknowledge your report within 2 business days and provide a resolution timeline within 7.</li>
                             </ul>
@@ -112,7 +112,7 @@ import { Head } from '@inertiajs/vue3';
                         <Heading id="contact-security" as="h2">Contact</Heading>
                         <div class="mt-4 space-y-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                             <p>
-                                Security issues: <a href="mailto:security@papevi.com" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 dark:text-white dark:hover:text-brand-400">security@papevi.com</a><br />
+                                Security issues: <a href="mailto:security@papevi.com" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-white dark:hover:text-brand-400">security@papevi.com</a><br />
                                 PGP key available on request.
                             </p>
                         </div>

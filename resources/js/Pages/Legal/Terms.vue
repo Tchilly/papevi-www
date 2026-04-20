@@ -39,7 +39,7 @@ import { Head } from '@inertiajs/vue3';
                         <Heading id="accounts" as="h2">2. Accounts</Heading>
                         <div class="mt-4 space-y-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                             <p>You must be at least 18 years old and able to form a binding contract in your jurisdiction to create an account. One person or legal entity may hold the account; you are responsible for all activity under it.</p>
-                            <p>You must keep your credentials secure. Notify us immediately at <a href="mailto:security@papevi.com" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 dark:text-white dark:hover:text-brand-400">security@papevi.com</a> if you suspect unauthorised access.</p>
+                            <p>You must keep your credentials secure. Notify us immediately at <a href="mailto:security@papevi.com" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-white dark:hover:text-brand-400">security@papevi.com</a> if you suspect unauthorised access.</p>
                         </div>
                     </section>
 
@@ -137,7 +137,7 @@ import { Head } from '@inertiajs/vue3';
                     <section aria-labelledby="contact-terms">
                         <Heading id="contact-terms" as="h2">13. Contact</Heading>
                         <div class="mt-4 space-y-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-                            <p>Questions about these terms: <a href="mailto:legal@papevi.com" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 dark:text-white dark:hover:text-brand-400">legal@papevi.com</a></p>
+                            <p>Questions about these terms: <a href="mailto:legal@papevi.com" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-white dark:hover:text-brand-400">legal@papevi.com</a></p>
                         </div>
                     </section>
 

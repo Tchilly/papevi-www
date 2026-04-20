@@ -90,7 +90,7 @@ const pillars = [
             </div>
 
             <!-- Footer note -->
-            <p class="mt-8 text-center text-xs text-gray-500 dark:text-gray-500">
+            <p class="mt-8 text-center text-xs text-gray-600 dark:text-gray-400">
                 * NIS-2 implementation is in progress. Current status and our roadmap are available on request.
             </p>
         </div>

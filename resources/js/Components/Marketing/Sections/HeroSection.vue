@@ -82,7 +82,7 @@ const onImageError = (event: Event) => {
                     <span class="product-frame-dot"></span>
                     <span class="product-frame-dot"></span>
                     <span class="product-frame-dot"></span>
-                    <span class="ml-3 font-mono text-[11px] text-gray-500 dark:text-gray-400">
+                    <span class="ml-3 font-mono text-[11px] text-gray-600 dark:text-gray-400">
                         papevi.app / editor
                     </span>
                 </div>

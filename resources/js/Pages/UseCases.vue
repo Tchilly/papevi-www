@@ -154,7 +154,7 @@ const onImageError = (event: Event) => {
                         :key="item.id"
                         :href="`#${item.id}`"
                         :aria-label="`Jump to: ${item.eyebrow}`"
-                        class="glass-panel group flex items-center justify-between gap-3 p-4 transition hover:border-brand-400/40"
+                        class="glass-panel group flex items-center justify-between gap-3 p-4 transition hover:border-brand-400/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 focus-visible:ring-offset-1"
                     >
                         <p class="text-sm font-semibold text-gray-900 transition group-hover:text-brand-700 dark:text-white dark:group-hover:text-brand-300">{{ item.eyebrow }}</p>
                         <svg class="size-4 shrink-0 text-gray-400 transition group-hover:translate-x-0.5 group-hover:text-brand-600 dark:group-hover:text-brand-400" viewBox="0 0 20 20" fill="none" aria-hidden="true">

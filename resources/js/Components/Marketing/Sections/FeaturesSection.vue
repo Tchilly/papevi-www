@@ -67,7 +67,7 @@ const onImageError = (event: Event) => {
                 :class="{ 'lg:[&>*:first-child]:order-2': index % 2 === 1 }"
             >
                 <div class="space-y-5">
-                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-600 dark:text-brand-400">
+                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700 dark:text-brand-400">
                         {{ feature.eyebrow }}
                     </p>
                     <Heading as="h3" class="text-balance text-3xl font-bold tracking-[-0.02em] text-gray-900 sm:text-4xl dark:text-white">
@@ -97,7 +97,7 @@ const onImageError = (event: Event) => {
                         <span class="product-frame-dot"></span>
                         <span class="product-frame-dot"></span>
                         <span class="product-frame-dot"></span>
-                        <span class="ml-3 font-mono text-[11px] text-gray-500 dark:text-gray-400">
+                        <span class="ml-3 font-mono text-[11px] text-gray-600 dark:text-gray-400">
                             {{ feature.eyebrow.toLowerCase() }}.papevi.app
                         </span>
                     </div>

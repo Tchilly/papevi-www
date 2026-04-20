@@ -116,6 +116,7 @@ const tabIndex = computed(() => {
 <style scoped>
 /* ── Base ─────────────────────────────────── */
 .button {
+    cursor: pointer;
     font-weight: var(--font-weight-medium, 500);
     white-space: nowrap;
     justify-content: center;
@@ -197,9 +198,9 @@ const tabIndex = computed(() => {
 
 /* Brand */
 .button-brand {
-    border: 1px solid var(--color-brand-600, oklch(48.5% 0.158 22));
-    background-color: var(--color-brand-600, oklch(48.5% 0.158 22));
-    color: var(--color-white, #eaeaea);
+    border: 1px solid var(--color-brand-700);
+    background-color: var(--color-brand-700);
+    color: #fff;
     box-shadow:
         inset 0 0.5px rgb(255 255 255 / 9%),
         0 1px 3px rgb(0 0 0 / 10%),
@@ -208,18 +209,18 @@ const tabIndex = computed(() => {
 
 @media (hover: hover) {
     .button-brand:hover {
-        border-color: var(--color-brand-800, oklch(31.5% 0.088 22));
-        background-color: var(--color-brand-700, oklch(39.3% 0.122 22));
+        border-color: var(--color-brand-900);
+        background-color: var(--color-brand-800);
     }
 }
 
 .button-brand:focus-visible {
-    outline: 2px solid var(--color-brand-700, oklch(48.5% 0.158 22));
+    outline: 2px solid var(--color-brand-600);
     outline-offset: 2px;
 }
 
 :where(.dark, .dark *) .button-brand:focus-visible {
-    outline-color: var(--color-brand-300, oklch(84.8% 0.115 22));
+    outline-color: var(--color-brand-300);
 }
 
 .button-brand:active:not(:disabled) {
@@ -243,12 +244,12 @@ const tabIndex = computed(() => {
 }
 
 .button-gray:focus-visible {
-    outline: 2px solid var(--color-gray-700, #323333);
+    outline: 2px solid var(--color-brand-600);
     outline-offset: 2px;
 }
 
 :where(.dark, .dark *) .button-gray:focus-visible {
-    outline-color: var(--color-gray-300, #c2c4c4);
+    outline-color: var(--color-brand-300);
 }
 
 .button-gray:active:not(:disabled) {
@@ -272,12 +273,12 @@ const tabIndex = computed(() => {
 }
 
 .button-danger:focus-visible {
-    outline: 2px solid var(--color-red-600, oklch(48.7% 0.168 20));
+    outline: 2px solid var(--color-brand-600);
     outline-offset: 2px;
 }
 
 :where(.dark, .dark *) .button-danger:focus-visible {
-    outline-color: var(--color-red-400, oklch(72% 0.148 20));
+    outline-color: var(--color-brand-300);
 }
 
 .button-danger:active:not(:disabled) {
@@ -301,12 +302,12 @@ const tabIndex = computed(() => {
 }
 
 .button-success:focus-visible {
-    outline: 2px solid var(--color-green-700, oklch(43.5% 0.115 148));
+    outline: 2px solid var(--color-brand-600);
     outline-offset: 2px;
 }
 
 :where(.dark, .dark *) .button-success:focus-visible {
-    outline-color: var(--color-green-400, oklch(74.5% 0.135 148));
+    outline-color: var(--color-brand-300);
 }
 
 .button-success:active:not(:disabled) {
@@ -330,12 +331,12 @@ const tabIndex = computed(() => {
 }
 
 .button-warning:focus-visible {
-    outline: 2px solid var(--color-orange-700, oklch(44.8% 0.122 56));
+    outline: 2px solid var(--color-brand-600);
     outline-offset: 2px;
 }
 
 :where(.dark, .dark *) .button-warning:focus-visible {
-    outline-color: var(--color-orange-400, oklch(75.6% 0.14 56));
+    outline-color: var(--color-brand-300);
 }
 
 .button-warning:active:not(:disabled) {
@@ -357,7 +358,7 @@ const tabIndex = computed(() => {
 }
 
 .button-outline:focus-visible {
-    outline: 2px solid var(--color-gray-700, #323333);
+    outline: 2px solid var(--color-brand-600);
     outline-offset: 2px;
 }
 
@@ -375,7 +376,7 @@ const tabIndex = computed(() => {
 }
 
 :where(.dark, .dark *) .button-outline:focus-visible {
-    outline-color: var(--color-gray-300, #c2c4c4);
+    outline-color: var(--color-brand-300);
 }
 
 .button-outline:active:not(:disabled) {
@@ -396,7 +397,7 @@ const tabIndex = computed(() => {
 }
 
 .button-ghost:focus-visible {
-    outline: 2px solid var(--color-gray-700, #323333);
+    outline: 2px solid var(--color-brand-600);
     outline-offset: 2px;
 }
 
@@ -412,7 +413,7 @@ const tabIndex = computed(() => {
 }
 
 :where(.dark, .dark *) .button-ghost:focus-visible {
-    outline-color: var(--color-gray-300, #c2c4c4);
+    outline-color: var(--color-brand-300);
 }
 
 /* Link */
@@ -428,7 +429,7 @@ const tabIndex = computed(() => {
 }
 
 .button-link:focus-visible {
-    outline: 2px solid var(--color-gray-700, #323333);
+    outline: 2px solid var(--color-brand-600);
     outline-offset: 2px;
 }
 
@@ -443,7 +444,7 @@ const tabIndex = computed(() => {
 }
 
 :where(.dark, .dark *) .button-link:focus-visible {
-    outline-color: var(--color-gray-300, #c2c4c4);
+    outline-color: var(--color-brand-300);
 }
 
 /* ── Icon sizing ──────────────────────────── */

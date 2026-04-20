@@ -133,7 +133,7 @@ const perks = [
                 <div class="mx-auto max-w-2xl">
                     <Heading id="contact-heading" as="h2" class="text-gray-900 dark:text-white">Interested?</Heading>
                     <p class="mt-3 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
-                        Drop us a line at <a href="mailto:partners@papevi.com" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 dark:text-white dark:hover:text-brand-400">partners@papevi.com</a> with a short intro — what you build and who your clients are. We'll take it from there.
+                        Drop us a line at <a href="mailto:partners@papevi.com" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-white dark:hover:text-brand-400">partners@papevi.com</a> with a short intro — what you build and who your clients are. We'll take it from there.
                     </p>
                     <div class="mt-6">
                         <Button as="a" href="mailto:partners@papevi.com" variant="brand" size="lg" aria-label="Email partners@papevi.com to apply">

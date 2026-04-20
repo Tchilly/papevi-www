@@ -233,7 +233,7 @@ function pricePeriod(monthly: number): string {
                             role="switch"
                             :aria-checked="annual"
                             aria-label="Toggle annual billing"
-                            class="relative inline-flex h-6 w-10 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500"
+                            class="relative inline-flex h-6 w-10 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 dark:focus-visible:outline-brand-400"
                             :class="annual ? 'bg-brand-500' : 'bg-gray-300 dark:bg-gray-600'"
                             @click="annual = !annual"
                         >
@@ -263,18 +263,18 @@ function pricePeriod(monthly: number): string {
                                 : 'border-gray-200 bg-white dark:border-white/10 dark:bg-gray-900',
                         ]"
                     >
-                        <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-600 dark:text-brand-400">
+                        <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700 dark:text-brand-400">
                             {{ plan.name }}
                         </h3>
 
                         <div class="mt-4">
                             <template v-if="plan.enterprise">
                                 <span class="text-3xl font-bold text-gray-900 dark:text-white">€399</span>
-                                <span class="ml-1 text-sm text-gray-500 dark:text-gray-400">/month +</span>
+                                <span class="ml-1 text-sm text-gray-600 dark:text-gray-400">/month +</span>
                             </template>
                             <template v-else-if="plan.monthlyPrice">
                                 <span class="text-3xl font-bold text-gray-900 dark:text-white">{{ formatPrice(plan.monthlyPrice) }}</span>
-                                <span class="ml-1 text-xs text-gray-500 dark:text-gray-400">{{ pricePeriod(plan.monthlyPrice) }}</span>
+                                <span class="ml-1 text-xs text-gray-600 dark:text-gray-400">{{ pricePeriod(plan.monthlyPrice) }}</span>
                             </template>
                         </div>
 
@@ -287,7 +287,7 @@ function pricePeriod(monthly: number): string {
                                 :key="limit.label"
                                 class="flex items-center justify-between gap-2 text-sm"
                             >
-                                <dt class="text-gray-500 dark:text-gray-400">{{ limit.label }}</dt>
+                                <dt class="text-gray-600 dark:text-gray-400">{{ limit.label }}</dt>
                                 <dd class="font-medium text-gray-900 dark:text-white">{{ limit.value }}</dd>
                             </div>
                         </dl>
@@ -323,7 +323,7 @@ function pricePeriod(monthly: number): string {
                     </article>
                 </div>
 
-                <div class="mx-auto mt-6 max-w-6xl space-y-1 text-right text-xs text-gray-500 dark:text-gray-400">
+                <div class="mx-auto mt-6 max-w-6xl space-y-1 text-right text-xs text-gray-600 dark:text-gray-400">
                     <p>* API requests are direct origin requests — no CDN caching on authenticated endpoints. Overages are billed at €10 per 500k additional requests.</p>
                     <p>** NIS-2 implementation is in progress. Current status available on request.</p>
                     <p>*** 7-year retention aligns with EU accounting and audit trail obligations (VAT Directive, NIS-2 guidance).</p>
@@ -337,11 +337,11 @@ function pricePeriod(monthly: number): string {
 
                         <div class="space-y-1.5">
                             <div class="flex items-center gap-2.5">
-                                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">Free</p>
-                                <span class="rounded-full border border-gray-200 bg-gray-100 px-2.5 py-0.5 font-mono text-[11px] text-gray-500 dark:border-white/10 dark:bg-white/5 dark:text-gray-400">dev mode</span>
+                                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-gray-600 dark:text-gray-400">Free</p>
+                                <span class="rounded-full border border-gray-200 bg-gray-100 px-2.5 py-0.5 font-mono text-[11px] text-gray-700 dark:border-white/10 dark:bg-white/5 dark:text-gray-400">dev mode</span>
                             </div>
                             <Heading id="dev-mode-heading" as="h2" class="text-xl font-semibold text-gray-900 dark:text-white">Evaluate Papevi without a credit card.</Heading>
-                            <p class="max-w-sm text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+                            <p class="max-w-sm text-sm leading-relaxed text-gray-600 dark:text-gray-400">
                                 Full API access on a single rate-limited site — 1 site, 2 users, 10k API calls/mo, and 1 GB storage. Build and test before committing to a plan.
                             </p>
                         </div>
@@ -378,7 +378,7 @@ function pricePeriod(monthly: number): string {
                         <h3 class="text-sm font-semibold text-gray-900 dark:text-white">{{ addon.name }}</h3>
                         <div class="mt-2 flex items-baseline gap-1">
                             <span class="text-2xl font-bold text-gray-900 dark:text-white">{{ addon.price }}</span>
-                            <span class="text-xs text-gray-500 dark:text-gray-400">{{ addon.period }}</span>
+                            <span class="text-xs text-gray-600 dark:text-gray-400">{{ addon.period }}</span>
                         </div>
                         <p class="mt-3 flex-1 text-sm leading-relaxed text-gray-600 dark:text-gray-300">{{ addon.description }}</p>
                     </article>

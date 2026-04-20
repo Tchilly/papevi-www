@@ -31,7 +31,7 @@ import { Head } from '@inertiajs/vue3';
                     <section aria-labelledby="who-we-are">
                         <Heading id="who-we-are" as="h2">1. Who we are</Heading>
                         <div class="mt-4 space-y-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-                            <p>Papevi CMS is the controller of the personal data you provide when using our website and platform. For questions about this policy or your data, contact us at <a href="mailto:privacy@papevi.com" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 dark:text-white dark:hover:text-brand-400">privacy@papevi.com</a>.</p>
+                            <p>Papevi CMS is the controller of the personal data you provide when using our website and platform. For questions about this policy or your data, contact us at <a href="mailto:privacy@papevi.com" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-white dark:hover:text-brand-400">privacy@papevi.com</a>.</p>
                         </div>
                     </section>
 
@@ -119,7 +119,7 @@ import { Head } from '@inertiajs/vue3';
                                 <li><strong class="font-semibold text-gray-800 dark:text-gray-100">Objection</strong> — object to processing based on legitimate interest.</li>
                                 <li><strong class="font-semibold text-gray-800 dark:text-gray-100">Restriction</strong> — request we restrict processing in certain circumstances.</li>
                             </ul>
-                            <p>To exercise any of these rights, email <a href="mailto:privacy@papevi.com" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 dark:text-white dark:hover:text-brand-400">privacy@papevi.com</a>. We will respond within 30 days. You also have the right to lodge a complaint with your national data protection authority.</p>
+                            <p>To exercise any of these rights, email <a href="mailto:privacy@papevi.com" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-white dark:hover:text-brand-400">privacy@papevi.com</a>. We will respond within 30 days. You also have the right to lodge a complaint with your national data protection authority.</p>
                         </div>
                     </section>
 

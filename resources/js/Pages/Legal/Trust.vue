@@ -96,7 +96,7 @@ const pillars = [
                 <div class="mx-auto max-w-3xl">
                     <Heading id="dpa-heading" as="h2">Data Processing Agreement</Heading>
                     <p class="mt-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-                        If your organisation requires a signed DPA as part of your GDPR or vendor management process, we will sign one. Email <a href="mailto:legal@papevi.com" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 dark:text-white dark:hover:text-brand-400">legal@papevi.com</a> with "DPA request" in the subject line. Standard turnaround is 2 business days.
+                        If your organisation requires a signed DPA as part of your GDPR or vendor management process, we will sign one. Email <a href="mailto:legal@papevi.com" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-white dark:hover:text-brand-400">legal@papevi.com</a> with "DPA request" in the subject line. Standard turnaround is 2 business days.
                     </p>
                     <p class="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                         Our standard DPA covers: subject matter and duration, nature and purpose of processing, categories of data, data subject rights, subprocessor management, and technical/organisational security measures.
@@ -110,15 +110,15 @@ const pillars = [
                     <Heading id="related-heading" as="h2">Related documents</Heading>
                     <ul class="mt-6 space-y-3 text-sm">
                         <li>
-                            <Link :href="route('privacy')" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 dark:text-white dark:hover:text-brand-400">Privacy Policy</Link>
+                            <Link :href="route('privacy')" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-white dark:hover:text-brand-400">Privacy Policy</Link>
                             <span class="ml-2 text-gray-500 dark:text-gray-400">— what data we collect, why, and your rights under GDPR</span>
                         </li>
                         <li>
-                            <Link :href="route('terms')" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 dark:text-white dark:hover:text-brand-400">Terms of Service</Link>
+                            <Link :href="route('terms')" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-white dark:hover:text-brand-400">Terms of Service</Link>
                             <span class="ml-2 text-gray-500 dark:text-gray-400">— your rights and ours, billing, acceptable use</span>
                         </li>
                         <li>
-                            <Link :href="route('security')" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 dark:text-white dark:hover:text-brand-400">Security Policy</Link>
+                            <Link :href="route('security')" class="font-medium text-gray-900 underline underline-offset-2 hover:text-brand-600 focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-white dark:hover:text-brand-400">Security Policy</Link>
                             <span class="ml-2 text-gray-500 dark:text-gray-400">— infrastructure security, incident response, and vulnerability disclosure</span>
                         </li>
                     </ul>

@@ -40,7 +40,7 @@ const onImageError = (event: Event) => {
                 :key="stage.state"
                 class="glass-panel relative p-5"
             >
-                <span class="font-mono text-xs text-brand-600 dark:text-brand-400">0{{ index + 1 }}</span>
+                <span class="font-mono text-xs text-brand-700 dark:text-brand-400">0{{ index + 1 }}</span>
                 <p class="mt-2 text-base font-semibold text-gray-900 dark:text-white">{{ stage.state }}</p>
                 <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">{{ stage.summary }}</p>
             </li>
@@ -52,7 +52,7 @@ const onImageError = (event: Event) => {
                     <span class="product-frame-dot"></span>
                     <span class="product-frame-dot"></span>
                     <span class="product-frame-dot"></span>
-                    <span class="ml-3 font-mono text-[11px] text-gray-500 dark:text-gray-400">
+                    <span class="ml-3 font-mono text-[11px] text-gray-600 dark:text-gray-400">
                         workflow.papevi.app
                     </span>
                 </div>

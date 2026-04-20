@@ -35,7 +35,7 @@ import { Head, Link } from '@inertiajs/vue3';
                 <div class="mt-4 flex flex-wrap gap-3">
                     <Link
                         href="/docs/getting-started"
-                        class="inline-flex items-center gap-1.5 text-sm font-medium text-brand-600 transition hover:text-brand-500 dark:text-brand-400 dark:hover:text-brand-300"
+                        class="inline-flex items-center gap-1.5 text-sm font-medium text-brand-600 transition hover:underline hover:text-brand-500 focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-brand-400 dark:hover:text-brand-300"
                     >
                         Get your first token
                         <svg class="size-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">

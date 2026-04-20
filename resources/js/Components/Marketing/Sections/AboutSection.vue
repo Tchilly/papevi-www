@@ -39,13 +39,13 @@ const pillars = [
 
             <!-- Brand etymology -->
             <div class="mx-auto mt-16 max-w-3xl rounded-2xl border border-gray-200 bg-gray-50 p-8 sm:p-10 dark:border-white/5 dark:bg-gray-900">
-                <p class="text-center text-sm font-medium text-gray-500 dark:text-gray-400">The name</p>
+                <p class="text-center text-sm font-medium text-gray-600 dark:text-gray-400">The name</p>
                 <p class="mt-3 text-center text-base leading-relaxed text-gray-700 dark:text-gray-200">
-                    <span class="font-semibold text-brand-600 dark:text-brand-400">Pa</span> from
+                    <span class="font-semibold text-brand-700 dark:text-brand-400">Pa</span> from
                     <em>paper</em>,
-                    <span class="font-semibold text-brand-600 dark:text-brand-400">pe</span> from
+                    <span class="font-semibold text-brand-700 dark:text-brand-400">pe</span> from
                     <em>pen</em>, and
-                    <span class="font-semibold text-brand-600 dark:text-brand-400">vi</span> from
+                    <span class="font-semibold text-brand-700 dark:text-brand-400">vi</span> from
                     <em>viva / vivid</em> — symbolizing content that comes alive and is amplified
                     through digital publishing.
                 </p>
@@ -58,7 +58,7 @@ const pillars = [
                     :key="pillar.label"
                     class="glass-panel space-y-3 p-6"
                 >
-                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-600 dark:text-brand-400">
+                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700 dark:text-brand-400">
                         {{ pillar.label }}
                     </p>
                     <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">

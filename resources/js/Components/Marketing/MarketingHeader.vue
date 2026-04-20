@@ -21,7 +21,7 @@ const solutionsLinks = [
         <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 sm:px-8 lg:px-12">
             <!-- Left: Logo + Main nav -->
             <div class="flex items-center gap-6">
-                <Link href="/" class="flex shrink-0 items-center gap-3">
+                <Link href="/" class="flex shrink-0 items-center gap-3 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 focus-visible:ring-offset-2">
                     <div class="flex h-9 w-9 items-center justify-center rounded-lg border border-brand-400/50 bg-brand-500/10">
                         <span class="font-mono text-xs font-semibold text-brand-700 dark:text-brand-200">PC</span>
                     </div>
@@ -38,7 +38,7 @@ const solutionsLinks = [
                     >
                         <button
                             type="button"
-                            class="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-white"
+                            class="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-white"
                             :aria-expanded="solutionsOpen"
                             aria-haspopup="true"
                             @click="solutionsOpen = !solutionsOpen"
@@ -65,7 +65,7 @@ const solutionsLinks = [
                                     v-for="item in solutionsLinks"
                                     :key="item.label"
                                     :href="item.href"
-                                    class="flex rounded-lg px-3 py-2 text-sm text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
+                                    class="flex rounded-lg px-3 py-2 text-sm text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
                                     @click="solutionsOpen = false"
                                 >
                                     {{ item.label }}
@@ -76,19 +76,19 @@ const solutionsLinks = [
 
                     <Link
                         :href="route('use-cases')"
-                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-white"
+                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-white"
                     >
                         Use Cases
                     </Link>
                     <Link
                         :href="route('pricing')"
-                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-white"
+                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-white"
                     >
                         Pricing
                     </Link>
                     <Link
                         :href="route('about')"
-                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-white"
+                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-white"
                     >
                         About
                     </Link>
@@ -109,7 +109,7 @@ const solutionsLinks = [
                 <!-- Mobile menu toggle -->
                 <button
                     type="button"
-                    class="inline-flex items-center justify-center rounded-md p-2 text-gray-700 transition hover:bg-gray-100 lg:hidden dark:text-gray-200 dark:hover:bg-gray-800"
+                    class="inline-flex items-center justify-center rounded-md p-2 text-gray-700 transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 lg:hidden dark:text-gray-200 dark:hover:bg-gray-800"
                     aria-label="Toggle menu"
                     @click="mobileOpen = !mobileOpen"
                 >
@@ -142,7 +142,7 @@ const solutionsLinks = [
                         v-for="item in solutionsLinks"
                         :key="item.label"
                         :href="item.href"
-                        class="rounded-lg px-3 py-2 text-sm text-gray-700 transition hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                        class="rounded-lg px-3 py-2 text-sm text-gray-700 transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-gray-300 dark:hover:bg-gray-800"
                         @click="mobileOpen = false"
                     >
                         {{ item.label }}
@@ -152,28 +152,28 @@ const solutionsLinks = [
 
                     <Link
                         :href="route('use-cases')"
-                        class="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-800"
+                        class="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-gray-200 dark:hover:bg-gray-800"
                         @click="mobileOpen = false"
                     >
                         Use Cases
                     </Link>
                     <Link
                         :href="route('pricing')"
-                        class="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-800"
+                        class="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-gray-200 dark:hover:bg-gray-800"
                         @click="mobileOpen = false"
                     >
                         Pricing
                     </Link>
                     <Link
                         :href="route('about')"
-                        class="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-800"
+                        class="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-gray-200 dark:hover:bg-gray-800"
                         @click="mobileOpen = false"
                     >
                         About
                     </Link>
                     <Link
                         :href="route('docs')"
-                        class="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-800"
+                        class="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-gray-200 dark:hover:bg-gray-800"
                         @click="mobileOpen = false"
                     >
                         Docs
@@ -182,7 +182,7 @@ const solutionsLinks = [
                     <hr class="my-2 border-gray-200 dark:border-white/5" />
                     <a
                         href="/#beta"
-                        class="rounded-lg px-3 py-2 text-sm font-medium text-brand-600 transition hover:bg-brand-50 dark:text-brand-400 dark:hover:bg-brand-500/10"
+                        class="rounded-lg px-3 py-2 text-sm font-medium text-brand-700 transition hover:bg-brand-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 dark:text-brand-400 dark:hover:bg-brand-500/10"
                         @click="mobileOpen = false"
                     >
                         Get started

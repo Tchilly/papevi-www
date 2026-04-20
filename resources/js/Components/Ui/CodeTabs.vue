@@ -48,7 +48,7 @@ if (props.examples) {
                 v-for="item in items"
                 :key="item.label"
                 :value="item.label"
-                class="relative px-4 py-2.5 text-xs font-medium text-gray-500 transition-colors select-none hover:text-gray-200 data-[state=active]:bg-white/[0.06] data-[state=active]:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-inset"
+                class="relative px-4 py-2.5 text-xs font-medium text-gray-500 transition-colors select-none hover:text-gray-200 data-[state=active]:bg-white/[0.06] data-[state=active]:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:focus-visible:ring-brand-400 focus-visible:ring-inset"
             >
                 {{ item.label }}
             </TabsTrigger>
