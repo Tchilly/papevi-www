@@ -76,6 +76,36 @@ const useCases = [
     },
 ];
 
+const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+        {
+            '@type': 'WebPage',
+            'name': 'Papevi CMS Use Cases — Built for teams that move fast',
+            'description': 'Explore how marketing teams, publishers, developers, regulated industries, agencies, and SaaS products use Papevi CMS to manage structured content at scale.',
+            'inLanguage': 'en',
+            'breadcrumb': {
+                '@type': 'BreadcrumbList',
+                'itemListElement': [
+                    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': '/' },
+                    { '@type': 'ListItem', 'position': 2, 'name': 'Use Cases', 'item': '/use-cases' },
+                ],
+            },
+        },
+        {
+            '@type': 'ItemList',
+            'name': 'Papevi CMS Use Cases',
+            'itemListElement': useCases.map((item, i) => ({
+                '@type': 'ListItem',
+                'position': i + 1,
+                'name': item.eyebrow,
+                'description': item.body,
+                'url': `/use-cases#${item.id}`,
+            })),
+        },
+    ],
+};
+
 const onImageLoad = (event: Event) => {
     (event.target as HTMLImageElement).dataset.loaded = 'true';
 };
@@ -86,7 +116,20 @@ const onImageError = (event: Event) => {
 </script>
 
 <template>
-    <Head title="Use Cases — Papevi CMS" />
+    <Head>
+        <title>Papevi CMS Use Cases — Built for teams that move fast</title>
+        <meta head-key="description" name="description" content="Explore how marketing teams, publishers, developers, regulated industries, agencies, and SaaS products use Papevi CMS to manage structured content at scale." />
+        <meta head-key="robots" name="robots" content="index, follow" />
+        <link head-key="canonical" rel="canonical" :href="route('use-cases')" />
+        <meta head-key="og:type" property="og:type" content="website" />
+        <meta head-key="og:title" property="og:title" content="Papevi CMS Use Cases — Built for teams that move fast" />
+        <meta head-key="og:description" property="og:description" content="Explore how marketing teams, publishers, developers, regulated industries, agencies, and SaaS products use Papevi CMS." />
+        <meta head-key="og:url" property="og:url" :content="route('use-cases')" />
+        <meta head-key="twitter:card" name="twitter:card" content="summary" />
+        <meta head-key="twitter:title" name="twitter:title" content="Papevi CMS Use Cases — Built for teams that move fast" />
+        <meta head-key="twitter:description" name="twitter:description" content="Explore how marketing teams, publishers, developers, and SaaS products use Papevi CMS to manage content at scale." />
+        <component :is="'script'" type="application/ld+json" v-text="JSON.stringify(structuredData)" />
+    </Head>
 
     <div class="flex min-h-screen flex-col bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-white">
         <MarketingHeader />
@@ -105,11 +148,12 @@ const onImageError = (event: Event) => {
                     </p>
                 </div>
 
-                <div class="mx-auto mt-14 grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <nav aria-label="Jump to a use case" class="mx-auto mt-14 grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
                     <a
                         v-for="item in useCases"
                         :key="item.id"
                         :href="`#${item.id}`"
+                        :aria-label="`Jump to: ${item.eyebrow}`"
                         class="glass-panel group flex items-center justify-between gap-3 p-4 transition hover:border-brand-400/40"
                     >
                         <p class="text-sm font-semibold text-gray-900 transition group-hover:text-brand-700 dark:text-white dark:group-hover:text-brand-300">{{ item.eyebrow }}</p>
@@ -117,15 +161,16 @@ const onImageError = (event: Event) => {
                             <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </a>
-                </div>
+                </nav>
             </section>
 
             <!-- Expanded use case sections -->
             <div class="divide-y divide-gray-100 px-6 sm:px-8 lg:px-12 dark:divide-white/5">
-                <div
+                <section
                     v-for="(item, index) in useCases"
                     :id="item.id"
                     :key="item.id"
+                    :aria-labelledby="`${item.id}-title`"
                     class="mx-auto grid max-w-6xl items-center gap-10 py-24 lg:grid-cols-2 lg:gap-16"
                     :class="{ 'lg:[&>*:first-child]:order-2': index % 2 === 1 }"
                 >
@@ -133,7 +178,7 @@ const onImageError = (event: Event) => {
                         <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-600 dark:text-brand-400">
                             {{ item.eyebrow }}
                         </p>
-                        <Heading as="h2" display="md" class="text-balance">
+                        <Heading :id="`${item.id}-title`" as="h2" display="md" class="text-balance">
                             {{ item.title }}
                         </Heading>
                         <p class="text-base leading-relaxed text-gray-600 sm:text-lg dark:text-gray-300">
@@ -178,7 +223,7 @@ const onImageError = (event: Event) => {
                             </div>
                         </div>
                     </figure>
-                </div>
+                </section>
             </div>
 
             <CtaSection />

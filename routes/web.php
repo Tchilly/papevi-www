@@ -8,7 +8,7 @@ Route::get('/', function () {
     return Inertia::render('Welcome', [
         'betaSuccess' => session('beta_success'),
     ]);
-});
+})->name('home');
 
 Route::get('/about', function () {
     return Inertia::render('About');

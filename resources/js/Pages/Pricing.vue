@@ -110,6 +110,51 @@ const plans: Plan[] = [
     },
 ];
 
+const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+        {
+            '@type': 'WebPage',
+            'name': 'Papevi CMS Pricing — Plans Starting at €29/month',
+            'description': 'Transparent headless CMS pricing. Starter €29/mo, Grow €59/mo, Scale €129/mo, Enterprise custom. Annual billing saves 2 months. Free developer tier available — no credit card required.',
+            'inLanguage': 'en',
+            'breadcrumb': {
+                '@type': 'BreadcrumbList',
+                'itemListElement': [
+                    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': '/' },
+                    { '@type': 'ListItem', 'position': 2, 'name': 'Pricing', 'item': '/pricing' },
+                ],
+            },
+        },
+        {
+            '@type': 'ItemList',
+            'name': 'Papevi CMS Pricing Plans',
+            'itemListElement': [
+                {
+                    '@type': 'ListItem',
+                    'position': 1,
+                    'item': { '@type': 'Product', 'name': 'Papevi CMS Starter', 'description': 'One site, a small team, and a reliable headless CMS. Perfect for getting started.', 'offers': { '@type': 'Offer', 'price': '29.00', 'priceCurrency': 'EUR', 'billingIncrement': 'Monthly', 'availability': 'https://schema.org/InStock' } },
+                },
+                {
+                    '@type': 'ListItem',
+                    'position': 2,
+                    'item': { '@type': 'Product', 'name': 'Papevi CMS Grow', 'description': 'More sites, more team members, and the full workflow toolset.', 'offers': { '@type': 'Offer', 'price': '59.00', 'priceCurrency': 'EUR', 'billingIncrement': 'Monthly', 'availability': 'https://schema.org/InStock' } },
+                },
+                {
+                    '@type': 'ListItem',
+                    'position': 3,
+                    'item': { '@type': 'Product', 'name': 'Papevi CMS Scale', 'description': 'Built for teams running multiple sites with compliance and security requirements.', 'offers': { '@type': 'Offer', 'price': '129.00', 'priceCurrency': 'EUR', 'billingIncrement': 'Monthly', 'availability': 'https://schema.org/InStock' } },
+                },
+                {
+                    '@type': 'ListItem',
+                    'position': 4,
+                    'item': { '@type': 'Product', 'name': 'Papevi CMS Enterprise', 'description': 'For large organisations that need custom limits, compliance controls, and a dedicated team.', 'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'EUR', 'description': 'Custom pricing — contact us' } },
+                },
+            ],
+        },
+    ],
+};
+
 const addOns = [
     {
         name: 'AI Writing',
@@ -148,7 +193,20 @@ function pricePeriod(monthly: number): string {
 </script>
 
 <template>
-    <Head title="Pricing — Papevi CMS" />
+    <Head>
+        <title>Papevi CMS Pricing — Plans Starting at €29/month</title>
+        <meta head-key="description" name="description" content="Transparent headless CMS pricing. Starter from €29/month. Grow €59/mo, Scale €129/mo, Enterprise custom. Annual billing saves 2 months. Free developer tier — no credit card required." />
+        <meta head-key="robots" name="robots" content="index, follow" />
+        <link head-key="canonical" rel="canonical" :href="route('pricing')" />
+        <meta head-key="og:type" property="og:type" content="website" />
+        <meta head-key="og:title" property="og:title" content="Papevi CMS Pricing — Plans Starting at €29/month" />
+        <meta head-key="og:description" property="og:description" content="Transparent headless CMS pricing. Starter from €29/month. Annual billing saves 2 months. Free developer tier available — no credit card required." />
+        <meta head-key="og:url" property="og:url" :content="route('pricing')" />
+        <meta head-key="twitter:card" name="twitter:card" content="summary" />
+        <meta head-key="twitter:title" name="twitter:title" content="Papevi CMS Pricing — Plans Starting at €29/month" />
+        <meta head-key="twitter:description" name="twitter:description" content="Transparent headless CMS pricing. Starter from €29/month. Annual billing saves 2 months. Free dev tier — no credit card required." />
+        <component :is="'script'" type="application/ld+json" v-text="JSON.stringify(structuredData)" />
+    </Head>
 
     <div class="flex min-h-screen flex-col bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-white">
         <MarketingHeader />
@@ -173,6 +231,7 @@ function pricePeriod(monthly: number): string {
                             type="button"
                             role="switch"
                             :aria-checked="annual"
+                            aria-label="Toggle annual billing"
                             class="relative inline-flex h-6 w-10 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500"
                             :class="annual ? 'bg-brand-500' : 'bg-gray-300 dark:bg-gray-600'"
                             @click="annual = !annual"
@@ -190,10 +249,12 @@ function pricePeriod(monthly: number): string {
                 </div>
 
                 <!-- Plans grid -->
-                <div class="mx-auto mt-14 grid max-w-6xl gap-6 sm:grid-cols-2 xl:grid-cols-4">
-                    <div
+                <div id="pricing-plans" class="mx-auto mt-14 grid max-w-6xl gap-6 sm:grid-cols-2 xl:grid-cols-4" role="list" aria-label="Pricing plans">
+                    <article
                         v-for="plan in plans"
                         :key="plan.name"
+                        :aria-label="`${plan.name} plan`"
+                        role="listitem"
                         :class="[
                             'flex flex-col rounded-2xl border p-7',
                             plan.highlighted
@@ -201,9 +262,9 @@ function pricePeriod(monthly: number): string {
                                 : 'border-gray-200 bg-white dark:border-white/10 dark:bg-gray-900',
                         ]"
                     >
-                        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-600 dark:text-brand-400">
+                        <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-600 dark:text-brand-400">
                             {{ plan.name }}
-                        </p>
+                        </h3>
 
                         <div class="mt-4">
                             <template v-if="plan.enterprise">
@@ -231,7 +292,7 @@ function pricePeriod(monthly: number): string {
                         </dl>
 
                         <!-- Features -->
-                        <ul class="mt-6 flex-1 space-y-2.5 border-t border-gray-100 pt-5 dark:border-white/5">
+                        <ul :aria-label="`Features included in ${plan.name}`" class="mt-6 flex-1 space-y-2.5 border-t border-gray-100 pt-5 dark:border-white/5">
                             <li
                                 v-for="feature in plan.features"
                                 :key="feature"
@@ -252,12 +313,13 @@ function pricePeriod(monthly: number): string {
                                 href="/#beta"
                                 :variant="plan.highlighted ? 'brand' : 'outline'"
                                 size="lg"
+                                :aria-label="`${plan.cta} — ${plan.name} plan`"
                                 class="w-full"
                             >
                                 {{ plan.cta }}
                             </Button>
                         </div>
-                    </div>
+                    </article>
                 </div>
 
                 <div class="mx-auto mt-6 max-w-6xl space-y-1 text-right text-xs text-gray-500 dark:text-gray-400">
@@ -267,46 +329,54 @@ function pricePeriod(monthly: number): string {
             </section>
 
             <!-- Free dev mode -->
-            <section class="mt-16 border-t border-gray-100 bg-gray-50 px-6 py-16 sm:px-8 lg:px-12 dark:border-white/5 dark:bg-gray-900">
+            <section id="dev-mode" aria-labelledby="dev-mode-heading" class="mt-16 border-t border-gray-100 bg-gray-50 px-6 py-12 sm:px-8 lg:px-12 dark:border-white/5 dark:bg-gray-900">
                 <div class="mx-auto max-w-6xl">
-                    <div class="flex flex-col gap-8 rounded-2xl border border-dashed border-gray-300 bg-white p-8 dark:border-white/10 dark:bg-gray-950 sm:flex-row sm:items-center sm:justify-between">
-                        <div class="space-y-2">
+                    <div class="flex flex-col gap-6 rounded-2xl border border-dashed border-gray-300 bg-white p-8 dark:border-white/10 dark:bg-gray-950 sm:flex-row sm:items-center sm:justify-between">
+
+                        <div class="space-y-1.5">
                             <div class="flex items-center gap-2.5">
                                 <p class="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">Free</p>
                                 <span class="rounded-full border border-gray-200 bg-gray-100 px-2.5 py-0.5 font-mono text-[11px] text-gray-500 dark:border-white/10 dark:bg-white/5 dark:text-gray-400">dev mode</span>
                             </div>
-                            <Heading as="h2" class="text-xl font-semibold text-gray-900 dark:text-white">Evaluate Papevi without a credit card.</Heading>
-                            <p class="max-w-xl text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-                                The free dev tier gives developers full API access to one restricted site — so you can build and test your frontend before committing to a plan.
-                                Dev mode sites are rate-limited, storage-capped, and not suitable for production.
+                            <Heading id="dev-mode-heading" as="h2" class="text-xl font-semibold text-gray-900 dark:text-white">Evaluate Papevi without a credit card.</Heading>
+                            <p class="max-w-sm text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+                                Full API access on a single rate-limited site — build and test before committing to a plan. Not suitable for production.
                             </p>
-                            <dl class="mt-4 flex flex-wrap gap-3">
-                                <div v-for="stat in [
-                                    { label: 'Sites', value: '1' },
-                                    { label: 'Users', value: '2' },
-                                    { label: 'API calls / mo', value: '10k' },
-                                    { label: 'Storage', value: '1 GB' },
-                                    { label: 'Custom domain', value: 'No' },
-                                ]" :key="stat.label" class="flex flex-col rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 dark:border-white/10 dark:bg-white/5">
-                                    <dd class="text-sm font-semibold text-gray-900 dark:text-white">{{ stat.value }}</dd>
-                                    <dt class="text-[11px] text-gray-500 dark:text-gray-400">{{ stat.label }}</dt>
+                        </div>
+
+                        <div class="flex shrink-0 flex-col items-start gap-5 sm:items-end">
+                            <dl aria-label="Free plan limits" class="flex flex-wrap gap-x-5 gap-y-1 text-sm sm:justify-end">
+                                <div class="flex items-baseline gap-1.5">
+                                    <dt class="text-gray-500 dark:text-gray-400">Sites</dt>
+                                    <dd class="font-medium text-gray-700 dark:text-gray-200">1</dd>
+                                </div>
+                                <div class="flex items-baseline gap-1.5">
+                                    <dt class="text-gray-500 dark:text-gray-400">Users</dt>
+                                    <dd class="font-medium text-gray-700 dark:text-gray-200">2</dd>
+                                </div>
+                                <div class="flex items-baseline gap-1.5">
+                                    <dt class="text-gray-500 dark:text-gray-400">API calls</dt>
+                                    <dd class="font-medium text-gray-700 dark:text-gray-200">10k / mo</dd>
+                                </div>
+                                <div class="flex items-baseline gap-1.5">
+                                    <dt class="text-gray-500 dark:text-gray-400">Storage</dt>
+                                    <dd class="font-medium text-gray-700 dark:text-gray-200">1 GB</dd>
                                 </div>
                             </dl>
-                        </div>
-                        <div class="shrink-0">
-                            <Button as="a" href="/#beta" variant="outline" size="lg">
+                            <Button as="a" href="/#beta" variant="outline" size="md" aria-label="Get free developer access to Papevi">
                                 Get dev access
                             </Button>
                         </div>
+
                     </div>
                 </div>
             </section>
 
             <!-- Add-ons -->
-            <section class="border-t border-gray-100 bg-white px-6 py-24 sm:px-8 lg:px-12 dark:border-white/5 dark:bg-gray-950">
+            <section id="add-ons" aria-labelledby="add-ons-heading" class="border-t border-gray-100 bg-white px-6 py-24 sm:px-8 lg:px-12 dark:border-white/5 dark:bg-gray-950">
                 <div class="mx-auto max-w-3xl text-center">
                     <p class="kicker mx-auto">Add-ons</p>
-                    <Heading as="h2" display="md" class="mt-5 text-balance">
+                    <Heading id="add-ons-heading" as="h2" display="md" class="mt-5 text-balance">
                         Extend any plan with what you need.
                     </Heading>
                     <p class="mx-auto mt-5 max-w-2xl text-base text-gray-600 dark:text-gray-300">
@@ -315,18 +385,19 @@ function pricePeriod(monthly: number): string {
                 </div>
 
                 <div class="mx-auto mt-16 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    <div
+                    <article
                         v-for="addon in addOns"
                         :key="addon.name"
+                        :aria-label="`${addon.name} add-on`"
                         class="glass-panel flex flex-col p-6"
                     >
-                        <p class="text-sm font-semibold text-gray-900 dark:text-white">{{ addon.name }}</p>
+                        <h3 class="text-sm font-semibold text-gray-900 dark:text-white">{{ addon.name }}</h3>
                         <div class="mt-2 flex items-baseline gap-1">
                             <span class="text-2xl font-bold text-gray-900 dark:text-white">{{ addon.price }}</span>
                             <span class="text-xs text-gray-500 dark:text-gray-400">{{ addon.period }}</span>
                         </div>
                         <p class="mt-3 flex-1 text-sm leading-relaxed text-gray-600 dark:text-gray-300">{{ addon.description }}</p>
-                    </div>
+                    </article>
                 </div>
             </section>
 
