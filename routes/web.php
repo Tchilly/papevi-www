@@ -35,7 +35,7 @@ Route::get('/pricing', function () {
 })->name('pricing');
 
 Route::post('/beta-signup', [BetaSignupController::class, 'store'])
-    ->middleware('throttle:6,1')
+    ->middleware('throttle:3,1')
     ->name('beta-signup');
 
 Route::get('/docs', function () {
