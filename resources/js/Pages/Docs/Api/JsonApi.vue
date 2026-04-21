@@ -2,6 +2,7 @@
 import { Head } from '@inertiajs/vue3';
 
 import DocsToc from '@/Components/Docs/DocsToc.vue';
+import DocsTable from '@/Components/Docs/DocsTable.vue';
 import Code from '@/Components/Ui/Code.vue';
 import Heading from '@/Components/Ui/Heading.vue';
 import DocsLayout from '@/Layouts/DocsLayout.vue';
@@ -210,16 +211,7 @@ const errorExample =
                     <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">data</code>.
                     Every resource object has three required members:
                 </p>
-                <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
-                    <table class="w-full text-sm">
-                        <thead class="bg-gray-50 text-xs text-gray-500 dark:bg-white/[0.03] dark:text-gray-400">
-                            <tr>
-                                <th class="px-5 py-3 text-left font-medium">Member</th>
-                                <th class="px-5 py-3 text-left font-medium">Type</th>
-                                <th class="px-5 py-3 text-left font-medium">Description</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100 text-gray-700 dark:divide-white/8 dark:text-gray-200">
+                <DocsTable :columns="['Member', 'Type', 'Description']">
                             <tr>
                                 <td class="px-5 py-3"><code class="font-mono text-xs">type</code></td>
                                 <td class="px-5 py-3 text-xs text-gray-500">string</td>
@@ -242,9 +234,7 @@ const errorExample =
                                     Resource fields. Foreign keys are never exposed here — use relationships instead
                                 </td>
                             </tr>
-                        </tbody>
-                    </table>
-                </div>
+                        </DocsTable>
                 <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
                     <Code
                         lang="json"
@@ -272,16 +262,7 @@ const errorExample =
                     cursor URLs.
                 </p>
 
-                <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
-                    <table class="w-full text-sm">
-                        <thead class="bg-gray-50 text-xs text-gray-500 dark:bg-white/[0.03] dark:text-gray-400">
-                            <tr>
-                                <th class="px-5 py-3 text-left font-medium">Parameter</th>
-                                <th class="px-5 py-3 text-left font-medium">Default</th>
-                                <th class="px-5 py-3 text-left font-medium">Description</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100 text-gray-700 dark:divide-white/8 dark:text-gray-200">
+                <DocsTable :columns="['Parameter', 'Default', 'Description']">
                             <tr>
                                 <td class="px-5 py-3"><code class="font-mono text-xs">per_page</code></td>
                                 <td class="px-5 py-3 text-xs text-gray-500">15</td>
@@ -307,9 +288,7 @@ const errorExample =
                                     Filter by field value. See each resource's docs for supported filters.
                                 </td>
                             </tr>
-                        </tbody>
-                    </table>
-                </div>
+                        </DocsTable>
 
                 <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
                     <Code
@@ -347,15 +326,7 @@ const errorExample =
                         :code="relationshipExample"
                     />
                 </div>
-                <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
-                    <table class="w-full text-sm">
-                        <thead class="bg-gray-50 text-xs text-gray-500 dark:bg-white/[0.03] dark:text-gray-400">
-                            <tr>
-                                <th class="px-5 py-3 text-left font-medium">Resource</th>
-                                <th class="px-5 py-3 text-left font-medium">Supported includes</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100 text-gray-700 dark:divide-white/8 dark:text-gray-200">
+                <DocsTable :columns="['Resource', 'Supported includes']">
                             <tr>
                                 <td class="px-5 py-3"><code class="font-mono text-xs">menus</code></td>
                                 <td class="px-5 py-3"><code class="font-mono text-xs">items</code></td>
@@ -364,9 +335,7 @@ const errorExample =
                                 <td class="px-5 py-3"><code class="font-mono text-xs">taxonomies</code></td>
                                 <td class="px-5 py-3"><code class="font-mono text-xs">terms</code></td>
                             </tr>
-                        </tbody>
-                    </table>
-                </div>
+                        </DocsTable>
             </div>
 
             <!-- Error objects -->
@@ -399,16 +368,7 @@ const errorExample =
                         :code="errorExample"
                     />
                 </div>
-                <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
-                    <table class="w-full text-sm">
-                        <thead class="bg-gray-50 text-xs text-gray-500 dark:bg-white/[0.03] dark:text-gray-400">
-                            <tr>
-                                <th class="px-5 py-3 text-left font-medium">Status</th>
-                                <th class="px-5 py-3 text-left font-medium">Title</th>
-                                <th class="px-5 py-3 text-left font-medium">When</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100 text-gray-700 dark:divide-white/8 dark:text-gray-200">
+                <DocsTable :columns="['Status', 'Title', 'When']">
                             <tr>
                                 <td class="px-5 py-3">
                                     <code class="font-mono text-xs text-red-600 dark:text-red-400">401</code>
@@ -446,9 +406,7 @@ const errorExample =
                                     Rate limit exceeded — check <code class="font-mono text-xs">meta.retry_after</code>
                                 </td>
                             </tr>
-                        </tbody>
-                    </table>
-                </div>
+                        </DocsTable>
             </div>
 
             <!-- Version member -->

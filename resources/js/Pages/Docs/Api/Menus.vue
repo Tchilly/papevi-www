@@ -2,6 +2,7 @@
 import { Head } from '@inertiajs/vue3';
 
 import DocsToc from '@/Components/Docs/DocsToc.vue';
+import DocsTable from '@/Components/Docs/DocsTable.vue';
 import Code from '@/Components/Ui/Code.vue';
 import Heading from '@/Components/Ui/Heading.vue';
 import DocsLayout from '@/Layouts/DocsLayout.vue';
@@ -123,16 +124,7 @@ const menuResponseJson =
                     class="scroll-mt-24"
                     >Endpoints</Heading
                 >
-                <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
-                    <table class="w-full text-sm">
-                        <thead class="bg-gray-50 text-xs text-gray-500 dark:bg-white/[0.03] dark:text-gray-400">
-                            <tr>
-                                <th class="px-5 py-3 text-left font-medium">Method</th>
-                                <th class="px-5 py-3 text-left font-medium">Path</th>
-                                <th class="px-5 py-3 text-left font-medium">Description</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100 text-gray-700 dark:divide-white/8 dark:text-gray-200">
+                <DocsTable :columns="['Method', 'Path', 'Description']">
                             <tr>
                                 <td class="px-5 py-3">
                                     <code class="font-mono text-xs text-green-600 dark:text-green-400">GET</code>
@@ -147,9 +139,7 @@ const menuResponseJson =
                                 <td class="px-5 py-3"><code class="font-mono text-xs">/menus/{id}</code></td>
                                 <td class="px-5 py-3">Get a single menu by slug</td>
                             </tr>
-                        </tbody>
-                    </table>
-                </div>
+                        </DocsTable>
             </div>
 
             <!-- GET /menus -->
@@ -174,18 +164,7 @@ const menuResponseJson =
 
                 <div class="space-y-3">
                     <p class="text-sm font-medium text-gray-900 dark:text-white">Query parameters</p>
-                    <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
-                        <table class="w-full text-sm">
-                            <thead class="bg-gray-50 text-xs text-gray-500 dark:bg-white/[0.03] dark:text-gray-400">
-                                <tr>
-                                    <th class="px-5 py-3 text-left font-medium">Parameter</th>
-                                    <th class="px-5 py-3 text-left font-medium">Type</th>
-                                    <th class="px-5 py-3 text-left font-medium">Description</th>
-                                </tr>
-                            </thead>
-                            <tbody
-                                class="divide-y divide-gray-100 text-gray-700 dark:divide-white/8 dark:text-gray-200"
-                            >
+                                        <DocsTable :columns="['Parameter', 'Type', 'Description']">
                                 <tr>
                                     <td class="px-5 py-3"><code class="font-mono text-xs">per_page</code></td>
                                     <td class="px-5 py-3 text-xs text-gray-500">integer</td>
@@ -237,9 +216,7 @@ const menuResponseJson =
                                         Pass <code class="font-mono text-xs">items</code> to sideload menu items
                                     </td>
                                 </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                            </DocsTable>
                 </div>
 
                 <p class="text-sm font-medium text-gray-900 dark:text-white">Example</p>
@@ -307,18 +284,7 @@ const menuResponseJson =
                 >
                 <div class="space-y-4">
                     <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Menu</p>
-                    <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
-                        <table class="w-full text-sm">
-                            <thead class="bg-gray-50 text-xs text-gray-500 dark:bg-white/[0.03] dark:text-gray-400">
-                                <tr>
-                                    <th class="px-5 py-3 text-left font-medium">Field</th>
-                                    <th class="px-5 py-3 text-left font-medium">Type</th>
-                                    <th class="px-5 py-3 text-left font-medium">Description</th>
-                                </tr>
-                            </thead>
-                            <tbody
-                                class="divide-y divide-gray-100 text-gray-700 dark:divide-white/8 dark:text-gray-200"
-                            >
+                                        <DocsTable :columns="['Field', 'Type', 'Description']">
                                 <tr>
                                     <td class="px-5 py-3"><code class="font-mono text-xs">name</code></td>
                                     <td class="px-5 py-3 text-xs text-gray-500">string</td>
@@ -356,9 +322,7 @@ const menuResponseJson =
                                     <td class="px-5 py-3 text-xs text-gray-500">ISO 8601</td>
                                     <td class="px-5 py-3">Last updated timestamp</td>
                                 </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                            </DocsTable>
 
                     <p class="text-sm font-medium text-gray-700 dark:text-gray-300">
                         Menu item
@@ -366,18 +330,7 @@ const menuResponseJson =
                             >(type: <code class="font-mono text-xs">menu-items</code>)</span
                         >
                     </p>
-                    <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
-                        <table class="w-full text-sm">
-                            <thead class="bg-gray-50 text-xs text-gray-500 dark:bg-white/[0.03] dark:text-gray-400">
-                                <tr>
-                                    <th class="px-5 py-3 text-left font-medium">Field</th>
-                                    <th class="px-5 py-3 text-left font-medium">Type</th>
-                                    <th class="px-5 py-3 text-left font-medium">Description</th>
-                                </tr>
-                            </thead>
-                            <tbody
-                                class="divide-y divide-gray-100 text-gray-700 dark:divide-white/8 dark:text-gray-200"
-                            >
+                                        <DocsTable :columns="['Field', 'Type', 'Description']">
                                 <tr>
                                     <td class="px-5 py-3"><code class="font-mono text-xs">title</code></td>
                                     <td class="px-5 py-3 text-xs text-gray-500">string</td>
@@ -454,9 +407,7 @@ const menuResponseJson =
                                     <td class="px-5 py-3 text-xs text-gray-500">string|null</td>
                                     <td class="px-5 py-3">Optional icon identifier</td>
                                 </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                            </DocsTable>
                 </div>
             </div>
         </div>
