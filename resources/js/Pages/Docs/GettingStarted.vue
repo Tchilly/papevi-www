@@ -191,7 +191,7 @@ const tocItems = [
                 </div>
 
                 <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-4 text-sm"
+                    class="overflow-x-auto rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900 p-4 text-sm"
                 ><code class="font-mono text-gray-100">PAPEVI_TOKEN=<span class="text-brand-300">papevi_live_xxxxxxxxxxxx</span></code></pre>
 
                 <!-- Screenshot placeholder -->
@@ -329,7 +329,7 @@ const tocItems = [
                 </div>
 
                 <pre
-                    class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5 text-sm leading-relaxed"
+                    class="overflow-x-auto rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900 p-5 text-sm leading-relaxed"
                 ><code class="font-mono text-gray-100"><span class="text-gray-500"># Authenticate</span>
 curl https://api.papevi.app/api/test \
   -H <span class="text-brand-300">"Authorization: Bearer $PAPEVI_TOKEN"</span>

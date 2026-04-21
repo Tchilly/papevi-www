@@ -71,7 +71,7 @@ const siteResponseJson =
                     class="scroll-mt-24"
                     >Base URL</Heading
                 >
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950"><Code lang="bash" :code="baseUrl" /></div>
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"><Code lang="bash" :code="baseUrl" /></div>
             </div>
 
             <!-- Endpoints -->
@@ -110,7 +110,7 @@ const siteResponseJson =
                     <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">404</code>.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950"><Code lang="bash" :code="getSiteCurl" /></div>
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"><Code lang="bash" :code="getSiteCurl" /></div>
             </div>
 
             <!-- Response format -->
@@ -127,7 +127,7 @@ const siteResponseJson =
                     <strong class="font-semibold text-gray-800 dark:text-gray-100">JSON:API</strong> specification.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950"><Code lang="json" :code="siteResponseJson" /></div>
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"><Code lang="json" :code="siteResponseJson" /></div>
             </div>
 
             <!-- Attributes -->

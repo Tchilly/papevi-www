@@ -86,7 +86,7 @@ const mediaResponseJson =
                     class="scroll-mt-24"
                     >Base URL</Heading
                 >
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950"><Code lang="bash" :code="baseUrl" /></div>
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"><Code lang="bash" :code="baseUrl" /></div>
             </div>
 
             <!-- Endpoints -->
@@ -129,7 +129,7 @@ const mediaResponseJson =
                     Returns a paginated list of media files for the authenticated site, sorted by newest first.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950"><Code lang="bash" :code="listMediaCurl" /></div>
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"><Code lang="bash" :code="listMediaCurl" /></div>
 
                 <div class="space-y-3">
                     <p class="text-sm font-medium text-gray-900 dark:text-white">Query parameters</p>
@@ -177,7 +177,7 @@ const mediaResponseJson =
                 </div>
 
                 <p class="text-sm font-medium text-gray-900 dark:text-white">Example</p>
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950"><Code lang="bash" :code="listMediaExampleCurl" /></div>
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"><Code lang="bash" :code="listMediaExampleCurl" /></div>
             </div>
 
             <!-- GET /media/{id} -->
@@ -195,7 +195,7 @@ const mediaResponseJson =
                     does not belong to your site.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950"><Code lang="bash" :code="getMediaIdCurl" /></div>
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"><Code lang="bash" :code="getMediaIdCurl" /></div>
             </div>
 
             <!-- Response format -->
@@ -212,7 +212,7 @@ const mediaResponseJson =
                     <strong class="font-semibold text-gray-800 dark:text-gray-100">JSON:API</strong> specification.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950"><Code lang="json" :code="mediaResponseJson" /></div>
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"><Code lang="json" :code="mediaResponseJson" /></div>
             </div>
 
             <!-- Attributes -->

@@ -107,7 +107,7 @@ const menuResponseJson =
                     class="scroll-mt-24"
                     >Base URL</Heading
                 >
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="bash"
                         :code="baseUrl"
@@ -155,7 +155,7 @@ const menuResponseJson =
                     Returns a paginated list of menus for the authenticated site.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="bash"
                         :code="listMenusCurl"
@@ -220,7 +220,7 @@ const menuResponseJson =
                 </div>
 
                 <p class="text-sm font-medium text-gray-900 dark:text-white">Example</p>
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="bash"
                         :code="listMenusExampleCurl"
@@ -243,7 +243,7 @@ const menuResponseJson =
                     menu does not belong to your site.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="bash"
                         :code="getMenuSlugCurl"
@@ -265,7 +265,7 @@ const menuResponseJson =
                     <strong class="font-semibold text-gray-800 dark:text-gray-100">JSON:API</strong> specification.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="json"
                         :code="menuResponseJson"

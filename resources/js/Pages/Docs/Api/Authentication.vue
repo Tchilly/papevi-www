@@ -140,7 +140,7 @@ const testResponseExample =
                     header.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         code="Authorization: Bearer <your-token>"
                         lang="bash"
@@ -190,14 +190,14 @@ const testResponseExample =
                     prefix).
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="bash"
                         :code="testCurlExample"
                     />
                 </div>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="json"
                         :code="testResponseExample"
@@ -252,7 +252,7 @@ const testResponseExample =
                     <strong class="font-medium text-gray-900 dark:text-white">API Tokens → Verified Domains</strong>,
                     then add this TXT record to your DNS:
                 </p>
-                <div class="overflow-x-auto rounded-xl border border-white/10 bg-gray-950 p-5">
+                <div class="overflow-x-auto rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900 p-5">
                     <table class="w-full font-mono text-xs text-gray-300">
                         <thead>
                             <tr class="border-b border-white/10 text-gray-500">

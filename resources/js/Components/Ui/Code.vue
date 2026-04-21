@@ -69,8 +69,8 @@ async function copy() {
         class="group relative"
     >
         <pre
-            class="overflow-x-auto p-5 text-sm leading-relaxed text-slate-200"
-        ><code class="font-mono" v-html="highlighted" /></pre>
+            class="overflow-x-auto bg-gray-100 p-5 text-sm leading-relaxed text-gray-700 dark:bg-gray-900 dark:text-gray-300"
+        ><code class="hljs font-mono" v-html="highlighted" /></pre>
         <button
             type="button"
             aria-label="Copy code"
@@ -118,64 +118,116 @@ async function copy() {
     </div>
 </template>
 
+<!-- unscoped: rules target v-html injected spans -->
 <style>
+/* ── Light mode ─────────────────────────────────────────── */
+.hljs {
+    color: var(--color-gray-700);
+}
 .hljs-comment,
 .hljs-quote {
-    color: rgb(107 114 128); /* gray-500 */
+    color: var(--color-gray-500);
+    font-style: italic;
 }
 .hljs-keyword,
 .hljs-selector-tag,
-.hljs-addition {
-    color: rgb(167 139 250); /* violet-400 */
+.hljs-subst,
+.hljs-name {
+    color: var(--color-yellow-700);
 }
 .hljs-string,
-.hljs-attr,
-.hljs-template-tag,
+.hljs-doctag,
 .hljs-template-variable,
-.hljs-link {
-    color: rgb(74 222 128); /* green-400 */
+.hljs-addition {
+    color: var(--color-brand-600);
+}
+.hljs-attr,
+.hljs-attribute {
+    color: var(--color-gray-800);
 }
 .hljs-number,
-.hljs-literal {
-    color: rgb(251 146 60); /* orange-400 */
+.hljs-literal,
+.hljs-symbol,
+.hljs-bullet {
+    color: var(--color-orange-600);
 }
 .hljs-built_in,
-.hljs-attribute {
-    color: rgb(96 165 250); /* blue-400 */
-}
-.hljs-variable {
-    color: rgb(226 232 240); /* slate-200 */
-}
-.hljs-title,
-.hljs-class .hljs-title,
-.hljs-title.class_ {
-    color: rgb(129 200 248); /* sky-300 */
-}
 .hljs-type,
-.hljs-params {
-    color: rgb(129 200 248); /* sky-300 */
+.hljs-class .hljs-title,
+.hljs-title.class_,
+.hljs-title {
+    color: var(--color-yellow-600);
 }
-.hljs-name {
-    color: rgb(96 165 250); /* blue-400 */
+.hljs-variable,
+.hljs-params,
+.hljs-formula {
+    color: var(--color-gray-700);
 }
-.hljs-meta {
-    color: rgb(156 163 175); /* gray-400 */
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-meta .hljs-string {
+    color: var(--color-green-600);
 }
 .hljs-deletion {
-    color: rgb(248 113 113); /* red-400 */
+    color: var(--color-red-600);
 }
-.hljs-subst,
-.hljs-punctuation {
-    color: rgb(148 163 184); /* slate-400 */
+
+/* ── Dark mode ──────────────────────────────────────────── */
+.dark .hljs {
+    color: var(--color-gray-300);
 }
-.hljs-section {
-    color: rgb(167 139 250); /* violet-400 */
+.dark .hljs-comment,
+.dark .hljs-quote {
+    color: var(--color-gray-500);
+    font-style: italic;
+}
+.dark .hljs-keyword,
+.dark .hljs-selector-tag,
+.dark .hljs-subst,
+.dark .hljs-name {
+    color: var(--color-yellow-300);
+}
+.dark .hljs-string,
+.dark .hljs-doctag,
+.dark .hljs-template-variable,
+.dark .hljs-addition {
+    color: var(--color-brand-400);
+}
+.dark .hljs-attr,
+.dark .hljs-attribute {
+    color: var(--color-gray-100);
+}
+.dark .hljs-number,
+.dark .hljs-literal,
+.dark .hljs-symbol,
+.dark .hljs-bullet {
+    color: var(--color-orange-300);
+}
+.dark .hljs-built_in,
+.dark .hljs-type,
+.dark .hljs-class .hljs-title,
+.dark .hljs-title.class_,
+.dark .hljs-title {
+    color: var(--color-yellow-400);
+}
+.dark .hljs-variable,
+.dark .hljs-params,
+.dark .hljs-formula {
+    color: var(--color-gray-300);
+}
+.dark .hljs-meta,
+.dark .hljs-meta .hljs-keyword,
+.dark .hljs-meta .hljs-string {
+    color: var(--color-green-300);
+}
+.dark .hljs-deletion {
+    color: var(--color-red-400);
+}
+
+.hljs-strong {
     font-weight: 600;
 }
 .hljs-emphasis {
     font-style: italic;
-}
-.hljs-strong {
-    font-weight: 700;
 }
 </style>

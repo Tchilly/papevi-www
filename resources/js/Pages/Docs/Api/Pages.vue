@@ -118,7 +118,7 @@ const sparseFieldsExample =
                     class="scroll-mt-24"
                     >Base URL</Heading
                 >
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="bash"
                         :code="baseUrl"
@@ -168,7 +168,7 @@ const sparseFieldsExample =
                     to control page size.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="bash"
                         :code="listPagesCurl"
@@ -208,7 +208,7 @@ const sparseFieldsExample =
                             </DocsTable>
                 </div>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="json"
                         :code="listPagesJson"
@@ -231,7 +231,7 @@ const sparseFieldsExample =
                     page must belong to the site associated with your token.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="bash"
                         :code="getPagesSlugCurl"
@@ -260,7 +260,7 @@ const sparseFieldsExample =
                     wrapper. The exact fields depend on your page type configuration.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="json"
                         :code="singlePageJson"
@@ -271,7 +271,7 @@ const sparseFieldsExample =
                     Use sparse fieldsets to limit which attributes are returned:
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="bash"
                         :code="sparseFieldsExample"

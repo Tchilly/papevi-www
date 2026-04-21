@@ -189,7 +189,7 @@ const errorExample =
                     <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">Accept</code>
                     header, though it is not required.
                 </p>
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="bash"
                         code="Content-Type: application/vnd.api+json"
@@ -235,7 +235,7 @@ const errorExample =
                                 </td>
                             </tr>
                         </DocsTable>
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="json"
                         :code="singleResourceExample"
@@ -290,7 +290,7 @@ const errorExample =
                             </tr>
                         </DocsTable>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="json"
                         :code="collectionExample"
@@ -320,7 +320,7 @@ const errorExample =
                     <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">included</code>
                     array — each resource appears only once even if referenced multiple times.
                 </p>
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="json"
                         :code="relationshipExample"
@@ -362,7 +362,7 @@ const errorExample =
                     >
                     value in seconds.
                 </p>
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="json"
                         :code="errorExample"
@@ -424,7 +424,7 @@ const errorExample =
                     object declaring the spec version. This is always
                     <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">1.1</code>.
                 </p>
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="json"
                         code='{ "jsonapi": { "version": "1.1" } }'

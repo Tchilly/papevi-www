@@ -101,7 +101,7 @@ const taxonomyResponseJson =
                     class="scroll-mt-24"
                     >Base URL</Heading
                 >
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="bash"
                         :code="baseUrl"
@@ -149,7 +149,7 @@ const taxonomyResponseJson =
                     Returns a paginated list of taxonomies for the authenticated site.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="bash"
                         :code="listTaxonomiesCurl"
@@ -214,7 +214,7 @@ const taxonomyResponseJson =
                 </div>
 
                 <p class="text-sm font-medium text-gray-900 dark:text-white">Example</p>
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="bash"
                         :code="listTaxonomiesExampleCurl"
@@ -237,7 +237,7 @@ const taxonomyResponseJson =
                     does not belong to your site.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="bash"
                         :code="getTaxonomyIdCurl"
@@ -259,7 +259,7 @@ const taxonomyResponseJson =
                     <strong class="font-semibold text-gray-800 dark:text-gray-100">JSON:API</strong> specification.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-gray-950">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
                     <Code
                         lang="json"
                         :code="taxonomyResponseJson"
