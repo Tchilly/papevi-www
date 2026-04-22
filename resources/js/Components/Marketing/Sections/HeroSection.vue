@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
 
+import { editorHeroImage } from '@/Components/Marketing/marketingImages';
 import Button from '@/Components/Ui/Button.vue';
 import Heading from '@/Components/Ui/Heading.vue';
 
@@ -122,7 +123,7 @@ const onImageError = (event: Event) => {
                 </div>
                 <div class="relative aspect-[4/3] w-full overflow-hidden product-placeholder">
                     <img
-                        src="/images/marketing/editor-hero.png"
+                        :src="editorHeroImage"
                         alt="Papevi CMS editor interface"
                         class="absolute inset-0 h-full w-full object-cover opacity-0 transition data-[loaded=true]:opacity-100"
                         loading="eager"

@@ -138,7 +138,7 @@ const year = new Date().getFullYear();
         </div>
 
         <div
-            class="mx-auto mt-10 flex max-w-7xl flex-col items-center justify-between gap-3 border-t border-gray-200 pt-6 text-xs text-gray-600 sm:flex-row dark:border-white/5"
+            class="mx-auto mt-10 flex max-w-7xl flex-col items-center justify-between gap-3 border-t border-gray-200 pt-6 text-xs text-gray-700 sm:flex-row dark:border-white/5 dark:text-gray-300"
         >
             <p>&copy; {{ year }} Papevi CMS. All rights reserved.</p>
             <p class="font-mono">papevi.com</p>

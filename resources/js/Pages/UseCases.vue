@@ -3,6 +3,7 @@ import { Head } from '@inertiajs/vue3';
 
 import MarketingFooter from '@/Components/Marketing/MarketingFooter.vue';
 import MarketingHeader from '@/Components/Marketing/MarketingHeader.vue';
+import { useCaseImages } from '@/Components/Marketing/marketingImages';
 import CtaSection from '@/Components/Marketing/Sections/CtaSection.vue';
 import Heading from '@/Components/Ui/Heading.vue';
 
@@ -297,7 +298,7 @@ const onImageError = (event: Event) => {
                         </div>
                         <div class="relative aspect-[4/3] w-full overflow-hidden product-placeholder">
                             <img
-                                :src="`/images/marketing/use-case-${index + 1}.png`"
+                                :src="useCaseImages[index]"
                                 :alt="item.title"
                                 class="absolute inset-0 h-full w-full object-cover opacity-0 transition data-[loaded=true]:opacity-100"
                                 loading="lazy"

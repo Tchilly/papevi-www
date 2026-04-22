@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { workflowImage } from '@/Components/Marketing/marketingImages';
 import Heading from '@/Components/Ui/Heading.vue';
 
 const stages = [
@@ -62,7 +63,7 @@ const onImageError = (event: Event) => {
                 </div>
                 <div class="relative aspect-[16/9] w-full overflow-hidden product-placeholder">
                     <img
-                        src="/images/marketing/workflow.png"
+                        :src="workflowImage"
                         alt="Workflow board"
                         class="absolute inset-0 h-full w-full object-cover opacity-0 transition data-[loaded=true]:opacity-100"
                         loading="lazy"
