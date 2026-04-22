@@ -5,7 +5,7 @@ test('ssr build is configured', function () {
 
     expect($packageJson)
         ->toHaveKey('scripts.build:ssr')
-        ->and($packageJson['scripts']['build:ssr'])->toBe('vite build --ssr');
+        ->and($packageJson['scripts']['build:ssr'])->toBe('npm run build && vite build --ssr');
 
     $viteConfig = file_get_contents(base_path('vite.config.js'));
 
