@@ -18,7 +18,7 @@ class BetaSignupController extends Controller
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255'],
         ]);
 
-        Mail::to($validated['email'])->queue(new BetaWelcomeMail);
+        Mail::to($validated['email'])->send(new BetaWelcomeMail);
 
         return back()->with('beta_success', 'You\'re on the list! Check your inbox for a welcome email.');
     }
