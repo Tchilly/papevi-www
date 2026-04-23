@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Head } from '@inertiajs/vue3';
 
-import DocsToc from '@/Components/Docs/DocsToc.vue';
 import DocsTable from '@/Components/Docs/DocsTable.vue';
+import DocsToc from '@/Components/Docs/DocsToc.vue';
 import Code from '@/Components/Ui/Code.vue';
 import Heading from '@/Components/Ui/Heading.vue';
 import DocsLayout from '@/Layouts/DocsLayout.vue';
@@ -18,8 +18,7 @@ const tocItems = [
 
 const baseUrl = 'https://api.papevi.app/api/v1';
 
-const listTaxonomiesCurl =
-    'curl https://api.papevi.app/api/v1/taxonomies \\\n  -H "Authorization: Bearer <token>"';
+const listTaxonomiesCurl = 'curl https://api.papevi.app/api/v1/taxonomies \\\n  -H "Authorization: Bearer <token>"';
 
 const listTaxonomiesExampleCurl =
     '# Fetch the "category" taxonomy with all its terms\n' +
@@ -82,7 +81,7 @@ const taxonomyResponseJson =
 
         <div class="space-y-10">
             <div class="space-y-3 border-b border-gray-200 pb-10 dark:border-white/8">
-                <p class="text-xs font-semibold tracking-[0.14em] text-brand-600 uppercase dark:text-brand-400">
+                <p class="text-xs font-semibold tracking-[0.14em] text-brand-700 uppercase dark:text-brand-400">
                     API Reference
                 </p>
                 <Heading as="h1">Taxonomies API</Heading>
@@ -101,7 +100,9 @@ const taxonomyResponseJson =
                     class="scroll-mt-24"
                     >Base URL</Heading
                 >
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="bash"
                         :code="baseUrl"
@@ -119,21 +120,21 @@ const taxonomyResponseJson =
                     >Endpoints</Heading
                 >
                 <DocsTable :columns="['Method', 'Path', 'Description']">
-                            <tr>
-                                <td class="px-5 py-3">
-                                    <code class="font-mono text-xs text-green-600 dark:text-green-400">GET</code>
-                                </td>
-                                <td class="px-5 py-3"><code class="font-mono text-xs">/taxonomies</code></td>
-                                <td class="px-5 py-3">List all taxonomies for your site</td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-3">
-                                    <code class="font-mono text-xs text-green-600 dark:text-green-400">GET</code>
-                                </td>
-                                <td class="px-5 py-3"><code class="font-mono text-xs">/taxonomies/{id}</code></td>
-                                <td class="px-5 py-3">Get a single taxonomy by ID</td>
-                            </tr>
-                        </DocsTable>
+                    <tr>
+                        <td class="px-5 py-3">
+                            <code class="font-mono text-xs text-green-600 dark:text-green-400">GET</code>
+                        </td>
+                        <td class="px-5 py-3"><code class="font-mono text-xs">/taxonomies</code></td>
+                        <td class="px-5 py-3">List all taxonomies for your site</td>
+                    </tr>
+                    <tr>
+                        <td class="px-5 py-3">
+                            <code class="font-mono text-xs text-green-600 dark:text-green-400">GET</code>
+                        </td>
+                        <td class="px-5 py-3"><code class="font-mono text-xs">/taxonomies/{id}</code></td>
+                        <td class="px-5 py-3">Get a single taxonomy by ID</td>
+                    </tr>
+                </DocsTable>
             </div>
 
             <!-- GET /taxonomies -->
@@ -149,7 +150,9 @@ const taxonomyResponseJson =
                     Returns a paginated list of taxonomies for the authenticated site.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="bash"
                         :code="listTaxonomiesCurl"
@@ -158,63 +161,67 @@ const taxonomyResponseJson =
 
                 <div class="space-y-3">
                     <p class="text-sm font-medium text-gray-900 dark:text-white">Query parameters</p>
-                                        <DocsTable :columns="['Parameter', 'Type', 'Description']">
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">per_page</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">integer</td>
-                                    <td class="px-5 py-3">
-                                        Results per page (default <code class="font-mono text-xs">15</code>)
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">sort</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">string</td>
-                                    <td class="px-5 py-3">
-                                        One of <code class="font-mono text-xs">name</code>,
-                                        <code class="font-mono text-xs">slug</code>,
-                                        <code class="font-mono text-xs">created_at</code>,
-                                        <code class="font-mono text-xs">updated_at</code>. Prefix with
-                                        <code class="font-mono text-xs">-</code> for descending (default
-                                        <code class="font-mono text-xs">name</code>)
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">filter[name]</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">string</td>
-                                    <td class="px-5 py-3">Exact name match</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">filter[slug]</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">string</td>
-                                    <td class="px-5 py-3">Exact slug match</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">filter[language]</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">string</td>
-                                    <td class="px-5 py-3">Filter by language code</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3">
-                                        <code class="font-mono text-xs">filter[hierarchical]</code>
-                                    </td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">boolean</td>
-                                    <td class="px-5 py-3">
-                                        Filter to hierarchical (<code class="font-mono text-xs">true</code>) or flat
-                                        (<code class="font-mono text-xs">false</code>) taxonomies
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">include</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">string</td>
-                                    <td class="px-5 py-3">
-                                        Pass <code class="font-mono text-xs">terms</code> to sideload taxonomy terms
-                                    </td>
-                                </tr>
-                            </DocsTable>
+                    <DocsTable :columns="['Parameter', 'Type', 'Description']">
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">per_page</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">integer</td>
+                            <td class="px-5 py-3">
+                                Results per page (default <code class="font-mono text-xs">15</code>)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">sort</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                            <td class="px-5 py-3">
+                                One of <code class="font-mono text-xs">name</code>,
+                                <code class="font-mono text-xs">slug</code>,
+                                <code class="font-mono text-xs">created_at</code>,
+                                <code class="font-mono text-xs">updated_at</code>. Prefix with
+                                <code class="font-mono text-xs">-</code> for descending (default
+                                <code class="font-mono text-xs">name</code>)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">filter[name]</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                            <td class="px-5 py-3">Exact name match</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">filter[slug]</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                            <td class="px-5 py-3">Exact slug match</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">filter[language]</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                            <td class="px-5 py-3">Filter by language code</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3">
+                                <code class="font-mono text-xs">filter[hierarchical]</code>
+                            </td>
+                            <td class="px-5 py-3 text-xs text-gray-500">boolean</td>
+                            <td class="px-5 py-3">
+                                Filter to hierarchical (<code class="font-mono text-xs">true</code>) or flat (<code
+                                    class="font-mono text-xs"
+                                    >false</code
+                                >) taxonomies
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">include</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                            <td class="px-5 py-3">
+                                Pass <code class="font-mono text-xs">terms</code> to sideload taxonomy terms
+                            </td>
+                        </tr>
+                    </DocsTable>
                 </div>
 
                 <p class="text-sm font-medium text-gray-900 dark:text-white">Example</p>
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="bash"
                         :code="listTaxonomiesExampleCurl"
@@ -237,7 +244,9 @@ const taxonomyResponseJson =
                     does not belong to your site.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="bash"
                         :code="getTaxonomyIdCurl"
@@ -259,7 +268,9 @@ const taxonomyResponseJson =
                     <strong class="font-semibold text-gray-800 dark:text-gray-100">JSON:API</strong> specification.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="json"
                         :code="taxonomyResponseJson"
@@ -278,48 +289,48 @@ const taxonomyResponseJson =
                 >
                 <div class="space-y-4">
                     <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Taxonomy</p>
-                                        <DocsTable :columns="['Field', 'Type', 'Description']">
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">name</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">string</td>
-                                    <td class="px-5 py-3">Taxonomy name</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">slug</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">string</td>
-                                    <td class="px-5 py-3">URL-safe identifier</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">description</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">string|null</td>
-                                    <td class="px-5 py-3">Optional description</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">hierarchical</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">boolean</td>
-                                    <td class="px-5 py-3">Whether terms can be nested</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">multiple_selection</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">boolean</td>
-                                    <td class="px-5 py-3">Whether multiple terms can be selected on a page</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">required</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">boolean</td>
-                                    <td class="px-5 py-3">Whether a term is required on pages using this taxonomy</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">max_depth</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">integer|null</td>
-                                    <td class="px-5 py-3">Maximum nesting depth for hierarchical taxonomies</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">language</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">string</td>
-                                    <td class="px-5 py-3">Language code</td>
-                                </tr>
-                            </DocsTable>
+                    <DocsTable :columns="['Field', 'Type', 'Description']">
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">name</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                            <td class="px-5 py-3">Taxonomy name</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">slug</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                            <td class="px-5 py-3">URL-safe identifier</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">description</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">string|null</td>
+                            <td class="px-5 py-3">Optional description</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">hierarchical</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">boolean</td>
+                            <td class="px-5 py-3">Whether terms can be nested</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">multiple_selection</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">boolean</td>
+                            <td class="px-5 py-3">Whether multiple terms can be selected on a page</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">required</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">boolean</td>
+                            <td class="px-5 py-3">Whether a term is required on pages using this taxonomy</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">max_depth</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">integer|null</td>
+                            <td class="px-5 py-3">Maximum nesting depth for hierarchical taxonomies</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">language</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                            <td class="px-5 py-3">Language code</td>
+                        </tr>
+                    </DocsTable>
 
                     <p class="text-sm font-medium text-gray-700 dark:text-gray-300">
                         Taxonomy term
@@ -327,28 +338,28 @@ const taxonomyResponseJson =
                             >(type: <code class="font-mono text-xs">taxonomy-terms</code>)</span
                         >
                     </p>
-                                        <DocsTable :columns="['Field', 'Type', 'Description']">
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">name</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">string</td>
-                                    <td class="px-5 py-3">Term label</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">slug</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">string</td>
-                                    <td class="px-5 py-3">URL-safe identifier</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">description</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">string|null</td>
-                                    <td class="px-5 py-3">Optional description</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">order</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">integer</td>
-                                    <td class="px-5 py-3">Sort position within the taxonomy</td>
-                                </tr>
-                            </DocsTable>
+                    <DocsTable :columns="['Field', 'Type', 'Description']">
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">name</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                            <td class="px-5 py-3">Term label</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">slug</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                            <td class="px-5 py-3">URL-safe identifier</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">description</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">string|null</td>
+                            <td class="px-5 py-3">Optional description</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">order</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">integer</td>
+                            <td class="px-5 py-3">Sort position within the taxonomy</td>
+                        </tr>
+                    </DocsTable>
                 </div>
             </div>
         </div>

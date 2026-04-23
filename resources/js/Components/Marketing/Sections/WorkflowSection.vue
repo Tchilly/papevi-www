@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { workflowImage } from '@/Components/Marketing/marketingImages';
+import ProductFrame from '@/Components/Marketing/ProductFrame.vue';
 import Heading from '@/Components/Ui/Heading.vue';
 
 const stages = [
@@ -9,14 +10,6 @@ const stages = [
     { state: 'Scheduled', summary: 'Publish and unpublish on precise timestamps.' },
     { state: 'Published', summary: 'Live with audit-backed accountability and rollback.' },
 ];
-
-const onImageLoad = (event: Event) => {
-    (event.target as HTMLImageElement).dataset.loaded = 'true';
-};
-
-const onImageError = (event: Event) => {
-    (event.target as HTMLImageElement).remove();
-};
 </script>
 
 <template>
@@ -52,29 +45,13 @@ const onImageError = (event: Event) => {
         </ol>
 
         <div class="mx-auto mt-14 max-w-5xl">
-            <figure class="product-frame">
-                <div class="product-frame-bar">
-                    <span class="product-frame-dot"></span>
-                    <span class="product-frame-dot"></span>
-                    <span class="product-frame-dot"></span>
-                    <span class="ml-3 font-mono text-[11px] text-gray-600 dark:text-gray-400">
-                        workflow.papevi.app
-                    </span>
-                </div>
-                <div class="relative aspect-[16/9] w-full overflow-hidden product-placeholder">
-                    <img
-                        :src="workflowImage"
-                        alt="Workflow board"
-                        class="absolute inset-0 h-full w-full object-cover opacity-0 transition data-[loaded=true]:opacity-100"
-                        loading="lazy"
-                        @load="onImageLoad"
-                        @error="onImageError"
-                    />
-                    <div class="absolute inset-0 flex items-center justify-center text-sm text-gray-400">
-                        <span class="font-mono">Workflow preview</span>
-                    </div>
-                </div>
-            </figure>
+            <ProductFrame
+                url="workflow.papevi.app"
+                :src="workflowImage"
+                alt="Workflow board"
+                label="Workflow preview"
+                aspect="16/9"
+            />
         </div>
     </section>
 </template>

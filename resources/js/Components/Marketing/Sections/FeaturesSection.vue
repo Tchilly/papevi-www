@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { featureImages } from '@/Components/Marketing/marketingImages';
+import ProductFrame from '@/Components/Marketing/ProductFrame.vue';
 import Heading from '@/Components/Ui/Heading.vue';
 
 const features = [
@@ -45,14 +46,6 @@ const features = [
         ],
     },
 ];
-
-const onImageLoad = (event: Event) => {
-    (event.target as HTMLImageElement).dataset.loaded = 'true';
-};
-
-const onImageError = (event: Event) => {
-    (event.target as HTMLImageElement).remove();
-};
 </script>
 
 <template>
@@ -124,29 +117,12 @@ const onImageError = (event: Event) => {
                     </ul>
                 </div>
 
-                <figure class="product-frame">
-                    <div class="product-frame-bar">
-                        <span class="product-frame-dot"></span>
-                        <span class="product-frame-dot"></span>
-                        <span class="product-frame-dot"></span>
-                        <span class="ml-3 font-mono text-[11px] text-gray-600 dark:text-gray-400">
-                            {{ feature.eyebrow.toLowerCase() }}.papevi.app
-                        </span>
-                    </div>
-                    <div class="relative aspect-[4/3] w-full overflow-hidden product-placeholder">
-                        <img
-                            :src="featureImages[index]"
-                            :alt="feature.title"
-                            class="absolute inset-0 h-full w-full object-cover opacity-0 transition data-[loaded=true]:opacity-100"
-                            loading="lazy"
-                            @load="onImageLoad"
-                            @error="onImageError"
-                        />
-                        <div class="absolute inset-0 flex items-center justify-center text-sm text-gray-400">
-                            <span class="font-mono">{{ feature.eyebrow }} preview</span>
-                        </div>
-                    </div>
-                </figure>
+                <ProductFrame
+                    :url="`${feature.eyebrow.toLowerCase()}.papevi.app`"
+                    :src="featureImages[index]"
+                    :alt="feature.title"
+                    :label="`${feature.eyebrow} preview`"
+                />
             </div>
         </div>
     </section>

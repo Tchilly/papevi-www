@@ -4,6 +4,7 @@ import { Head } from '@inertiajs/vue3';
 import MarketingFooter from '@/Components/Marketing/MarketingFooter.vue';
 import MarketingHeader from '@/Components/Marketing/MarketingHeader.vue';
 import { useCaseImages } from '@/Components/Marketing/marketingImages';
+import ProductFrame from '@/Components/Marketing/ProductFrame.vue';
 import CtaSection from '@/Components/Marketing/Sections/CtaSection.vue';
 import Heading from '@/Components/Ui/Heading.vue';
 
@@ -109,14 +110,6 @@ const structuredData = {
             })),
         },
     ],
-};
-
-const onImageLoad = (event: Event) => {
-    (event.target as HTMLImageElement).dataset.loaded = 'true';
-};
-
-const onImageError = (event: Event) => {
-    (event.target as HTMLImageElement).remove();
 };
 </script>
 
@@ -298,7 +291,7 @@ const onImageError = (event: Event) => {
                     :class="{ 'lg:[&>*:first-child]:order-2': index % 2 === 1 }"
                 >
                     <div class="space-y-5">
-                        <p class="text-xs font-semibold tracking-[0.18em] text-brand-600 uppercase dark:text-brand-400">
+                        <p class="text-xs font-semibold tracking-[0.18em] text-brand-700 uppercase dark:text-brand-400">
                             {{ item.eyebrow }}
                         </p>
                         <Heading
@@ -341,29 +334,12 @@ const onImageError = (event: Event) => {
                         </ul>
                     </div>
 
-                    <figure class="product-frame">
-                        <div class="product-frame-bar">
-                            <span class="product-frame-dot"></span>
-                            <span class="product-frame-dot"></span>
-                            <span class="product-frame-dot"></span>
-                            <span class="ml-3 font-mono text-[11px] text-gray-500 dark:text-gray-400">
-                                papevi.com / {{ item.id }}
-                            </span>
-                        </div>
-                        <div class="relative aspect-[4/3] w-full overflow-hidden product-placeholder">
-                            <img
-                                :src="useCaseImages[index]"
-                                :alt="item.title"
-                                class="absolute inset-0 h-full w-full object-cover opacity-0 transition data-[loaded=true]:opacity-100"
-                                loading="lazy"
-                                @load="onImageLoad"
-                                @error="onImageError"
-                            />
-                            <div class="absolute inset-0 flex items-center justify-center text-sm text-gray-400">
-                                <span class="font-mono">{{ item.eyebrow }}</span>
-                            </div>
-                        </div>
-                    </figure>
+                    <ProductFrame
+                        :url="`papevi.com / ${item.id}`"
+                        :src="useCaseImages[index]"
+                        :alt="item.title"
+                        :label="item.eyebrow"
+                    />
                 </section>
             </div>
 

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Head } from '@inertiajs/vue3';
 
-import DocsToc from '@/Components/Docs/DocsToc.vue';
 import DocsTable from '@/Components/Docs/DocsTable.vue';
+import DocsToc from '@/Components/Docs/DocsToc.vue';
 import Code from '@/Components/Ui/Code.vue';
 import CodeTabs from '@/Components/Ui/CodeTabs.vue';
 import Heading from '@/Components/Ui/Heading.vue';
@@ -95,7 +95,7 @@ const sparseFieldsExample =
 
         <div class="space-y-10">
             <div class="space-y-3 border-b border-gray-200 pb-10 dark:border-white/8">
-                <p class="text-xs font-semibold tracking-[0.14em] text-brand-600 uppercase dark:text-brand-400">
+                <p class="text-xs font-semibold tracking-[0.14em] text-brand-700 uppercase dark:text-brand-400">
                     API Reference
                 </p>
                 <Heading as="h1">Pages API</Heading>
@@ -118,7 +118,9 @@ const sparseFieldsExample =
                     class="scroll-mt-24"
                     >Base URL</Heading
                 >
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="bash"
                         :code="baseUrl"
@@ -136,21 +138,21 @@ const sparseFieldsExample =
                     >Endpoints</Heading
                 >
                 <DocsTable :columns="['Method', 'Path', 'Description']">
-                            <tr>
-                                <td class="px-5 py-3">
-                                    <code class="font-mono text-xs text-green-600 dark:text-green-400">GET</code>
-                                </td>
-                                <td class="px-5 py-3"><code class="font-mono text-xs">/pages</code></td>
-                                <td class="px-5 py-3">List pages for your site</td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-3">
-                                    <code class="font-mono text-xs text-green-600 dark:text-green-400">GET</code>
-                                </td>
-                                <td class="px-5 py-3"><code class="font-mono text-xs">/pages/{slug}</code></td>
-                                <td class="px-5 py-3">Get a single page by slug</td>
-                            </tr>
-                        </DocsTable>
+                    <tr>
+                        <td class="px-5 py-3">
+                            <code class="font-mono text-xs text-green-600 dark:text-green-400">GET</code>
+                        </td>
+                        <td class="px-5 py-3"><code class="font-mono text-xs">/pages</code></td>
+                        <td class="px-5 py-3">List pages for your site</td>
+                    </tr>
+                    <tr>
+                        <td class="px-5 py-3">
+                            <code class="font-mono text-xs text-green-600 dark:text-green-400">GET</code>
+                        </td>
+                        <td class="px-5 py-3"><code class="font-mono text-xs">/pages/{slug}</code></td>
+                        <td class="px-5 py-3">Get a single page by slug</td>
+                    </tr>
+                </DocsTable>
             </div>
 
             <!-- GET /pages -->
@@ -168,7 +170,9 @@ const sparseFieldsExample =
                     to control page size.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="bash"
                         :code="listPagesCurl"
@@ -177,38 +181,38 @@ const sparseFieldsExample =
 
                 <div class="space-y-3">
                     <p class="text-sm font-medium text-gray-900 dark:text-white">Query parameters</p>
-                                        <DocsTable :columns="['Parameter', 'Type', 'Description']">
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">per_page</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">integer</td>
-                                    <td class="px-5 py-3">
-                                        Results per page (default <code class="font-mono text-xs">15</code>)
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">page</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">integer</td>
-                                    <td class="px-5 py-3">
-                                        Page number (default <code class="font-mono text-xs">1</code>)
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">sort</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">string</td>
-                                    <td class="px-5 py-3">
-                                        Field name to sort by. Prefix with <code class="font-mono text-xs">-</code> for
-                                        descending (e.g. <code class="font-mono text-xs">-created_at</code>)
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5 py-3"><code class="font-mono text-xs">filter[slug]</code></td>
-                                    <td class="px-5 py-3 text-xs text-gray-500">string</td>
-                                    <td class="px-5 py-3">Exact slug match</td>
-                                </tr>
-                            </DocsTable>
+                    <DocsTable :columns="['Parameter', 'Type', 'Description']">
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">per_page</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">integer</td>
+                            <td class="px-5 py-3">
+                                Results per page (default <code class="font-mono text-xs">15</code>)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">page</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">integer</td>
+                            <td class="px-5 py-3">Page number (default <code class="font-mono text-xs">1</code>)</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">sort</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                            <td class="px-5 py-3">
+                                Field name to sort by. Prefix with <code class="font-mono text-xs">-</code> for
+                                descending (e.g. <code class="font-mono text-xs">-created_at</code>)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3"><code class="font-mono text-xs">filter[slug]</code></td>
+                            <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                            <td class="px-5 py-3">Exact slug match</td>
+                        </tr>
+                    </DocsTable>
                 </div>
 
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="json"
                         :code="listPagesJson"
@@ -231,7 +235,9 @@ const sparseFieldsExample =
                     page must belong to the site associated with your token.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="bash"
                         :code="getPagesSlugCurl"
@@ -260,7 +266,9 @@ const sparseFieldsExample =
                     wrapper. The exact fields depend on your page type configuration.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="json"
                         :code="singlePageJson"
@@ -271,7 +279,9 @@ const sparseFieldsExample =
                     Use sparse fieldsets to limit which attributes are returned:
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="bash"
                         :code="sparseFieldsExample"

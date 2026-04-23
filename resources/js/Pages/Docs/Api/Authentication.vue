@@ -50,7 +50,7 @@ const testResponseExample =
 
         <div class="space-y-10">
             <div class="space-y-3 border-b border-gray-200 pb-10 dark:border-white/8">
-                <p class="text-xs font-semibold tracking-[0.14em] text-brand-600 uppercase dark:text-brand-400">
+                <p class="text-xs font-semibold tracking-[0.14em] text-brand-700 uppercase dark:text-brand-400">
                     API Reference
                 </p>
                 <Heading as="h1">Authentication</Heading>
@@ -140,7 +140,9 @@ const testResponseExample =
                     header.
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         code="Authorization: Bearer <your-token>"
                         lang="bash"
@@ -190,14 +192,18 @@ const testResponseExample =
                     prefix).
                 </p>
 
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="bash"
                         :code="testCurlExample"
                     />
                 </div>
 
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="json"
                         :code="testResponseExample"
@@ -252,7 +258,9 @@ const testResponseExample =
                     <strong class="font-medium text-gray-900 dark:text-white">API Tokens → Verified Domains</strong>,
                     then add this TXT record to your DNS:
                 </p>
-                <div class="overflow-x-auto rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900 p-5">
+                <div
+                    class="overflow-x-auto rounded-xl border border-gray-200 bg-gray-100 p-5 dark:border-white/10 dark:bg-gray-900"
+                >
                     <table class="w-full font-mono text-xs text-gray-300">
                         <thead>
                             <tr class="border-b border-white/10 text-gray-500">

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Head } from '@inertiajs/vue3';
 
-import DocsToc from '@/Components/Docs/DocsToc.vue';
 import DocsTable from '@/Components/Docs/DocsTable.vue';
+import DocsToc from '@/Components/Docs/DocsToc.vue';
 import Code from '@/Components/Ui/Code.vue';
 import Heading from '@/Components/Ui/Heading.vue';
 import DocsLayout from '@/Layouts/DocsLayout.vue';
@@ -128,7 +128,7 @@ const errorExample =
 
         <div class="space-y-10">
             <div class="space-y-3 border-b border-gray-200 pb-10 dark:border-white/8">
-                <p class="text-xs font-semibold tracking-[0.14em] text-brand-600 uppercase dark:text-brand-400">
+                <p class="text-xs font-semibold tracking-[0.14em] text-brand-700 uppercase dark:text-brand-400">
                     API Reference
                 </p>
                 <Heading as="h1">JSON:API</Heading>
@@ -189,7 +189,9 @@ const errorExample =
                     <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">Accept</code>
                     header, though it is not required.
                 </p>
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="bash"
                         code="Content-Type: application/vnd.api+json"
@@ -212,30 +214,32 @@ const errorExample =
                     Every resource object has three required members:
                 </p>
                 <DocsTable :columns="['Member', 'Type', 'Description']">
-                            <tr>
-                                <td class="px-5 py-3"><code class="font-mono text-xs">type</code></td>
-                                <td class="px-5 py-3 text-xs text-gray-500">string</td>
-                                <td class="px-5 py-3">
-                                    Resource type name (e.g. <code class="font-mono text-xs">pages</code>,
-                                    <code class="font-mono text-xs">menus</code>)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-3"><code class="font-mono text-xs">id</code></td>
-                                <td class="px-5 py-3 text-xs text-gray-500">string</td>
-                                <td class="px-5 py-3">
-                                    Resource identifier — always a string even when the underlying value is numeric
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-3"><code class="font-mono text-xs">attributes</code></td>
-                                <td class="px-5 py-3 text-xs text-gray-500">object</td>
-                                <td class="px-5 py-3">
-                                    Resource fields. Foreign keys are never exposed here — use relationships instead
-                                </td>
-                            </tr>
-                        </DocsTable>
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                    <tr>
+                        <td class="px-5 py-3"><code class="font-mono text-xs">type</code></td>
+                        <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                        <td class="px-5 py-3">
+                            Resource type name (e.g. <code class="font-mono text-xs">pages</code>,
+                            <code class="font-mono text-xs">menus</code>)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-5 py-3"><code class="font-mono text-xs">id</code></td>
+                        <td class="px-5 py-3 text-xs text-gray-500">string</td>
+                        <td class="px-5 py-3">
+                            Resource identifier — always a string even when the underlying value is numeric
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-5 py-3"><code class="font-mono text-xs">attributes</code></td>
+                        <td class="px-5 py-3 text-xs text-gray-500">object</td>
+                        <td class="px-5 py-3">
+                            Resource fields. Foreign keys are never exposed here — use relationships instead
+                        </td>
+                    </tr>
+                </DocsTable>
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="json"
                         :code="singleResourceExample"
@@ -263,34 +267,36 @@ const errorExample =
                 </p>
 
                 <DocsTable :columns="['Parameter', 'Default', 'Description']">
-                            <tr>
-                                <td class="px-5 py-3"><code class="font-mono text-xs">per_page</code></td>
-                                <td class="px-5 py-3 text-xs text-gray-500">15</td>
-                                <td class="px-5 py-3">Items per page. Each resource type has a configured max.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-3"><code class="font-mono text-xs">page</code></td>
-                                <td class="px-5 py-3 text-xs text-gray-500">1</td>
-                                <td class="px-5 py-3">Page number to fetch</td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-3"><code class="font-mono text-xs">sort</code></td>
-                                <td class="px-5 py-3 text-xs text-gray-500">varies</td>
-                                <td class="px-5 py-3">
-                                    Field name to sort by. Prefix with <code class="font-mono text-xs">-</code> for
-                                    descending (e.g. <code class="font-mono text-xs">-created_at</code>)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-3"><code class="font-mono text-xs">filter[field]</code></td>
-                                <td class="px-5 py-3 text-xs text-gray-500">—</td>
-                                <td class="px-5 py-3">
-                                    Filter by field value. See each resource's docs for supported filters.
-                                </td>
-                            </tr>
-                        </DocsTable>
+                    <tr>
+                        <td class="px-5 py-3"><code class="font-mono text-xs">per_page</code></td>
+                        <td class="px-5 py-3 text-xs text-gray-500">15</td>
+                        <td class="px-5 py-3">Items per page. Each resource type has a configured max.</td>
+                    </tr>
+                    <tr>
+                        <td class="px-5 py-3"><code class="font-mono text-xs">page</code></td>
+                        <td class="px-5 py-3 text-xs text-gray-500">1</td>
+                        <td class="px-5 py-3">Page number to fetch</td>
+                    </tr>
+                    <tr>
+                        <td class="px-5 py-3"><code class="font-mono text-xs">sort</code></td>
+                        <td class="px-5 py-3 text-xs text-gray-500">varies</td>
+                        <td class="px-5 py-3">
+                            Field name to sort by. Prefix with <code class="font-mono text-xs">-</code> for descending
+                            (e.g. <code class="font-mono text-xs">-created_at</code>)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-5 py-3"><code class="font-mono text-xs">filter[field]</code></td>
+                        <td class="px-5 py-3 text-xs text-gray-500">—</td>
+                        <td class="px-5 py-3">
+                            Filter by field value. See each resource's docs for supported filters.
+                        </td>
+                    </tr>
+                </DocsTable>
 
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="json"
                         :code="collectionExample"
@@ -320,22 +326,24 @@ const errorExample =
                     <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">included</code>
                     array — each resource appears only once even if referenced multiple times.
                 </p>
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="json"
                         :code="relationshipExample"
                     />
                 </div>
                 <DocsTable :columns="['Resource', 'Supported includes']">
-                            <tr>
-                                <td class="px-5 py-3"><code class="font-mono text-xs">menus</code></td>
-                                <td class="px-5 py-3"><code class="font-mono text-xs">items</code></td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-3"><code class="font-mono text-xs">taxonomies</code></td>
-                                <td class="px-5 py-3"><code class="font-mono text-xs">terms</code></td>
-                            </tr>
-                        </DocsTable>
+                    <tr>
+                        <td class="px-5 py-3"><code class="font-mono text-xs">menus</code></td>
+                        <td class="px-5 py-3"><code class="font-mono text-xs">items</code></td>
+                    </tr>
+                    <tr>
+                        <td class="px-5 py-3"><code class="font-mono text-xs">taxonomies</code></td>
+                        <td class="px-5 py-3"><code class="font-mono text-xs">terms</code></td>
+                    </tr>
+                </DocsTable>
             </div>
 
             <!-- Error objects -->
@@ -362,51 +370,53 @@ const errorExample =
                     >
                     value in seconds.
                 </p>
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="json"
                         :code="errorExample"
                     />
                 </div>
                 <DocsTable :columns="['Status', 'Title', 'When']">
-                            <tr>
-                                <td class="px-5 py-3">
-                                    <code class="font-mono text-xs text-red-600 dark:text-red-400">401</code>
-                                </td>
-                                <td class="px-5 py-3">Unauthorized</td>
-                                <td class="px-5 py-3">Missing or invalid API token</td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-3">
-                                    <code class="font-mono text-xs text-red-600 dark:text-red-400">403</code>
-                                </td>
-                                <td class="px-5 py-3">Forbidden</td>
-                                <td class="px-5 py-3">Token used from an unverified domain</td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-3">
-                                    <code class="font-mono text-xs text-red-600 dark:text-red-400">404</code>
-                                </td>
-                                <td class="px-5 py-3">Not Found</td>
-                                <td class="px-5 py-3">Resource doesn't exist or doesn't belong to your site</td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-3">
-                                    <code class="font-mono text-xs text-red-600 dark:text-red-400">405</code>
-                                </td>
-                                <td class="px-5 py-3">Method Not Allowed</td>
-                                <td class="px-5 py-3">HTTP method not supported on this endpoint</td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-3">
-                                    <code class="font-mono text-xs text-red-600 dark:text-red-400">429</code>
-                                </td>
-                                <td class="px-5 py-3">Too Many Requests</td>
-                                <td class="px-5 py-3">
-                                    Rate limit exceeded — check <code class="font-mono text-xs">meta.retry_after</code>
-                                </td>
-                            </tr>
-                        </DocsTable>
+                    <tr>
+                        <td class="px-5 py-3">
+                            <code class="font-mono text-xs text-red-600 dark:text-red-400">401</code>
+                        </td>
+                        <td class="px-5 py-3">Unauthorized</td>
+                        <td class="px-5 py-3">Missing or invalid API token</td>
+                    </tr>
+                    <tr>
+                        <td class="px-5 py-3">
+                            <code class="font-mono text-xs text-red-600 dark:text-red-400">403</code>
+                        </td>
+                        <td class="px-5 py-3">Forbidden</td>
+                        <td class="px-5 py-3">Token used from an unverified domain</td>
+                    </tr>
+                    <tr>
+                        <td class="px-5 py-3">
+                            <code class="font-mono text-xs text-red-600 dark:text-red-400">404</code>
+                        </td>
+                        <td class="px-5 py-3">Not Found</td>
+                        <td class="px-5 py-3">Resource doesn't exist or doesn't belong to your site</td>
+                    </tr>
+                    <tr>
+                        <td class="px-5 py-3">
+                            <code class="font-mono text-xs text-red-600 dark:text-red-400">405</code>
+                        </td>
+                        <td class="px-5 py-3">Method Not Allowed</td>
+                        <td class="px-5 py-3">HTTP method not supported on this endpoint</td>
+                    </tr>
+                    <tr>
+                        <td class="px-5 py-3">
+                            <code class="font-mono text-xs text-red-600 dark:text-red-400">429</code>
+                        </td>
+                        <td class="px-5 py-3">Too Many Requests</td>
+                        <td class="px-5 py-3">
+                            Rate limit exceeded — check <code class="font-mono text-xs">meta.retry_after</code>
+                        </td>
+                    </tr>
+                </DocsTable>
             </div>
 
             <!-- Version member -->
@@ -424,7 +434,9 @@ const errorExample =
                     object declaring the spec version. This is always
                     <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs dark:bg-gray-800">1.1</code>.
                 </p>
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900">
+                <div
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-white/10 dark:bg-gray-900"
+                >
                     <Code
                         lang="json"
                         code='{ "jsonapi": { "version": "1.1" } }'

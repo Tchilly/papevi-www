@@ -22,7 +22,7 @@ const tocItems = [
 
         <div class="space-y-10">
             <div class="space-y-3 border-b border-gray-200 pb-10 dark:border-white/8">
-                <p class="text-xs font-semibold tracking-[0.14em] text-brand-600 uppercase dark:text-brand-400">
+                <p class="text-xs font-semibold tracking-[0.14em] text-brand-700 uppercase dark:text-brand-400">
                     Editor Guide
                 </p>
                 <Heading as="h1">Workflow &amp; Publishing</Heading>

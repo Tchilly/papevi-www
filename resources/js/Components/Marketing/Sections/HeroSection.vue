@@ -2,16 +2,9 @@
 import { Link } from '@inertiajs/vue3';
 
 import { editorHeroImage } from '@/Components/Marketing/marketingImages';
+import ProductFrame from '@/Components/Marketing/ProductFrame.vue';
 import Button from '@/Components/Ui/Button.vue';
 import Heading from '@/Components/Ui/Heading.vue';
-
-const onImageLoad = (event: Event) => {
-    (event.target as HTMLImageElement).dataset.loaded = 'true';
-};
-
-const onImageError = (event: Event) => {
-    (event.target as HTMLImageElement).remove();
-};
 </script>
 
 <template>
@@ -112,31 +105,13 @@ const onImageError = (event: Event) => {
             </div>
 
             <!-- Right column: product frame -->
-            <figure class="product-frame">
-                <div class="product-frame-bar">
-                    <span class="product-frame-dot"></span>
-                    <span class="product-frame-dot"></span>
-                    <span class="product-frame-dot"></span>
-                    <span class="ml-3 font-mono text-[11px] text-gray-600 dark:text-gray-400">
-                        papevi.app / editor
-                    </span>
-                </div>
-                <div class="relative aspect-[4/3] w-full overflow-hidden product-placeholder">
-                    <img
-                        :src="editorHeroImage"
-                        alt="Papevi CMS editor interface"
-                        class="absolute inset-0 h-full w-full object-cover opacity-0 transition data-[loaded=true]:opacity-100"
-                        loading="eager"
-                        @load="onImageLoad"
-                        @error="onImageError"
-                    />
-                    <div
-                        class="absolute inset-0 flex items-center justify-center text-sm text-gray-400 dark:text-gray-500"
-                    >
-                        <span class="font-mono">Editor preview</span>
-                    </div>
-                </div>
-            </figure>
+            <ProductFrame
+                url="papevi.app / editor"
+                :src="editorHeroImage"
+                alt="Papevi CMS editor interface"
+                label="Editor preview"
+                loading="eager"
+            />
         </div>
     </section>
 </template>
