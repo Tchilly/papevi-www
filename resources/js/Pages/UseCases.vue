@@ -180,11 +180,33 @@ const onImageError = (event: Event) => {
         <MarketingHeader />
 
         <main id="main-content">
-            <!-- Header + quick-nav cards -->
-            <section
-                class="border-b border-gray-100 bg-gray-50 px-6 py-24 sm:px-8 lg:px-12 dark:border-white/5 dark:bg-gray-900"
-            >
-                <div class="mx-auto max-w-3xl text-center">
+            <!-- Hero intro + quick-nav cards -->
+            <section class="relative overflow-hidden bg-gray-950 px-6 py-24 sm:px-8 lg:px-12">
+                <!-- Brand glow -->
+                <div
+                    class="pointer-events-none absolute top-[-10%] right-[-5%] h-[700px] w-[700px] opacity-70 brand-glow"
+                    aria-hidden="true"
+                />
+
+                <!-- Noise texture -->
+                <div
+                    class="pointer-events-none absolute inset-0 hero-noise opacity-30"
+                    aria-hidden="true"
+                />
+
+                <!-- Subtle grid -->
+                <div
+                    class="pointer-events-none absolute inset-0 atmos-grid"
+                    aria-hidden="true"
+                />
+
+                <!-- Bottom gradient fade -->
+                <div
+                    class="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-950 to-transparent"
+                    aria-hidden="true"
+                />
+
+                <div class="relative mx-auto max-w-3xl text-center">
                     <p class="mx-auto kicker">Use cases</p>
                     <Heading
                         as="h1"
@@ -193,7 +215,7 @@ const onImageError = (event: Event) => {
                     >
                         Built for teams that move fast.
                     </Heading>
-                    <p class="mx-auto mt-5 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
+                    <p class="mx-auto mt-5 max-w-2xl text-lg text-gray-400">
                         Whether you're a startup shipping landing pages or an enterprise managing multi-brand content —
                         Papevi adapts to how your team works.
                     </p>
@@ -201,22 +223,20 @@ const onImageError = (event: Event) => {
 
                 <nav
                     aria-label="Jump to a use case"
-                    class="mx-auto mt-14 grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-3"
+                    class="relative mx-auto mt-14 grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-3"
                 >
                     <a
                         v-for="item in useCases"
                         :key="item.id"
                         :href="`#${item.id}`"
                         :aria-label="`Jump to: ${item.eyebrow}`"
-                        class="group flex items-center justify-between gap-3 glass-panel p-4 transition hover:border-brand-400/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-1 dark:focus-visible:ring-brand-400"
+                        class="group flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-gray-900/70 p-4 backdrop-blur transition hover:border-brand-400/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-1"
                     >
-                        <p
-                            class="text-sm font-semibold text-gray-900 transition group-hover:text-brand-700 dark:text-white dark:group-hover:text-brand-300"
-                        >
+                        <p class="text-sm font-semibold text-white transition group-hover:text-brand-300">
                             {{ item.eyebrow }}
                         </p>
                         <svg
-                            class="size-4 shrink-0 text-gray-400 transition group-hover:translate-x-0.5 group-hover:text-brand-600 dark:group-hover:text-brand-400"
+                            class="size-4 shrink-0 text-gray-400 transition group-hover:translate-x-0.5 group-hover:text-brand-400"
                             viewBox="0 0 20 20"
                             fill="none"
                             aria-hidden="true"

@@ -305,9 +305,33 @@ function pricePeriod(monthly: number): string {
         <MarketingHeader />
 
         <main id="main-content">
-            <!-- Header -->
-            <section class="px-6 pt-24 pb-0 sm:px-8 lg:px-12">
-                <div class="mx-auto max-w-3xl text-center">
+            <!-- Hero intro -->
+            <section class="relative overflow-hidden bg-gray-950 px-6 pt-24 pb-16 sm:px-8 lg:px-12">
+                <!-- Brand glow -->
+                <div
+                    class="pointer-events-none absolute top-[-10%] right-[-5%] h-[700px] w-[700px] opacity-70 brand-glow"
+                    aria-hidden="true"
+                />
+
+                <!-- Noise texture -->
+                <div
+                    class="pointer-events-none absolute inset-0 hero-noise opacity-30"
+                    aria-hidden="true"
+                />
+
+                <!-- Subtle grid -->
+                <div
+                    class="pointer-events-none absolute inset-0 atmos-grid"
+                    aria-hidden="true"
+                />
+
+                <!-- Bottom gradient fade -->
+                <div
+                    class="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-950 to-transparent"
+                    aria-hidden="true"
+                />
+
+                <div class="relative z-10 mx-auto max-w-3xl text-center">
                     <p class="mx-auto kicker">Pricing</p>
                     <Heading
                         as="h1"
@@ -316,20 +340,16 @@ function pricePeriod(monthly: number): string {
                     >
                         Transparent pricing, no surprises.
                     </Heading>
-                    <p class="mx-auto mt-5 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
+                    <p class="mx-auto mt-5 max-w-2xl text-lg text-gray-400">
                         All prices in euros. Every paid plan includes the full CMS, API access, and editorial workflow —
                         add what you need.
                     </p>
 
                     <!-- Annual toggle -->
                     <div
-                        class="mt-10 inline-flex items-center gap-3 rounded-full border border-gray-200 bg-gray-50 px-4 py-2.5 dark:border-white/10 dark:bg-gray-900"
+                        class="mt-10 inline-flex items-center gap-3 rounded-full border border-white/10 bg-gray-900 px-4 py-2.5"
                     >
-                        <span
-                            :class="[
-                                'text-sm font-medium transition',
-                                !annual ? 'text-gray-900 dark:text-white' : 'text-gray-400 dark:text-gray-500',
-                            ]"
+                        <span :class="['text-sm font-medium transition', !annual ? 'text-white' : 'text-gray-500']"
                             >Monthly</span
                         >
                         <button
@@ -338,7 +358,7 @@ function pricePeriod(monthly: number): string {
                             :aria-checked="annual"
                             aria-label="Toggle annual billing"
                             class="relative inline-flex h-6 w-10 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 dark:focus-visible:outline-brand-400"
-                            :class="annual ? 'bg-brand-500' : 'bg-gray-300 dark:bg-gray-600'"
+                            :class="annual ? 'bg-brand-500' : 'bg-gray-600'"
                             @click="annual = !annual"
                         >
                             <span
@@ -347,25 +367,19 @@ function pricePeriod(monthly: number): string {
                                 :class="annual ? 'translate-x-4' : 'translate-x-0'"
                             />
                         </button>
-                        <span
-                            :class="[
-                                'text-sm font-medium transition',
-                                annual ? 'text-gray-900 dark:text-white' : 'text-gray-400 dark:text-gray-500',
-                            ]"
-                        >
+                        <span :class="['text-sm font-medium transition', annual ? 'text-white' : 'text-gray-500']">
                             Annual
                             <span
-                                class="ml-1 rounded-full bg-brand-100 px-2 py-0.5 text-xs font-semibold text-brand-700 dark:bg-brand-500/20 dark:text-brand-300"
+                                class="ml-1 rounded-full bg-brand-500/20 px-2 py-0.5 text-xs font-semibold text-brand-300"
                                 >2 months free</span
                             >
                         </span>
                     </div>
                 </div>
 
-                <!-- Plans grid -->
                 <div
                     id="pricing-plans"
-                    class="mx-auto mt-14 grid max-w-6xl gap-6 sm:grid-cols-2 xl:grid-cols-4"
+                    class="relative z-10 mx-auto mt-14 grid max-w-6xl gap-6 sm:grid-cols-2 xl:grid-cols-4"
                     role="list"
                     aria-label="Pricing plans"
                 >
