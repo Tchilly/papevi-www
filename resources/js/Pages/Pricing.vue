@@ -366,7 +366,7 @@ function pricePeriod(monthly: number): string {
                     <Heading
                         as="h1"
                         display="lg"
-                        class="mt-5 text-balance"
+                        class="mt-5 text-balance text-white"
                     >
                         Transparent pricing, no surprises.
                     </Heading>
@@ -421,7 +421,7 @@ function pricePeriod(monthly: number): string {
                         :class="[
                             'flex flex-col rounded-2xl border p-7',
                             plan.highlighted
-                                ? 'border-brand-400/50 bg-brand-500/5 ring-1 ring-brand-400/25 dark:border-brand-400/30 dark:bg-brand-500/5'
+                                ? 'border-brand-400/50 bg-brand-950/50 ring-1 ring-brand-400/25 dark:border-brand-400/30 dark:bg-brand-500/5'
                                 : 'border-gray-200 bg-white dark:border-white/10 dark:bg-gray-900',
                         ]"
                     >
@@ -509,7 +509,7 @@ function pricePeriod(monthly: number): string {
                     </article>
                 </div>
 
-                <div class="mx-auto mt-6 max-w-6xl space-y-1 text-right text-xs text-gray-600 dark:text-gray-400">
+                <div class="mx-auto mt-6 max-w-6xl space-y-1 text-right text-xs text-gray-400">
                     <p>
                         * API requests are direct origin requests — no CDN caching on authenticated endpoints. Overages
                         are billed at €10 per 500k additional requests.

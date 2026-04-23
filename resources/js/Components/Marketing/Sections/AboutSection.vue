@@ -53,7 +53,7 @@ const pillars = [
                 <Heading
                     as="h2"
                     display="lg"
-                    class="mt-5 text-balance"
+                    class="mt-5 text-balance text-white"
                 >
                     From pen and paper to living digital content.
                 </Heading>

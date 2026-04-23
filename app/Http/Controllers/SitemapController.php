@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\BlogService;
 use Illuminate\Http\Response;
 
 class SitemapController extends Controller
 {
+    public function __construct(private BlogService $blog) {}
+
     public function index(): Response
     {
         $pages = [
             ['url' => url('/'), 'priority' => '1.00', 'changefreq' => 'weekly'],
             ['url' => url('/pricing'), 'priority' => '0.90', 'changefreq' => 'weekly'],
+            ['url' => url('/blog'), 'priority' => '0.85', 'changefreq' => 'daily'],
             ['url' => url('/use-cases'), 'priority' => '0.80', 'changefreq' => 'monthly'],
             ['url' => url('/about'), 'priority' => '0.80', 'changefreq' => 'monthly'],
             ['url' => url('/docs'), 'priority' => '0.80', 'changefreq' => 'weekly'],
@@ -29,6 +33,14 @@ class SitemapController extends Controller
             ['url' => url('/privacy'), 'priority' => '0.30', 'changefreq' => 'yearly'],
             ['url' => url('/terms'), 'priority' => '0.30', 'changefreq' => 'yearly'],
         ];
+
+        foreach ($this->blog->all() as $post) {
+            $pages[] = [
+                'url' => url('/blog/'.$post['slug']),
+                'priority' => '0.75',
+                'changefreq' => 'monthly',
+            ];
+        }
 
         $content = view('sitemap', ['pages' => $pages])->render();
 

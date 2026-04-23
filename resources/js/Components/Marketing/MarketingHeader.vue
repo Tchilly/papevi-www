@@ -169,6 +169,12 @@ defineEmits<{
                 >
                     About
                 </Link>
+                <Link
+                    :href="route('blog')"
+                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-white dark:focus-visible:ring-brand-400"
+                >
+                    Blog
+                </Link>
             </nav>
 
             <div class="flex flex-1 items-center justify-end gap-2">
@@ -254,6 +260,13 @@ defineEmits<{
                         @click="marketingMobileOpen = false"
                     >
                         About
+                    </Link>
+                    <Link
+                        :href="route('blog')"
+                        class="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:text-gray-200 dark:hover:bg-gray-800 dark:focus-visible:ring-brand-400"
+                        @click="marketingMobileOpen = false"
+                    >
+                        Blog
                     </Link>
                     <Link
                         :href="route('docs')"

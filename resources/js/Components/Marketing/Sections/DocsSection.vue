@@ -1,36 +1,38 @@
 <script setup lang="ts">
+import { Link } from '@inertiajs/vue3';
+
 import Heading from '@/Components/Ui/Heading.vue';
 
 const links = [
     {
         title: 'API & tokens',
         body: 'Authenticate, fetch pages, and manage tokens.',
-        href: 'https://github.com/Tchilly/papevi-cms/blob/development/docs/api-tokens.md',
+        route: 'docs.api.authentication',
     },
     {
         title: 'PageType builder',
         body: 'Model structured content with reusable blocks.',
-        href: 'https://github.com/Tchilly/papevi-cms/blob/development/docs/features/pages/page-type-features.md',
+        route: 'docs',
     },
     {
         title: 'Roles & permissions',
         body: 'Predefined roles and the granular permission system.',
-        href: 'https://github.com/Tchilly/papevi-cms/blob/development/docs/roles.md',
+        route: 'docs',
     },
     {
         title: 'Versioning & audit',
         body: 'Revision history and audit trails for every change.',
-        href: 'https://github.com/Tchilly/papevi-cms/blob/development/docs/features/pages/versioning-audit-trails.md',
+        route: 'docs.features.versioning',
     },
     {
         title: 'Publishing & scheduling',
         body: 'How draft, scheduled, and live states resolve.',
-        href: 'https://github.com/Tchilly/papevi-cms/blob/development/docs/features/pages/page-publishing-scheduling.md',
+        route: 'docs.features.workflow',
     },
     {
         title: 'GDPR media',
         body: 'Consent, retention, and privacy zones for assets.',
-        href: 'https://github.com/Tchilly/papevi-cms/blob/development/docs/features/media/media-gdpr-compliance.md',
+        route: 'docs.api.media',
     },
 ];
 </script>
@@ -55,12 +57,10 @@ const links = [
         </div>
 
         <div class="mx-auto mt-14 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <a
+            <Link
                 v-for="doc in links"
                 :key="doc.title"
-                :href="doc.href"
-                target="_blank"
-                rel="noopener noreferrer"
+                :href="route(doc.route)"
                 class="group flex h-full flex-col justify-between glass-panel p-6 transition hover:border-brand-400/40"
             >
                 <div>
@@ -86,7 +86,7 @@ const links = [
                     </Heading>
                     <p class="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">{{ doc.body }}</p>
                 </div>
-            </a>
+            </Link>
         </div>
     </section>
 </template>

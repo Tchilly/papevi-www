@@ -11,7 +11,10 @@ const year = new Date().getFullYear();
         <div class="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div class="space-y-3">
                 <div class="flex items-center gap-3">
-                    <BrandLogo name="Papevi CMS" />
+                    <BrandLogo
+                        :boxed="false"
+                        name="Papevi CMS"
+                    />
                 </div>
                 <p class="text-xs text-gray-600 dark:text-gray-400">
                     Enterprise headless content platform for ambitious teams.
@@ -56,6 +59,13 @@ const year = new Date().getFullYear();
                             :href="route('pricing')"
                             class="rounded transition hover:text-gray-900 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:hover:text-white dark:focus-visible:ring-brand-400"
                             >Pricing</Link
+                        >
+                    </li>
+                    <li>
+                        <Link
+                            :href="route('blog')"
+                            class="rounded transition hover:text-gray-900 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:hover:text-white dark:focus-visible:ring-brand-400"
+                            >Blog</Link
                         >
                     </li>
                 </ul>

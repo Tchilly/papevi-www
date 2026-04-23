@@ -33,6 +33,17 @@ const features = [
             'Every action logged with full context: user, time, IP, and exactly what changed',
         ],
     },
+    {
+        eyebrow: 'Digital Asset Management',
+        title: 'A DAM built for structured content teams',
+        body: 'Every uploaded file is automatically processed, optimised, and stored with full metadata. Folder structure, licence rights, GDPR consent controls, and per-site image variants — not bolted on, just built in.',
+        bullets: [
+            'Auto-generate WebP and AVIF variants per site — 20–40% smaller files, no manual work',
+            'GDPR-ready: per-person consent tracking, retention policies, and right-to-be-forgotten built in',
+            'Licence management for every asset — CC, proprietary, commercial and derivative restrictions',
+            'Media picker embedded in the page editor — find and attach assets without leaving context',
+        ],
+    },
 ];
 
 const onImageLoad = (event: Event) => {

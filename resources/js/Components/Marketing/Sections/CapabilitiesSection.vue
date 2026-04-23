@@ -23,8 +23,8 @@ const capabilities = [
         body: 'Create locale variants for any content type. Manage translations alongside originals with the same structure and workflow.',
     },
     {
-        title: 'Media library',
-        body: 'Centralized assets with folder and tag organisation. Upload, resize, and reference across all your content.',
+        title: 'Digital Asset Management',
+        body: 'Full DAM built in — folder structure, image variants (WebP/AVIF), GDPR consent per person, licence rights, retention policies, and a media picker embedded in the page editor.',
     },
     {
         title: 'SEO & metadata',

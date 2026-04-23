@@ -18,6 +18,8 @@ const useCases = [
             'AI writing assistance speeds up copy across every campaign and page',
             'Set approval gates so nothing goes live without the right sign-off',
             'Schedule launch dates and auto-expiry in advance, then forget about it',
+            'Centralised DAM with folder structure, bulk upload, and media picker embedded in the editor',
+            'Auto-generated WebP and AVIF variants keep page weight low without manual optimisation',
         ],
     },
     {
@@ -51,6 +53,8 @@ const useCases = [
             'Full audit trail — everyone knows who changed what, and when',
             'Configurable approval flows so nothing publishes without the right sign-off',
             'GDPR media controls and EU data residency included, not bolted on',
+            'Per-asset consent tracking, data retention policies, and right-to-be-forgotten in the DAM',
+            'Asset licence management — flag commercial use rights, attribution requirements, and expiry',
         ],
     },
     {

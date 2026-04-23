@@ -103,7 +103,7 @@ const structuredData = {
 
 <template>
     <Head>
-        <title>Papevi CMS — The content platform for ambitious teams</title>
+        <title>Headless CMS for Ambitious Teams</title>
         <meta
             head-key="description"
             name="description"
@@ -127,7 +127,7 @@ const structuredData = {
         <meta
             head-key="og:title"
             property="og:title"
-            content="Papevi CMS — The content platform for ambitious teams"
+            content="Papevi — Headless CMS for Ambitious Teams"
         />
         <meta
             head-key="og:description"
@@ -147,7 +147,7 @@ const structuredData = {
         <meta
             head-key="twitter:title"
             name="twitter:title"
-            content="Papevi CMS — The content platform for ambitious teams"
+            content="Papevi — Headless CMS for Ambitious Teams"
         />
         <meta
             head-key="twitter:description"
