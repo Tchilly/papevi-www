@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BetaSignupController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -47,6 +48,10 @@ Route::get('/trust', function () {
 Route::post('/beta-signup', [BetaSignupController::class, 'store'])
     ->middleware('throttle:3,1')
     ->name('beta-signup');
+
+Route::post('/contact', [ContactController::class, 'store'])
+    ->middleware('throttle:5,10')
+    ->name('contact');
 
 Route::get('/docs', function () {
     return Inertia::render('Docs/GettingStarted');

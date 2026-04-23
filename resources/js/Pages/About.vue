@@ -4,6 +4,7 @@ import { Head } from '@inertiajs/vue3';
 import MarketingFooter from '@/Components/Marketing/MarketingFooter.vue';
 import MarketingHeader from '@/Components/Marketing/MarketingHeader.vue';
 import AboutSection from '@/Components/Marketing/Sections/AboutSection.vue';
+import ContactSection from '@/Components/Marketing/Sections/ContactSection.vue';
 import CtaSection from '@/Components/Marketing/Sections/CtaSection.vue';
 
 const structuredData = {
@@ -129,6 +130,7 @@ const structuredData = {
 
         <main id="main-content">
             <AboutSection />
+            <ContactSection />
             <CtaSection />
         </main>
 
