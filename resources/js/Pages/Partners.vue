@@ -84,6 +84,51 @@ const perks = [
             property="og:url"
             :content="route('partners')"
         />
+        <meta
+            head-key="og:site_name"
+            property="og:site_name"
+            content="Papevi CMS"
+        />
+        <meta
+            head-key="og:locale"
+            property="og:locale"
+            content="en_GB"
+        />
+        <meta
+            head-key="og:image"
+            property="og:image"
+            content="https://papevi.com/images/og-social-card.png"
+        />
+        <meta
+            head-key="og:image:width"
+            property="og:image:width"
+            content="1200"
+        />
+        <meta
+            head-key="og:image:height"
+            property="og:image:height"
+            content="630"
+        />
+        <meta
+            head-key="twitter:card"
+            name="twitter:card"
+            content="summary_large_image"
+        />
+        <meta
+            head-key="twitter:title"
+            name="twitter:title"
+            content="Partner Programme — Papevi CMS"
+        />
+        <meta
+            head-key="twitter:description"
+            name="twitter:description"
+            content="Join the Papevi partner programme. Earn 30% recurring commission in year one, 20% after that. No quotas."
+        />
+        <meta
+            head-key="twitter:image"
+            name="twitter:image"
+            content="https://papevi.com/images/og-social-card.png"
+        />
         <component
             :is="'script'"
             type="application/ld+json"

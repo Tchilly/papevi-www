@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BetaSignupController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -87,3 +88,5 @@ Route::get('/docs/features/workflow', function () {
 Route::get('/docs/features/versioning', function () {
     return Inertia::render('Docs/Features/Versioning');
 })->name('docs.features.versioning');
+
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');

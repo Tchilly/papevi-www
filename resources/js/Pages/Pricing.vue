@@ -280,9 +280,34 @@ function pricePeriod(monthly: number): string {
             :content="route('pricing')"
         />
         <meta
+            head-key="og:site_name"
+            property="og:site_name"
+            content="Papevi CMS"
+        />
+        <meta
+            head-key="og:locale"
+            property="og:locale"
+            content="en_GB"
+        />
+        <meta
+            head-key="og:image"
+            property="og:image"
+            content="https://papevi.com/images/og-social-card.png"
+        />
+        <meta
+            head-key="og:image:width"
+            property="og:image:width"
+            content="1200"
+        />
+        <meta
+            head-key="og:image:height"
+            property="og:image:height"
+            content="630"
+        />
+        <meta
             head-key="twitter:card"
             name="twitter:card"
-            content="summary"
+            content="summary_large_image"
         />
         <meta
             head-key="twitter:title"
@@ -293,6 +318,11 @@ function pricePeriod(monthly: number): string {
             head-key="twitter:description"
             name="twitter:description"
             content="Transparent headless CMS pricing. Starter from €29/month. Annual billing saves 2 months. Free dev tier — no credit card required."
+        />
+        <meta
+            head-key="twitter:image"
+            name="twitter:image"
+            content="https://papevi.com/images/og-social-card.png"
         />
         <component
             :is="'script'"

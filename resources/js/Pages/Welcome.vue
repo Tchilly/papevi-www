@@ -23,19 +23,22 @@ const structuredData = {
     '@graph': [
         {
             '@type': 'WebSite',
+            '@id': 'https://papevi.com/#website',
             name: 'Papevi CMS',
-            url: '/',
+            url: 'https://papevi.com/',
             description: 'Headless CMS for teams that need structured content, editorial workflow, and a reliable API.',
         },
         {
             '@type': 'Organization',
+            '@id': 'https://papevi.com/#organization',
             name: 'Papevi',
-            url: '/',
+            url: 'https://papevi.com/',
             description:
                 'Papevi builds a structured headless CMS for ambitious teams — with editorial workflow, multi-site support, and a clean API.',
         },
         {
             '@type': 'SoftwareApplication',
+            '@id': 'https://papevi.com/#software',
             name: 'Papevi CMS',
             applicationCategory: 'BusinessApplication',
             operatingSystem: 'Web',
@@ -48,6 +51,51 @@ const structuredData = {
                 priceCurrency: 'EUR',
                 offerCount: '5',
             },
+        },
+        {
+            '@type': 'FAQPage',
+            mainEntity: [
+                {
+                    '@type': 'Question',
+                    name: 'Who is Papevi for?',
+                    acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Editorial teams, product organizations, and engineering groups that need a single CMS for multi-site, multi-tenant publishing with strong governance.',
+                    },
+                },
+                {
+                    '@type': 'Question',
+                    name: 'Is Papevi really headless?',
+                    acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Yes. Your team authors content in the Papevi admin, and it is delivered through a clean API any frontend, app, or channel can consume.',
+                    },
+                },
+                {
+                    '@type': 'Question',
+                    name: 'How does workflow and scheduling work in Papevi CMS?',
+                    acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Pages move through draft, review, approved, and published. Status is computed live from publish and unpublish timestamps so scheduling is deterministic.',
+                    },
+                },
+                {
+                    '@type': 'Question',
+                    name: 'What compliance and security features does Papevi include?',
+                    acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Role-based access control, audit history, encrypted recovery codes, 2FA, and GDPR media controls are part of the platform — not add-ons.',
+                    },
+                },
+                {
+                    '@type': 'Question',
+                    name: 'Can Papevi CMS scale to enterprise traffic?',
+                    acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Yes. Papevi is multi-tenant from the ground up and runs on EU-hosted cloud infrastructure sized for enterprise traffic. As your audience grows, the platform grows with it.',
+                    },
+                },
+            ],
         },
     ],
 };
@@ -105,6 +153,36 @@ const structuredData = {
             head-key="twitter:description"
             name="twitter:description"
             content="Papevi is a headless CMS built for content teams that demand structure, workflow, and a clean API."
+        />
+        <meta
+            head-key="og:site_name"
+            property="og:site_name"
+            content="Papevi CMS"
+        />
+        <meta
+            head-key="og:locale"
+            property="og:locale"
+            content="en_GB"
+        />
+        <meta
+            head-key="og:image"
+            property="og:image"
+            content="https://papevi.com/images/og-social-card.png"
+        />
+        <meta
+            head-key="og:image:width"
+            property="og:image:width"
+            content="1200"
+        />
+        <meta
+            head-key="og:image:height"
+            property="og:image:height"
+            content="630"
+        />
+        <meta
+            head-key="twitter:image"
+            name="twitter:image"
+            content="https://papevi.com/images/og-social-card.png"
         />
         <component
             :is="'script'"
