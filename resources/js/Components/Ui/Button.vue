@@ -22,6 +22,8 @@ const props = withDefaults(
         iconOnly?: boolean;
         /** Position within a joined button group. */
         group?: 'first' | 'middle' | 'last';
+        /** Hidden on mobile (below 768px). */
+        hiddenMobile?: boolean;
     }>(),
     {
         as: 'button',
@@ -30,6 +32,7 @@ const props = withDefaults(
         type: 'button',
         loading: false,
         iconOnly: false,
+        hiddenMobile: false,
     },
 );
 
@@ -65,6 +68,7 @@ const tabIndex = computed(() => {
             group === 'first' && 'button-group-first',
             group === 'middle' && 'button-group-middle',
             group === 'last' && 'button-group-last',
+            props.hiddenMobile ? 'hidden! sm:inline-flex' : 'inline-flex',
         ]"
     >
         <Transition
@@ -133,7 +137,6 @@ const tabIndex = computed(() => {
         color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform;
     transition-duration: 75ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    display: inline-flex;
 }
 
 .button:disabled,

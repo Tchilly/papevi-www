@@ -148,80 +148,85 @@ onUnmounted(() => window.removeEventListener('keydown', onKey));
             <DialogOverlay
                 class="data-[state=open]:animate-in data-[state=open]:fade-in fixed inset-0 z-40 bg-gray-950/80 backdrop-blur-sm"
             />
-            <DialogContent
-                class="fixed top-24 left-1/2 z-50 w-[min(36rem,calc(100vw-2rem))] -translate-x-1/2 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl focus:outline-none dark:border-white/10 dark:bg-gray-900"
+            <div
+                v-if="open"
+                class="pointer-events-none fixed inset-0 z-50 flex items-start justify-center px-4 pt-24"
             >
-                <VisuallyHidden>
-                    <DialogTitle>Search documentation</DialogTitle>
-                    <DialogDescription>Find docs, page types, and editor help.</DialogDescription>
-                </VisuallyHidden>
+                <DialogContent
+                    class="pointer-events-auto w-full max-w-xl overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl focus:outline-none dark:border-white/10 dark:bg-gray-900"
+                >
+                    <VisuallyHidden>
+                        <DialogTitle>Search documentation</DialogTitle>
+                        <DialogDescription>Find docs, page types, and editor help.</DialogDescription>
+                    </VisuallyHidden>
 
-                <div class="flex items-center gap-3 border-b border-gray-200 px-4 py-3 dark:border-white/10">
-                    <svg
-                        class="size-4 text-gray-400"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        aria-hidden="true"
-                    >
-                        <circle
-                            cx="9"
-                            cy="9"
-                            r="5.5"
-                            stroke="currentColor"
-                            stroke-width="1.6"
-                        />
-                        <path
-                            d="m13.5 13.5 3.5 3.5"
-                            stroke="currentColor"
-                            stroke-width="1.6"
-                            stroke-linecap="round"
-                        />
-                    </svg>
-                    <input
-                        v-model="query"
-                        type="text"
-                        placeholder="Search docs, page types, editor help…"
-                        aria-label="Search documentation"
-                        autofocus
-                        class="w-full border-0 bg-transparent p-0 text-sm text-gray-900 placeholder:text-gray-400 focus:ring-0 focus:outline-none dark:text-white dark:placeholder:text-gray-500"
-                    />
-                    <DialogClose
-                        class="inline-flex h-6 min-w-[2rem] items-center justify-center rounded border border-gray-200 px-1.5 font-mono text-[10px] text-gray-700 transition hover:text-gray-900 dark:border-white/10 dark:text-gray-400 dark:hover:text-white"
-                        aria-label="Close"
-                        >ESC</DialogClose
-                    >
-                </div>
-
-                <ul class="max-h-[60vh] overflow-y-auto p-2">
-                    <li
-                        v-if="results.length === 0"
-                        class="px-3 py-6 text-center text-sm text-gray-400"
-                    >
-                        No matches.
-                    </li>
-                    <li
-                        v-for="entry in results"
-                        :key="entry.title + entry.href"
-                    >
-                        <Link
-                            :href="entry.href"
-                            class="flex items-start justify-between gap-3 rounded-lg px-3 py-2.5 text-left transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:hover:bg-white/5 dark:focus-visible:ring-brand-400"
-                            @click="open = false"
+                    <div class="flex items-center gap-3 border-b border-gray-200 px-4 py-3 dark:border-white/10">
+                        <svg
+                            class="size-4 text-gray-400"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            aria-hidden="true"
                         >
-                            <div class="min-w-0">
-                                <p class="truncate text-sm font-medium text-gray-900 dark:text-white">
-                                    {{ entry.title }}
-                                </p>
-                                <p class="truncate text-xs text-gray-600 dark:text-gray-400">{{ entry.body }}</p>
-                            </div>
-                            <span
-                                class="shrink-0 rounded-full border border-gray-200 px-2 py-0.5 text-[10px] tracking-wider text-gray-700 uppercase dark:border-white/10 dark:text-gray-400"
-                                >{{ entry.section }}</span
+                            <circle
+                                cx="9"
+                                cy="9"
+                                r="5.5"
+                                stroke="currentColor"
+                                stroke-width="1.6"
+                            />
+                            <path
+                                d="m13.5 13.5 3.5 3.5"
+                                stroke="currentColor"
+                                stroke-width="1.6"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+                        <input
+                            v-model="query"
+                            type="text"
+                            placeholder="Search docs, page types, editor help…"
+                            aria-label="Search documentation"
+                            autofocus
+                            class="w-full border-0 bg-transparent p-0 text-sm text-gray-900 placeholder:text-gray-400 focus:ring-0 focus:outline-none dark:text-white dark:placeholder:text-gray-500"
+                        />
+                        <DialogClose
+                            class="inline-flex h-6 min-w-8 items-center justify-center rounded border border-gray-200 px-1.5 font-mono text-[10px] text-gray-700 transition hover:text-gray-900 dark:border-white/10 dark:text-gray-400 dark:hover:text-white"
+                            aria-label="Close"
+                            >ESC</DialogClose
+                        >
+                    </div>
+
+                    <ul class="max-h-[60vh] overflow-y-auto p-2">
+                        <li
+                            v-if="results.length === 0"
+                            class="px-3 py-6 text-center text-sm text-gray-400"
+                        >
+                            No matches.
+                        </li>
+                        <li
+                            v-for="entry in results"
+                            :key="entry.title + entry.href"
+                        >
+                            <Link
+                                :href="entry.href"
+                                class="flex items-start justify-between gap-3 rounded-lg px-3 py-2.5 text-left transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:hover:bg-white/5 dark:focus-visible:ring-brand-400"
+                                @click="open = false"
                             >
-                        </Link>
-                    </li>
-                </ul>
-            </DialogContent>
+                                <div class="min-w-0">
+                                    <p class="truncate text-sm font-medium text-gray-900 dark:text-white">
+                                        {{ entry.title }}
+                                    </p>
+                                    <p class="truncate text-xs text-gray-600 dark:text-gray-400">{{ entry.body }}</p>
+                                </div>
+                                <span
+                                    class="shrink-0 rounded-full border border-gray-200 px-2 py-0.5 text-[10px] tracking-wider text-gray-700 uppercase dark:border-white/10 dark:text-gray-400"
+                                    >{{ entry.section }}</span
+                                >
+                            </Link>
+                        </li>
+                    </ul>
+                </DialogContent>
+            </div>
         </DialogPortal>
     </DialogRoot>
 </template>

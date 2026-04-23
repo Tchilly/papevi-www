@@ -44,11 +44,11 @@ const pillars = [
 <template>
     <section
         id="trust"
-        class="relative border-t border-gray-100 bg-gray-50 px-6 py-24 sm:px-8 lg:px-12 dark:border-white/5 dark:bg-gray-900"
+        class="relative overflow-hidden border-t border-gray-100 bg-gray-50 px-6 py-24 sm:px-8 lg:px-12 dark:border-white/5 dark:bg-gray-900"
     >
         <!-- Subtle left glow — dark mode only -->
         <div
-            class="pointer-events-none absolute top-1/2 left-[-10%] hidden h-[500px] w-[500px] -translate-y-1/2 opacity-10 brand-glow dark:block"
+            class="pointer-events-none absolute top-1/2 left-[-10%] hidden h-125 w-125 -translate-y-1/2 opacity-10 brand-glow dark:block"
             aria-hidden="true"
         />
 
