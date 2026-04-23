@@ -15,12 +15,12 @@ Papevi takes a different position. It is a managed, opinionated CMS built for te
 
 | Feature | Papevi | Strapi (Cloud) |
 |---|---|---|
-| Pricing | From €29/month | From $29/month (self-hosted free, Cloud from $29) |
+| Pricing | From €39/month | From $29/month (self-hosted free, Cloud from $29) |
 | Self-hosted option | No | Yes (open-source) |
 | Content types | Unlimited | Unlimited |
 | REST API | Yes | Yes |
 | GraphQL | No | Plugin available |
-| Editorial workflow | From Scale (€129/mo) | On Pro+ plans or Community Edition with plugin |
+| Editorial workflow | From Scale (€199/mo) | On Pro+ plans or Community Edition with plugin |
 | Approval routing | Included | Enterprise tier |
 | Audit log | Included from Scale | Cloud Pro+ / Enterprise |
 | Multi-site | Included from Scale | Limited / manual |
@@ -40,7 +40,7 @@ Papevi is fully managed. Infrastructure, uptime, backups, security patching, and
 
 Strapi's Community Edition has basic draft/publish states. Editorial workflow — approval routing, role-based review stages, scheduled publishing — requires Strapi Enterprise or careful plugin selection, and the experience is markedly less polished than in a purpose-built workflow system.
 
-Papevi's editorial workflow (draft → review → approved → published, approval routing, inline comment threads, scheduled publish and unpublish) is available from the Scale plan at €129/month.
+Papevi's editorial workflow (draft → review → approved → published, approval routing, inline comment threads, scheduled publish and unpublish) is available from the Scale plan at €199/month.
 
 **Bottom line:** For teams that need structured editorial workflow beyond simple draft/publish, Papevi is straightforward. Strapi can get there, but requires more configuration or Enterprise pricing.
 

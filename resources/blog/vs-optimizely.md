@@ -16,9 +16,9 @@ If that is what your organisation needs, this comparison will likely confirm Opt
 | Feature | Papevi | Optimizely CMS |
 |---|---|---|
 | Pricing model | Transparent, monthly | Custom enterprise contract |
-| Starting price | €29/month | Typically €50k–€150k+/year |
+| Starting price | €39/month | Typically €50k–€150k+/year |
 | Headless API | REST (JSON:API) | REST + GraphQL |
-| Editorial workflow | Included from Scale (€129/mo) | Included |
+| Editorial workflow | Included from Scale (€199/mo) | Included |
 | Approval routing | Included | Included |
 | Audit log | Included from Scale | Included |
 | A/B testing / personalisation | Not included | Core feature |
@@ -32,7 +32,7 @@ If that is what your organisation needs, this comparison will likely confirm Opt
 
 Optimizely does not publish pricing. Enterprise DXP contracts typically run between €50,000 and €200,000+ per year, and that excludes implementation costs — which, with the partner ecosystem required, routinely add six figures more.
 
-Papevi's Scale plan at €129/month (€1,548/year) covers multi-site, full workflow, audit log, and GDPR controls. The Enterprise plan adds custom limits, dedicated support, NIS-2 controls, and SLA on a custom contract — but the baseline capability is available to any team without a sales process.
+Papevi's Scale plan at €199/month (€1,990/year) covers multi-site, full workflow, audit log, and GDPR controls. The Enterprise plan adds custom limits, dedicated support, NIS-2 controls, and SLA on a custom contract — but the baseline capability is available to any team without a sales process.
 
 **Bottom line:** If you need A/B testing, personalisation, and an enterprise DXP, Optimizely's price point is justified by its breadth. If you need a structured headless CMS with real editorial workflow and compliance, you are paying for features you will never use.
 
@@ -40,7 +40,7 @@ Papevi's Scale plan at €129/month (€1,548/year) covers multi-site, full work
 
 This is where Optimizely genuinely earns its position. Approval routing, content scheduling, version comparison, multi-site publishing, and sophisticated role management are all well-implemented and have been refined over many years.
 
-Papevi covers the same core workflow surface: draft → review → approved → published, configurable approval routing, inline comment threads, scheduled publish and unpublish, side-by-side revision comparison, and one-click restore. The difference is availability: these features are on Papevi's Scale plan at €129/month.
+Papevi covers the same core workflow surface: draft → review → approved → published, configurable approval routing, inline comment threads, scheduled publish and unpublish, side-by-side revision comparison, and one-click restore. The difference is availability: these features are on Papevi's Scale plan at €199/month.
 
 **Bottom line:** The workflow feature sets are comparable for most teams. Papevi will not give you Optimizely's personalisation or experiment management, but for content workflow alone, the gap is small.
 

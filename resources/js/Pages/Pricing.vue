@@ -25,7 +25,7 @@ type Plan = {
 const plans: Plan[] = [
     {
         name: 'Starter',
-        monthlyPrice: 29,
+        monthlyPrice: 39,
         description: 'One site, a small team, and a reliable CMS. Perfect for getting started.',
         limits: [
             { label: 'Sites', value: '1' },
@@ -46,7 +46,7 @@ const plans: Plan[] = [
     },
     {
         name: 'Grow',
-        monthlyPrice: 59,
+        monthlyPrice: 99,
         description: 'More users, higher limits, and the full workflow toolset — on a single site.',
         limits: [
             { label: 'Sites', value: '1' },
@@ -66,7 +66,7 @@ const plans: Plan[] = [
     },
     {
         name: 'Scale',
-        monthlyPrice: 129,
+        monthlyPrice: 199,
         description: 'Built for teams running multiple sites with compliance and security requirements.',
         limits: [
             { label: 'Sites', value: '5' },
@@ -117,9 +117,9 @@ const structuredData = {
     '@graph': [
         {
             '@type': 'WebPage',
-            name: 'Papevi CMS Pricing — Plans Starting at €29/month',
+            name: 'Papevi CMS Pricing — Plans Starting at €39/month',
             description:
-                'Transparent headless CMS pricing. Starter €29/mo, Grow €59/mo, Scale €129/mo, Enterprise custom. Annual billing saves 2 months. Free developer tier available — no credit card required.',
+                'Transparent headless CMS pricing. Starter €39/mo, Grow €99/mo, Scale €199/mo, Enterprise custom. Annual billing saves 2 months. Free developer tier available — no credit card required.',
             inLanguage: 'en',
             breadcrumb: {
                 '@type': 'BreadcrumbList',
@@ -143,7 +143,7 @@ const structuredData = {
                             'One site, a small team, and a reliable headless CMS. Perfect for getting started.',
                         offers: {
                             '@type': 'Offer',
-                            price: '29.00',
+                            price: '39.00',
                             priceCurrency: 'EUR',
                             billingIncrement: 'Monthly',
                             availability: 'https://schema.org/InStock',
@@ -159,7 +159,7 @@ const structuredData = {
                         description: 'More sites, more team members, and the full workflow toolset.',
                         offers: {
                             '@type': 'Offer',
-                            price: '59.00',
+                            price: '99.00',
                             priceCurrency: 'EUR',
                             billingIncrement: 'Monthly',
                             availability: 'https://schema.org/InStock',
@@ -176,7 +176,7 @@ const structuredData = {
                             'Built for teams running multiple sites with compliance and security requirements.',
                         offers: {
                             '@type': 'Offer',
-                            price: '129.00',
+                            price: '199.00',
                             priceCurrency: 'EUR',
                             billingIncrement: 'Monthly',
                             availability: 'https://schema.org/InStock',
@@ -219,7 +219,7 @@ const addOns = [
     },
     {
         name: 'Content Metrics',
-        price: '€29',
+        price: '€39',
         period: '/month',
         description: 'Publish velocity, editorial throughput, and content performance dashboards.',
     },
@@ -243,11 +243,11 @@ function pricePeriod(monthly: number): string {
 
 <template>
     <Head>
-        <title>Papevi CMS Pricing — Plans Starting at €29/month</title>
+        <title>Papevi CMS Pricing — Plans Starting at €39/month</title>
         <meta
             head-key="description"
             name="description"
-            content="Transparent headless CMS pricing. Starter from €29/month. Grow €59/mo, Scale €129/mo, Enterprise custom. Annual billing saves 2 months. Free developer tier — no credit card required."
+            content="Transparent headless CMS pricing. Starter from €39/month. Grow €99/mo, Scale €199/mo, Enterprise custom. Annual billing saves 2 months. Free developer tier — no credit card required."
         />
         <meta
             head-key="robots"
@@ -267,12 +267,12 @@ function pricePeriod(monthly: number): string {
         <meta
             head-key="og:title"
             property="og:title"
-            content="Papevi CMS Pricing — Plans Starting at €29/month"
+            content="Papevi CMS Pricing — Plans Starting at €39/month"
         />
         <meta
             head-key="og:description"
             property="og:description"
-            content="Transparent headless CMS pricing. Starter from €29/month. Annual billing saves 2 months. Free developer tier available — no credit card required."
+            content="Transparent headless CMS pricing. Starter from €39/month. Annual billing saves 2 months. Free developer tier available — no credit card required."
         />
         <meta
             head-key="og:url"
@@ -312,12 +312,12 @@ function pricePeriod(monthly: number): string {
         <meta
             head-key="twitter:title"
             name="twitter:title"
-            content="Papevi CMS Pricing — Plans Starting at €29/month"
+            content="Papevi CMS Pricing — Plans Starting at €39/month"
         />
         <meta
             head-key="twitter:description"
             name="twitter:description"
-            content="Transparent headless CMS pricing. Starter from €29/month. Annual billing saves 2 months. Free dev tier — no credit card required."
+            content="Transparent headless CMS pricing. Starter from €39/month. Annual billing saves 2 months. Free dev tier — no credit card required."
         />
         <meta
             head-key="twitter:image"
@@ -443,7 +443,7 @@ function pricePeriod(monthly: number): string {
                                         'text-3xl font-bold',
                                         plan.highlighted ? 'text-white' : 'text-gray-900 dark:text-white',
                                     ]"
-                                    >€399</span
+                                    >€1,299</span
                                 >
                                 <span
                                     :class="[

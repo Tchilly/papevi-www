@@ -15,12 +15,12 @@ Papevi is designed around a different use case: structured content with editoria
 
 | Feature | Papevi | Storyblok |
 |---|---|---|
-| Pricing | From €29/month | Free tier, from $23/month |
+| Pricing | From €39/month | Free tier, from $23/month |
 | Visual preview editor | No | Yes — core feature |
 | Component library (blocks) | Structured fields | Visual block editor |
 | REST API | Yes | Yes |
 | GraphQL | No | Yes |
-| Editorial workflow | From Scale (€129/mo) | Available on Team+ plans |
+| Editorial workflow | From Scale (€199/mo) | Available on Team+ plans |
 | Approval routing | Included | Enterprise |
 | Audit log | Included from Scale | Team+ plans |
 | Multi-site / spaces | Included from Scale | Per-space pricing model |
@@ -42,7 +42,7 @@ Papevi does not currently offer a visual preview editor. Content is edited in a 
 
 Storyblok introduced workflow states in its Team plan, and approval management in Enterprise. These cover the basic content lifecycle needs for most teams, though approval routing and review stage configuration require Enterprise pricing.
 
-Papevi's editorial workflow is designed as a first-class feature. Draft → review → approved → published, configurable approval routing, inline comment threads, scheduled publish and unpublish, and revision history with one-click restore are all available on the Scale plan at €129/month. No Enterprise conversation required.
+Papevi's editorial workflow is designed as a first-class feature. Draft → review → approved → published, configurable approval routing, inline comment threads, scheduled publish and unpublish, and revision history with one-click restore are all available on the Scale plan at €199/month. No Enterprise conversation required.
 
 **Bottom line:** For teams with multi-stakeholder review requirements and publishing deadlines, Papevi provides more workflow structure at a lower price point.
 
@@ -58,7 +58,7 @@ Papevi provides a traditional content type builder with field-level validation, 
 
 Storyblok uses a spaces model. Each site or locale is typically a separate space. Pricing applies per space. Larger multi-site implementations can become expensive as the space count grows.
 
-Papevi's Scale plan ($129/month) includes multi-site management within a single subscription. Sites share a content model and user base with configurable per-site permissions.
+Papevi's Scale plan (€199/month) includes multi-site management within a single subscription. Sites share a content model and user base with configurable per-site permissions.
 
 **Bottom line:** For organisations running five or more sites, Papevi's multi-site inclusion in the Scale plan is significantly more cost-effective than Storyblok's per-space model.
 

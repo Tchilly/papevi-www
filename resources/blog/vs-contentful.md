@@ -18,8 +18,8 @@ This comparison is intended to help you make an informed decision, not to declar
 | Feature | Papevi | Contentful |
 |---|---|---|
 | Free tier | Yes — 1 site, 1 user | Yes — limited |
-| Starting paid price | €29/month | ~$300/month (Team plan) |
-| Multi-site | From Scale plan (€129/mo) | Enterprise only |
+| Starting paid price | €39/month | ~$300/month (Team plan) |
+| Multi-site | From Scale plan (€199/mo) | Enterprise only |
 | Approval workflow | Scale plan + | Enterprise add-on |
 | Audit log | Scale plan + | Enterprise only |
 | GDPR / EU data residency | Included | Paid add-on |
@@ -33,7 +33,7 @@ This comparison is intended to help you make an informed decision, not to declar
 
 Contentful operates on an enterprise pricing model. The free tier is meaningfully limited — 5 users, 2 locales, and no editorial workflow features. The Team plan starts at approximately $300/month. Adding multi-site support, access to audit logs, or compliance controls requires moving to Enterprise, which means a sales call and a custom contract.
 
-Papevi is more transparent. The Starter plan at €29/month is a real working CMS for one site and up to five users. Workflow, compliance, and multi-site features are available on the Scale plan at €129/month — with no hidden enterprise uplift for core features like audit trails or GDPR controls.
+Papevi is more transparent. The Starter plan at €39/month is a real working CMS for one site and up to five users. Workflow, compliance, and multi-site features are available on the Scale plan at €199/month — with no hidden enterprise uplift for core features like audit trails or GDPR controls.
 
 **Bottom line:** Contentful is significantly more expensive for teams that need workflow and compliance features. Papevi's pricing fits growing teams without requiring enterprise commitments.
 
@@ -49,7 +49,7 @@ Papevi treats editorial workflow as a core platform feature. Pages move through 
 
 Contentful supports multiple spaces, but managing them requires separate API keys and billing. Multi-site as a single-workspace concept is not a native feature — most teams bolt it together with workarounds.
 
-Papevi is multi-site from the ground up. One installation can run multiple sites and organisations, with per-site permissions and isolated content. Multi-locale content is available from the Grow plan (€59/month) with locale variants available on any content type.
+Papevi is multi-site from the ground up. One installation can run multiple sites and organisations, with per-site permissions and isolated content. Multi-locale content is available from the Grow plan (€99/month) with locale variants available on any content type.
 
 **Bottom line:** For agencies running multiple client sites, or enterprises with multiple brands, Papevi's multi-site model is substantially simpler.
 

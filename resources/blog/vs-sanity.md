@@ -15,10 +15,10 @@ Papevi takes a different design philosophy. Editorial teams should be able to op
 
 | Feature | Papevi | Sanity |
 |---|---|---|
-| Pricing | From €29/month | Free tier, from $15/month (pay-as-you-go) |
+| Pricing | From €39/month | Free tier, from $15/month (pay-as-you-go) |
 | Content API | REST (JSON:API) | GROQ / REST / GraphQL |
 | Real-time collaboration | On roadmap | Yes — core feature |
-| Editorial workflow | From Scale (€129/mo) | Custom build in Studio |
+| Editorial workflow | From Scale (€199/mo) | Custom build in Studio |
 | Approval routing | Included | Not built-in; custom plugin required |
 | Audit log | Included from Scale | Available at higher tiers |
 | Multi-site | Included from Scale | Project-per-site model typical |
@@ -63,7 +63,7 @@ Papevi does not currently offer real-time collaborative editing. Inline comments
 
 Sanity's free tier is genuinely useful for smaller projects: up to 3 users, 2 datasets, and most features included. Pay-as-you-go pricing scales with API requests and asset bandwidth, which can be unpredictable at scale.
 
-Papevi's plans are predictable and flat-rate. The Starter plan at €29/month covers most small projects with no usage-based charges. Scale at €129/month adds multi-site, workflow, and audit log with no API metering.
+Papevi's plans are predictable and flat-rate. The Starter plan at €39/month covers most small projects with no usage-based charges. Scale at €199/month adds multi-site, workflow, and audit log with no API metering.
 
 **Bottom line:** Sanity's free tier is excellent for side projects and small teams. For teams that need predictable monthly costs, Papevi's flat pricing is easier to budget.
 
