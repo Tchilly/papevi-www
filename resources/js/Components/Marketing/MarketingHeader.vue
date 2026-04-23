@@ -2,6 +2,7 @@
 import { Link } from '@inertiajs/vue3';
 import { ref } from 'vue';
 
+import BrandLogo from '@/Components/BrandLogo.vue';
 import Button from '@/Components/Ui/Button.vue';
 
 import SearchDialog from './SearchDialog.vue';
@@ -35,12 +36,7 @@ const solutionsLinks = [
                     href="/"
                     class="flex shrink-0 items-center gap-3 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 dark:focus-visible:ring-brand-400"
                 >
-                    <div
-                        class="flex h-9 w-9 items-center justify-center rounded-lg border border-brand-400/50 bg-brand-500/10"
-                    >
-                        <span class="font-mono text-xs font-semibold text-brand-700 dark:text-brand-200">PC</span>
-                    </div>
-                    <p class="text-sm font-semibold text-gray-900 dark:text-white">Papevi</p>
+                    <BrandLogo :boxed="false" />
                 </Link>
 
                 <!-- Desktop nav -->

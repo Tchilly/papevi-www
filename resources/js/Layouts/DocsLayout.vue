@@ -2,6 +2,7 @@
 import { Link, usePage } from '@inertiajs/vue3';
 import { ref } from 'vue';
 
+import BrandLogo from '@/Components/BrandLogo.vue';
 import SearchDialog from '@/Components/Marketing/SearchDialog.vue';
 import ThemeToggle from '@/Components/Marketing/ThemeToggle.vue';
 
@@ -86,16 +87,11 @@ const isActive = (path: string) => page.url === path;
                     href="/"
                     class="flex shrink-0 items-center gap-2.5"
                 >
-                    <div
-                        class="flex h-7 w-7 items-center justify-center rounded-lg border border-brand-400/40 bg-brand-500/10"
-                    >
-                        <span class="font-mono text-[10px] font-semibold text-brand-700 dark:text-brand-300">PC</span>
-                    </div>
-                    <span class="text-sm font-semibold text-gray-900 dark:text-white">Papevi</span>
-                    <span
-                        class="rounded border border-gray-200 bg-gray-100 px-1.5 py-0.5 font-mono text-[10px] text-gray-500 dark:border-white/10 dark:bg-white/5 dark:text-gray-400"
-                        >docs</span
-                    >
+                    <BrandLogo
+                        compact
+                        :boxed="false"
+                        badge="docs"
+                    />
                 </Link>
 
                 <div class="flex flex-1 items-center justify-end gap-2">

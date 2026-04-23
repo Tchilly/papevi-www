@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
 
+import BrandLogo from '@/Components/BrandLogo.vue';
+
 const year = new Date().getFullYear();
 </script>
 
@@ -9,12 +11,7 @@ const year = new Date().getFullYear();
         <div class="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div class="space-y-3">
                 <div class="flex items-center gap-3">
-                    <div
-                        class="flex h-9 w-9 items-center justify-center rounded-lg border border-brand-400/50 bg-brand-500/10"
-                    >
-                        <span class="font-mono text-xs font-semibold text-brand-700 dark:text-brand-200">PC</span>
-                    </div>
-                    <p class="text-sm font-semibold text-gray-900 dark:text-white">Papevi CMS</p>
+                    <BrandLogo name="Papevi CMS" />
                 </div>
                 <p class="text-xs text-gray-600 dark:text-gray-400">
                     Enterprise headless content platform for ambitious teams.
